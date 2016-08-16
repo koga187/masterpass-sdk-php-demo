@@ -1,0 +1,19 @@
+{
+    "description": "Masterpass SDK Demo usage",
+    "keywords": [
+        "masterpass",
+        "mastercard"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcos Vinicius Joia Lazarin",
+            "email": "merchant_support@masterpass.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "masterpass/mastercardcoresdk": "1.1.0",
+        "masterpass/masterpassmerchantsdk": "1.0.0"
+    }
+}
