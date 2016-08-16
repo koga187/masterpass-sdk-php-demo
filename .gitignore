@@ -1,0 +1,6 @@
+#Others
+*.php~
+/nbproject/*
+composer.lock
+phpunit.xml
+vendor/*
