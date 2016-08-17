@@ -13,7 +13,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "masterpass/mastercardcoresdk": "1.1.0",
-        "masterpass/masterpassmerchantsdk": "1.0.0"
+        "masterpass/mpasscoresdk": "1.1.0",
+        "masterpass/masterpassmerchantsdk": "1.0.0",
+        "apache/log4php": "2.3.0",
+        "guzzlehttp/guzzle": "~6.0"
     }
 }
