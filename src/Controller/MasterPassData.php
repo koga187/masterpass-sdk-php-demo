@@ -113,7 +113,7 @@ class MasterPassData
 		// If the one parameter is not provided, this is the default path
 		else
 		{
-			$profileConfigFile = dirname(__DIR__) . "/../web/" .
+			$profileConfigFile = dirname(__DIR__) . "/" .
 								MasterPassData::RESOURCES_PATH . 
 								MasterPassData::PROFILE_PATH . 
 								MasterPassData::DEFAULT_PROFILE . 

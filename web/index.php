@@ -1,20 +1,10 @@
 <?php
 
-include_once __DIR__ . '/../src/Controller/MasterPassController.php';
+session_start();
 
-$profiles = MasterPassController::getShippingProfiles();
-$data = array();
-
-foreach($profiles as $value)
-{
-	$settings = parse_ini_file(MasterPassData::RESOURCES_PATH.MasterPassData::PROFILE_PATH.$value.MasterPassData::CONFIG_SUFFIX);
-
-	$data[$value][] = $settings;
-}
+include_once __DIR__ . '/../src/Controller/MasterPassData.php';
 
 $sad = new MasterPassData();
-
-session_start();
 $_SESSION['sad'] = serialize($sad);
 
 ?>

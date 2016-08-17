@@ -36,7 +36,7 @@ class MasterPassController {
      */
     public static function getShippingProfiles() {
 
-        $handle = dirname(__DIR__) . "/../web/" . MasterPassData::RESOURCES_PATH . MasterPassData::PROFILE_PATH;
+        $handle = dirname(__DIR__) . "/" . MasterPassData::RESOURCES_PATH . MasterPassData::PROFILE_PATH;
 
         $configs = scandir($handle);
 
