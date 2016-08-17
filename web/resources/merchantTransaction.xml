@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MerchantTransactions>
+	<MerchantTransactions>
+		<TransactionId></TransactionId>
+		<ConsumerKey></ConsumerKey>
+		<Currency></Currency>
+		<OrderAmount></OrderAmount>
+		<PurchaseDate></PurchaseDate>
+		<TransactionStatus></TransactionStatus>
+		<ApprovalCode></ApprovalCode>
+		<PreCheckoutTransactionId/>
+		<ExpressCheckoutIndicator></ExpressCheckoutIndicator>
+	</MerchantTransactions>
+</MerchantTransactions>

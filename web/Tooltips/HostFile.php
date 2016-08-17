@@ -1,0 +1,13 @@
+<?php
+	$break = explode('/', $_SERVER['REQUEST_URI']);
+?>
+<html>
+	<body>
+		<h3>
+			The Callback URL must be resolved to the localhost (127.0.0.1) in order for this sample app to work. 
+			<br>Below is a example of how to configure the Host file.</h3>
+		<img
+			src="/<?php echo $break[1] ?>/Web/images/tooltips/HostFile.png"
+			alt="Checkout" style="border: 0px currentColor;" />
+	</body>
+</html>

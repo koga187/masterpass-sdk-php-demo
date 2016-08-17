@@ -1,0 +1,32 @@
+<ShoppingCartRequest>
+    <OAuthToken></OAuthToken>
+    <ShoppingCart>
+        <CurrencyCode>EUR</CurrencyCode>
+        <Subtotal>74996</Subtotal>
+        <ShoppingCartItem>
+            <Description>ROLINE Patchkabel /FTP sometext</Description>
+            <Quantity>1</Quantity>
+            <Value>29999</Value>
+            <ImageURL>http://projectabc.com/images/xbox.jpg</ImageURL>
+        </ShoppingCartItem>
+        <ShoppingCartItem>
+            <Description>Cell Phonè™</Description>
+            <Quantity>1</Quantity>
+            <Value>4999</Value>
+            <ImageURL>http://projectabc.com/images/Cell Phone.jpg</ImageURL>
+        </ShoppingCartItem>
+        <ShoppingCartItem>
+            <Description>27" Moñitor</Description>
+            <Quantity>1</Quantity>
+            <Value>24999</Value>
+            <ImageURL>http://projectabc.com/images/monitor.jpg</ImageURL>
+        </ShoppingCartItem>
+        <ShoppingCartItem>
+            <Description>Ĝarmin ĜPS</Description>
+            <Quantity>1</Quantity>
+            <Value>14999</Value>
+            <ImageURL>http://projectabc.com/images/garmin.jpg</ImageURL>
+        </ShoppingCartItem>
+    </ShoppingCart>
+    <OriginUrl></OriginUrl>
+</ShoppingCartRequest>

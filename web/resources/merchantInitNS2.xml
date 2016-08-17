@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:MerchantInitializationRequest xmlns:ns2="urn:mastercard.com:ppol:switchapi:types">
+    <ns2:OAuthToken></ns2:OAuthToken>
+    <ns2:OriginUrl></ns2:OriginUrl>
+</ns2:MerchantInitializationRequest>
