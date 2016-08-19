@@ -13,7 +13,7 @@ try {
     $sad = $controller->getRequestToken();
 } catch (SDKErrorResponseException $e) {
 
-    $errorMessage = MasterPassHelper::formatError($e->getMessage());
+    $errorMessage = MasterPassHelper::formatError($e);
 }
 
 $_SESSION['sad'] = serialize($sad);
