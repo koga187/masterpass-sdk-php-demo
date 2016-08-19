@@ -3,6 +3,8 @@
 
 class MasterPassHelper
 {
+    // Srings to detect errors in the service calls
+	const ERRORS_TAG = "<Errors>";
 
 	/**
 	 * Used to format all XML for display
@@ -31,7 +33,7 @@ class MasterPassHelper
 	 */
 	// Used to format the Error XML for display
 	public static function formatError($errorMessage) {
-		if( preg_match(Connector::ERRORS_TAG,$errorMessage) > 0 ) {
+		if( preg_match(self::ERRORS_TAG,$errorMessage) > 0 ) {
 			$errorMessage = MasterPassHelper::formatXML($errorMessage);
 		}
 		return $errorMessage;

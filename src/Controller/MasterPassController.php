@@ -1,9 +1,11 @@
 <?php
 
 require_once 'MasterPassData.php';
-//require_once dirname(dirname(__DIR__)) . '/WalletSDK/MasterPassService.php';
+require_once 'MasterPassHelper.php';
+require_once dirname(dirname(__DIR__)) . '/src/services/MasterPassService.php';
 
-class MasterPassController {
+class MasterPassController
+{
 
     public $service;
     public $appData;
@@ -19,7 +21,8 @@ class MasterPassController {
      * Constructor for MasterPassController
      * @param MasterPassData $masterPassData
      */
-    public function __construct($masterPassData) {
+    public function __construct($masterPassData)
+    {
         $consumerKey = $masterPassData->consumerKey;
         $privateKey = $this->getPrivateKey($masterPassData);
         $originUrl = $masterPassData->callbackDomain;
@@ -28,42 +31,12 @@ class MasterPassController {
     }
 
     /**
-     * Index page only
-     * 
-     * Method to parse the shipping profiles from the config files for 
-     * 
-     * @return Array of config file names
-     */
-    public static function getShippingProfiles() {
-
-        $handle = dirname(__DIR__) . "/" . MasterPassData::RESOURCES_PATH . MasterPassData::PROFILE_PATH;
-
-        $configs = scandir($handle);
-
-        sort($configs);
-
-        $size = count($configs);
-
-        for ($i = 0; $i < $size; $i++) {
-            // Using only the unhidden files
-            if (substr($configs[$i], 0, 1) != MasterPassData::PERIOD && substr($configs[$i], -4) == MasterPassData::CONFIG_SUFFIX) {
-                $configs[$i] = substr($configs[$i], 0, -4);
-            } else {
-                // Removing any file that starts with a '.' or does not end in '.ini'
-                unset($configs[$i]);
-            }
-        }
-
-        sort($configs);
-        return $configs;
-    }
-
-    /**
      * Method to retrieve the private key from the p12 file
      *
      * @return Private key string
      */
-    private function getPrivateKey($masterPassData) {
+    private function getPrivateKey($masterPassData)
+    {
         $thispath = dirname(__DIR__) . "/" . $masterPassData->keystorePath;
         $path = realpath($thispath);
         $keystore = array();
@@ -80,7 +53,8 @@ class MasterPassController {
      *  
      *  @return String : string to append to a URL 
      */
-    public function parsePostData($_POST_DATA) {
+    public function parsePostData($_POST_DATA)
+    {
 
         if ($_POST_DATA != null) {
             $acceptedCardsString = "";
@@ -109,15 +83,16 @@ class MasterPassController {
             }
 
             $redirectParameters = MasterPassService::ACCEPTABLE_CARDS . Connector::EQUALS . $this->appData->acceptableCards
-                    . Connector::AMP . MasterPassService::VERSION . Connector::EQUALS . $this->appData->xmlVersion
-                    . Connector::AMP . MasterPassService::SUPPRESS_SHIPPING_ADDRESS . Connector::EQUALS . $this->appData->shippingSuppression
-                    . Connector::AMP . MasterPassService::AUTH_LEVEL . Connector::EQUALS . ($this->appData->authLevelBasic ? "true" : "false")
-                    . Connector::AMP . MasterPassService::ACCEPT_REWARDS_PROGRAM . Connector::EQUALS . $this->appData->rewardsProgram;
+                . Connector::AMP . MasterPassService::VERSION . Connector::EQUALS . $this->appData->xmlVersion
+                . Connector::AMP . MasterPassService::SUPPRESS_SHIPPING_ADDRESS . Connector::EQUALS . $this->appData->shippingSuppression
+                . Connector::AMP . MasterPassService::AUTH_LEVEL . Connector::EQUALS . ($this->appData->authLevelBasic ? "true" : "false")
+                . Connector::AMP . MasterPassService::ACCEPT_REWARDS_PROGRAM . Connector::EQUALS . $this->appData->rewardsProgram;
             return $redirectParameters;
         }
     }
 
-    public function processParameters($_POST_DATA) {
+    public function processParameters($_POST_DATA)
+    {
         if ($_POST_DATA) {
             $acceptedCardsString = "";
 
@@ -159,7 +134,8 @@ class MasterPassController {
         return $this->appData;
     }
 
-    public function setPostbackParameter($_POST_DATA) {
+    public function setPostbackParameter($_POST_DATA)
+    {
         if ($_POST_DATA) {
             $postbackParameter = '';
             if (isset($_POST["postbackVersionDropdown"])) {
@@ -170,36 +146,42 @@ class MasterPassController {
         return $this->appData;
     }
 
-    public function setCallbackParameters($_GET_DATA) {
+    public function setCallbackParameters($_GET_DATA)
+    {
         $this->appData->requestToken = isset($_GET_DATA[MasterPassService::OAUTH_TOKEN]) ? $_GET_DATA[MasterPassService::OAUTH_TOKEN] : NULL;
         $this->appData->requestVerifier = isset($_GET_DATA[MasterPassService::OAUTH_VERIFIER]) ? $_GET_DATA[MasterPassService::OAUTH_VERIFIER] : NULL;
         $this->appData->checkoutResourceUrl = isset($_GET_DATA[MasterPassService::CHECKOUT_RESOURCE_URL]) ? $_GET_DATA[MasterPassService::CHECKOUT_RESOURCE_URL] : NULL;
         return $this->appData;
     }
 
-    public function setPairingDataTypes($dataTypes) {
+    public function setPairingDataTypes($dataTypes)
+    {
         $this->appData->pairingDataTypes = $dataTypes;
         return $this->appData;
     }
 
-    public function setPrecheckoutCardId($cardId) {
+    public function setPrecheckoutCardId($cardId)
+    {
         $this->appData->preCheckoutCardId = $cardId;
         return $this->appData;
     }
 
-    public function setPrecheckoutShippingId($shippingId) {
+    public function setPrecheckoutShippingId($shippingId)
+    {
         $this->appData->preCheckoutShippingAddressId = $shippingId;
         return $this->appData;
     }
 
-    public function setPairingToken($pairingToken) {
+    public function setPairingToken($pairingToken)
+    {
         if ($pairingToken != NULL) {
             $this->appData->pairingToken = $pairingToken;
         }
         return $this->appData;
     }
 
-    public function setPairingVerifier($pairingVerifier) {
+    public function setPairingVerifier($pairingVerifier)
+    {
         if ($pairingVerifier != NULL) {
             $this->appData->pairingVerifier = $pairingVerifier;
         }
@@ -215,7 +197,8 @@ class MasterPassController {
      *
      * @param String : $callbackdoamin
      */
-    public function parseShoppingCartXMLPrint() {
+    public function parseShoppingCartXMLPrint()
+    {
 
         $shoppingCartData = $this->parseShoppingCartXML("");
         $shoppingCartData->ShoppingCart->Subtotal = (double) $shoppingCartData->ShoppingCart->Subtotal / 100;
@@ -235,7 +218,8 @@ class MasterPassController {
      *
      * @return XML object
      */
-    public function parseShoppingCartXML($requestToken) {
+    public function parseShoppingCartXML($requestToken)
+    {
         $shoppingCartData = simplexml_load_file(MasterPassController::SHOPPING_CART_XML);
         $shoppingCartData->OAuthToken = $requestToken;
         $shoppingCartData->OriginUrl = $this->appData->originUrl;
@@ -248,7 +232,8 @@ class MasterPassController {
         return $shoppingCartData;
     }
 
-    public function parseMerchantInitXML($pairingToken) {
+    public function parseMerchantInitXML($pairingToken)
+    {
         $merchantInitData = simplexml_load_file(MasterPassController::MERCHANT_INIT_XML);
         $merchantInitData->OAuthToken = $pairingToken;
         $merchantInitData->OriginUrl = $this->appData->originUrl;
@@ -263,7 +248,8 @@ class MasterPassController {
      *
      * @return XML object
      */
-    private function updateImageURL($shoppingCartData) {
+    private function updateImageURL($shoppingCartData)
+    {
         $break = explode('/', $_SERVER['REQUEST_URI']);
 
         foreach ($shoppingCartData->ShoppingCart->ShoppingCartItem as $item) {
@@ -282,38 +268,34 @@ class MasterPassController {
      *
      * @throws Exception
      */
-    public function postMerchantInit($pairingToken) {
+    public function postMerchantInit($pairingToken)
+    {
 
         $merchantInitRequest = $this->parseMerchantInitXML($pairingToken);
         $merchantInitResponse = $this->service->postMerchantInitData($this->appData->merchantInitUrl, $merchantInitRequest->asXML());
+        
         return $merchantInitResponse;
     }
 
-    public function parsePrecheckoutXml() {
-        $typesXml = "";
-        foreach ($this->appData->pairingDataTypes as $dataType) {
-            $typesXml = $typesXml . sprintf("<PairingDataType><Type>%s</Type></PairingDataType>", $dataType);
-        }
-        $preCheckoutRequest = simplexml_load_string(sprintf("<PrecheckoutDataRequest><PairingDataTypes>%s</PairingDataTypes></PrecheckoutDataRequest>", $typesXml));
-
-        return $preCheckoutRequest->asXML();
-    }
-
-    public function getRequestToken() {
-        $requestTokenResponse = $this->service->getRequestToken($this->appData->requestUrl, $this->appData->callbackUrl);
+    public function getRequestToken()
+    {
+        $requestTokenResponse = $this->service->getRequestToken($this->appData->callbackUrl);
+        $this->appData->requestToken = $requestTokenResponse->OauthToken;
         $this->appData->requestTokenResponse = $requestTokenResponse;
-        $this->appData->requestToken = $requestTokenResponse->requestToken;
+        
         return $this->appData;
     }
 
-    public function getPairingToken() {
+    public function getPairingToken()
+    {
         $pairingTokenResponse = $this->service->getRequestToken($this->appData->requestUrl, $this->appData->callbackUrl);
         $this->appData->pairingTokenResponse = $pairingTokenResponse;
         $this->appData->pairingToken = $pairingTokenResponse->requestToken;
         return $this->appData;
     }
 
-    public function getLongAccessToken() {
+    public function getLongAccessToken()
+    {
         $longAccessTokenResponse = $this->service->GetAccessToken($this->appData->accessUrl, $this->appData->pairingToken, $this->appData->pairingVerifier);
         $this->appData->longAccessTokenResponse = $longAccessTokenResponse;
         $this->appData->longAccessToken = is_null($longAccessTokenResponse) ? "" : $longAccessTokenResponse->accessToken;
@@ -321,21 +303,24 @@ class MasterPassController {
         return $this->appData;
     }
 
-    public function getAccessToken() {
+    public function getAccessToken()
+    {
         $accessTokenResponse = $this->service->GetAccessToken($this->appData->accessUrl, $this->appData->requestToken, $this->appData->requestVerifier);
         $this->appData->accessTokenResponse = $accessTokenResponse;
         $this->appData->accessToken = $accessTokenResponse->accessToken;
         return $this->appData;
     }
 
-    public function postShoppingCart() {
+    public function postShoppingCart()
+    {
         $shoppingCartRequest = $this->parseShoppingCartXML($this->appData->requestToken);
         $this->appData->shoppingCartRequest = $shoppingCartRequest->asXML();
         $this->appData->shoppingCartResponse = $this->service->postShoppingCartData($this->appData->shoppingCartUrl, $this->appData->shoppingCartRequest);
         return $this->appData;
     }
 
-    public function postOpenFeed() {
+    public function postOpenFeed()
+    {
 
         /**
          * multipload
@@ -361,22 +346,25 @@ class MasterPassController {
         return $this->appData;
     }
 
-    public function postMerchantInitData() {
+    public function postMerchantInitData()
+    {
         $merchantInitRequest = $this->parseMerchantInitXML($this->appData->pairingToken);
         $this->appData->merchantInitRequest = $merchantInitRequest->asXML();
         $this->appData->merchantInitResponse = $this->service->postMerchantInitData($this->appData->merchantInitUrl, $this->appData->merchantInitRequest);
         return $this->appData;
     }
 
-    public function postMerchantInitCart() {
+    public function postMerchantInitCart()
+    {
         $merchantInitRequest = $this->parseMerchantInitXML($this->appData->requestToken);
         $this->appData->merchantInitRequest = $merchantInitRequest->asXML();
         $this->appData->merchantInitResponse = $this->service->postMerchantInitData($this->appData->merchantInitUrl, $this->appData->merchantInitRequest);
-        
+
         return $this->appData;
     }
 
-    public function postPreCheckoutData($longAccessToken) {
+    public function postPreCheckoutData($longAccessToken)
+    {
         $this->appData->preCheckoutRequest = $this->parsePrecheckoutXml();
         $this->appData->preCheckoutResponse = $this->service->getPreCheckoutData($this->appData->preCheckoutUrl, $this->appData->preCheckoutRequest, $longAccessToken);
 
@@ -396,14 +384,16 @@ class MasterPassController {
         return $this->appData;
     }
 
-    public function getCheckoutData() {
+    public function getCheckoutData()
+    {
         $this->appData->checkoutData = $this->service->GetPaymentShippingResource($this->appData->checkoutResourceUrl, $this->appData->accessToken);
         $checkoutObject = MasterPassHelper::formatResource($this->appData->checkoutData);
         $this->appData->transactionId = (string) $checkoutObject->TransactionId;
         return $this->appData;
     }
 
-    public function logTransaction() {
+    public function logTransaction()
+    {
         $shoppingCartData = $this->parseShoppingCartXML("");
 
         $merchantTransaction = simplexml_load_file(MasterPassController::MERCHANT_TRANSACTION_XML);
@@ -421,7 +411,8 @@ class MasterPassController {
         return $this->appData;
     }
 
-    public function allHtmlEncode($str) {
+    public function allHtmlEncode($str)
+    {
 
         if (empty($str)) {
             return $str;
@@ -433,7 +424,7 @@ class MasterPassController {
             foreach ($ar as $c) {
                 $o = ord($c);
                 if ((strlen($c) > 127) || /* multi-byte [unicode] */
-                        ($o > 127)) /* Encodes everything above ascii 127 */ {
+                    ($o > 127)) /* Encodes everything above ascii 127 */ {
                     // convert to numeric entity
                     $c = mb_encode_numericentity($c, array(0x0, 0xffff, 0, 0xffff), Connector::UTF_8);
                 }
