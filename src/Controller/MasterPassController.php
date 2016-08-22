@@ -189,58 +189,6 @@ class MasterPassController
     }
 
     /**
-     * This method parses the shoppingcart.xml file use to populate shopping cart items in the the checkout flow
-     *
-     * *only handles USD currency
-     *
-     * Returns a XML class of the shopping cart data
-     *
-     * @param String : $callbackdoamin
-     */
-    public function parseShoppingCartXMLPrint()
-    {
-
-        $shoppingCartData = $this->parseShoppingCartXML("");
-        $shoppingCartData->ShoppingCart->Subtotal = (double) $shoppingCartData->ShoppingCart->Subtotal / 100;
-
-        foreach ($shoppingCartData->ShoppingCart->ShoppingCartItem as $item) {
-            $item->Value = (double) $item->Value / 100;
-            $item->Description = $this->allHtmlEncode((string) $item->Description);
-        }
-
-        return $shoppingCartData;
-    }
-
-    /**
-     * Parses the shoppingcart.xml file and returns a XML object with the data
-     *
-     * @param String: $requestToken
-     *
-     * @return XML object
-     */
-    public function parseShoppingCartXML($requestToken)
-    {
-        $shoppingCartData = simplexml_load_file(MasterPassController::SHOPPING_CART_XML);
-        $shoppingCartData->OAuthToken = $requestToken;
-        $shoppingCartData->OriginUrl = $this->appData->originUrl;
-
-        if ($this->appData->iframeCall) {
-            $shoppingCartData->ExtensionPoint->SecondaryOriginUrl = $this->appData->secondOriginUrl;
-        }
-
-        $shoppingCartData = $this->updateImageURL($shoppingCartData);
-        return $shoppingCartData;
-    }
-
-    public function parseMerchantInitXML($pairingToken)
-    {
-        $merchantInitData = simplexml_load_file(MasterPassController::MERCHANT_INIT_XML);
-        $merchantInitData->OAuthToken = $pairingToken;
-        $merchantInitData->OriginUrl = $this->appData->originUrl;
-        return $merchantInitData;
-    }
-
-    /**
      * Update the domain of the Image URL's to the callback domain listed in the config.ini file.
      *
      * @param $shoppingCartData
@@ -257,24 +205,6 @@ class MasterPassController
         }
 
         return $shoppingCartData;
-    }
-
-    /**
-     * Method to post the Merchant Initialization XML to MasterCards services. The XML is parsed from the shoppingCart.xml file.
-     *
-     * @param data
-     *
-     * @return Command bean with the Shopping Cart response set.
-     *
-     * @throws Exception
-     */
-    public function postMerchantInit($pairingToken)
-    {
-
-        $merchantInitRequest = $this->parseMerchantInitXML($pairingToken);
-        $merchantInitResponse = $this->service->postMerchantInitData($this->appData->merchantInitUrl, $merchantInitRequest->asXML());
-
-        return $merchantInitResponse;
     }
 
     public function getRequestToken()
@@ -361,11 +291,31 @@ class MasterPassController
             )
         );
 
-        
         $this->appData->shoppingCartResponse = $this->service->postShoppingCartData($request);
-        
-        ///print_r($this->appData->shoppingCartResponse); exit;
-        
+
+        return $this->appData;
+    }
+
+    /**
+     * Method to post the Merchant Initialization XML to MasterCards services. The XML is parsed from the shoppingCart.xml file.
+     *
+     * @param data
+     *
+     * @return Command bean with the Shopping Cart response set.
+     *
+     * @throws Exception
+     */
+    public function postMerchantInit()
+    {
+        $request = new MerchantInitializationRequest(
+            array(
+            'OriginUrl' => $this->appData->originUrl,
+            'OAuthToken' => $this->appData->requestToken
+            )
+        );
+
+        $this->appData->merchantInitResponse = $this->service->postMerchantInitData($request);
+
         return $this->appData;
     }
 
@@ -392,23 +342,6 @@ class MasterPassController
         $this->appData->openFeedRequest = $message;
 
         $this->appData->openFeedResponse = $this->service->postOpenFeed($newUrl, $message);
-
-        return $this->appData;
-    }
-
-    public function postMerchantInitData()
-    {
-        $merchantInitRequest = $this->parseMerchantInitXML($this->appData->pairingToken);
-        $this->appData->merchantInitRequest = $merchantInitRequest->asXML();
-        $this->appData->merchantInitResponse = $this->service->postMerchantInitData($this->appData->merchantInitUrl, $this->appData->merchantInitRequest);
-        return $this->appData;
-    }
-
-    public function postMerchantInitCart()
-    {
-        $merchantInitRequest = $this->parseMerchantInitXML($this->appData->requestToken);
-        $this->appData->merchantInitRequest = $merchantInitRequest->asXML();
-        $this->appData->merchantInitResponse = $this->service->postMerchantInitData($this->appData->merchantInitUrl, $this->appData->merchantInitRequest);
 
         return $this->appData;
     }

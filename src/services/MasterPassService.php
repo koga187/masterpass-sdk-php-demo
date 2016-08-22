@@ -55,6 +55,19 @@ class MasterPassService
     }
     
     /**
+     * Merchant initialization
+     * 
+     * @param MerchantInitializationRequest $merchantInitializationRequest
+     * 
+     * @return MerchantInitializationResponse
+     */
+    public function postMerchantInitData(MerchantInitializationRequest $merchantInitializationRequest)
+    {   
+        #Call merchant initialization service api
+        return MerchantinitializationApi::create($merchantInitializationRequest);
+    }
+    
+    /**
      * 
      * SDK:
      * This method captures the Checkout Resource URL and Request Token Verifier
@@ -77,15 +90,6 @@ class MasterPassService
         $return->accessToken = isset($responseObject[MasterPassService::OAUTH_TOKEN]) ? $responseObject[MasterPassService::OAUTH_TOKEN] : "";
         $return->oAuthSecret = isset($responseObject[MasterPassService::OAUTH_TOKEN]) ? $responseObject[MasterPassService::OAUTH_TOKEN_SECRET] : "";
         return $return;
-    }
-
-    public function postMerchantInitData($merchantInitUrl, $merchantInitXml)
-    {
-        $params = array(
-            Connector::OAUTH_BODY_HASH => $this->generateBodyHash($merchantInitXml)
-        );
-        $response = $this->doRequest($params, $merchantInitUrl, Connector::POST, $merchantInitXml);
-        return $response;
     }
 
     public function postOpenFeed($openFeedUrl, $openFeedXml)
