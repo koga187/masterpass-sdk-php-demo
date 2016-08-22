@@ -273,7 +273,7 @@ class MasterPassController
 
         $merchantInitRequest = $this->parseMerchantInitXML($pairingToken);
         $merchantInitResponse = $this->service->postMerchantInitData($this->appData->merchantInitUrl, $merchantInitRequest->asXML());
-        
+
         return $merchantInitResponse;
     }
 
@@ -282,7 +282,7 @@ class MasterPassController
         $requestTokenResponse = $this->service->getRequestToken($this->appData->callbackUrl);
         $this->appData->requestToken = $requestTokenResponse->OauthToken;
         $this->appData->requestTokenResponse = $requestTokenResponse;
-        
+
         return $this->appData;
     }
 
@@ -313,9 +313,59 @@ class MasterPassController
 
     public function postShoppingCart()
     {
-        $shoppingCartRequest = $this->parseShoppingCartXML($this->appData->requestToken);
-        $this->appData->shoppingCartRequest = $shoppingCartRequest->asXML();
-        $this->appData->shoppingCartResponse = $this->service->postShoppingCartData($this->appData->shoppingCartUrl, $this->appData->shoppingCartRequest);
+        $requestToken = $this->appData->requestToken;
+
+        $request = new ShoppingCartRequest(
+            array(
+            'ShoppingCart' => new ShoppingCart(
+                array(
+                'Subtotal' => 74996,
+                'CurrencyCode' => 'USD',
+                'ShoppingCartItem' => array(
+                    new ShoppingCartItem(
+                        array(
+                        'ImageURL' => 'https://somemerchant.com/images/xbox.jpg',
+                        'Value' => 29999,
+                        'Description' => 'XBox 360',
+                        'Quantity' => 1
+                        )
+                    ),
+                    new ShoppingCartItem(
+                        array(
+                        'ImageURL' => 'https://somemerchant.com/images/CellPhone.jpg',
+                        'Value' => 4999,
+                        'Description' => 'Cell Phone',
+                        'Quantity' => 1
+                        )
+                    ),
+                    new ShoppingCartItem(
+                        array(
+                        'ImageURL' => 'https://somemerchant.com/images/monitor.jpg',
+                        'Value' => 24999,
+                        'Description' => '27 Monitoritor',
+                        'Quantity' => 1
+                        )
+                    ),
+                    new ShoppingCartItem(
+                        array(
+                        'ImageURL' => 'https://somemerchant.com/images/garmin.jpg',
+                        'Value' => 14999,
+                        'Description' => 'Garmin PS',
+                        'Quantity' => 1
+                        )
+                    )
+                ),
+                )
+            ),
+            'OAuthToken' => $requestToken
+            )
+        );
+
+        
+        $this->appData->shoppingCartResponse = $this->service->postShoppingCartData($request);
+        
+        ///print_r($this->appData->shoppingCartResponse); exit;
+        
         return $this->appData;
     }
 

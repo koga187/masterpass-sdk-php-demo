@@ -42,6 +42,19 @@ class MasterPassService
     }
 
     /**
+     * This method posts the Shopping Cart data to MasterCard services
+     * and is used to display the shopping cart in the wallet site.
+     * 
+     * @param ShoppingCartRequest $request
+     * 
+     * @return ShoppingCartResponse
+     */
+    public function postShoppingCartData(ShoppingCartRequest $request)
+    {
+        return ShoppingcartApi::create($request);
+    }
+    
+    /**
      * 
      * SDK:
      * This method captures the Checkout Resource URL and Request Token Verifier
@@ -50,7 +63,7 @@ class MasterPassService
      * @param $verifier
      * @return Output is Access Token
      */
-    public function GetAccessToken($accessUrl, $requestToken, $verifier)
+    public function getAccessToken($accessUrl, $requestToken, $verifier)
     {
         $params = array(
             MasterPassService::OAUTH_VERIFIER => $verifier,
@@ -64,22 +77,6 @@ class MasterPassService
         $return->accessToken = isset($responseObject[MasterPassService::OAUTH_TOKEN]) ? $responseObject[MasterPassService::OAUTH_TOKEN] : "";
         $return->oAuthSecret = isset($responseObject[MasterPassService::OAUTH_TOKEN]) ? $responseObject[MasterPassService::OAUTH_TOKEN_SECRET] : "";
         return $return;
-    }
-
-    /**
-     * SDK:
-     * This method posts the Shopping Cart data to MasterCard services
-     * and is used to display the shopping cart in the wallet site.
-     * @param $ShoppingCartXml
-     * @return Output is the response from MasterCard services
-     */
-    public function postShoppingCartData($shoppingCartUrl, $shoppingCartXml)
-    {
-        $params = array(
-            Connector::OAUTH_BODY_HASH => $this->generateBodyHash($shoppingCartXml)
-        );
-        $response = $this->doRequest($params, $shoppingCartUrl, Connector::POST, $shoppingCartXml);
-        return $response;
     }
 
     public function postMerchantInitData($merchantInitUrl, $merchantInitXml)
