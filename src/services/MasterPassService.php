@@ -9,6 +9,15 @@ Logger::configure(dirname(__DIR__) .'/services/config.php');
 class MasterPassService
 {
 
+    // Callback URL parameters
+	const OAUTH_TOKEN = "oauth_token";
+	const OAUTH_VERIFIER = "oauth_verifier";	
+	const CHECKOUT_RESOURCE_URL = "checkout_resource_url";
+	
+	const REDIRECT_URL = "redirect_url";
+	const PAIRING_TOKEN = "pairing_token";
+	const PAIRING_VERIFIER = "pairing_verifier";
+    
     public $originUrl;
     protected $consumerKey;
     private $privateKey;
