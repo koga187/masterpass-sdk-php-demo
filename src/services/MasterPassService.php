@@ -85,20 +85,9 @@ class MasterPassService
      * @param $verifier
      * @return Output is Access Token
      */
-    public function getAccessToken($accessUrl, $requestToken, $verifier)
+    public function getAccessToken($requestToken, $verifierToken)
     {
-        $params = array(
-            MasterPassService::OAUTH_VERIFIER => $verifier,
-            MasterPassService::OAUTH_TOKEN => $requestToken
-        );
-
-        $return = new AccessTokenResponse();
-        $response = $this->doRequest($params, $accessUrl, Connector::POST, null);
-        $responseObject = $this->parseConnectionResponse($response);
-
-        $return->accessToken = isset($responseObject[MasterPassService::OAUTH_TOKEN]) ? $responseObject[MasterPassService::OAUTH_TOKEN] : "";
-        $return->oAuthSecret = isset($responseObject[MasterPassService::OAUTH_TOKEN]) ? $responseObject[MasterPassService::OAUTH_TOKEN_SECRET] : "";
-        return $return;
+        return AccessTokenApi::create($requestToken, $verifierToken);
     }
 
     public function postOpenFeed($openFeedUrl, $openFeedXml)

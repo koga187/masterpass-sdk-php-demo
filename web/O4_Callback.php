@@ -11,7 +11,7 @@ $connect = false;
 if (isset($_GET['connect'])) {
     $connect = $_GET['connect'] === "true";
 }
-
+/**
 if (isset($_GET[MasterPassService::PAIRING_TOKEN]) && isset($_GET[MasterPassService::PAIRING_VERIFIER])) {
     $pairing = true;
     $sad = $controller->setPairingToken($_GET[MasterPassService::PAIRING_TOKEN]);
@@ -23,7 +23,7 @@ if (isset($_GET[MasterPassService::PAIRING_TOKEN]) && isset($_GET[MasterPassServ
         setcookie('longAccessToken', $sad->longAccessToken, time() + (60 * 60 * 24 * 7));
     }
 }
-
+*/
 $errorMessage = null;
 
 $_SESSION['sad'] = serialize($sad);
@@ -35,10 +35,6 @@ $_SESSION['sad'] = serialize($sad);
         <title>Masterpass Standard Checkout Flow</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" type="text/css" href="Content/Site.css">
-        <script type="text/javascript" src="Scripts/jquery-1.5.1.js"></script>
-        <script type="text/javascript" src="Scripts/tooltips/commonToolTips.js"></script>
-        <script type="text/javascript" src="Scripts/tooltips/jquery-1.3.2.min.js"></script> <!-- Needed for tooltips only -->
-        <script type="text/javascript" src="Scripts/tooltips/jquery.qtip-1.0.0-rc3.min.js"></script>
     </head>
     <body class="postCheckout">
         <div class="page">
@@ -204,7 +200,7 @@ $_SESSION['sad'] = serialize($sad);
     <?php endif; ?>            
                 <?php endif; ?>
 
-                <form method="POST" action="O4_GetAccessToken.php">
+                <form method="POST" action="O5_GetAccessToken.php">
                     <p>
                         <input value="Retrieve Access Token" type="submit"/>
                     </p>

@@ -235,9 +235,10 @@ class MasterPassController
 
     public function getAccessToken()
     {
-        $accessTokenResponse = $this->service->GetAccessToken($this->appData->accessUrl, $this->appData->requestToken, $this->appData->requestVerifier);
+        $accessTokenResponse = $this->service->getAccessToken($this->appData->requestToken, $this->appData->requestVerifier);
         $this->appData->accessTokenResponse = $accessTokenResponse;
-        $this->appData->accessToken = $accessTokenResponse->accessToken;
+        $this->appData->accessToken = $accessTokenResponse->OauthToken;
+        
         return $this->appData;
     }
 
