@@ -2,7 +2,7 @@
 
 session_start();
 
-include_once __DIR__ . '/../src/Controller/MasterPassData.php';
+include_once (dirname(__DIR__)) . '/src/controller/MasterPassData.php';
 
 $sad = new MasterPassData();
 $_SESSION['sad'] = serialize($sad);

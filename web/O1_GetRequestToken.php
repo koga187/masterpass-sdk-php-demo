@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once (dirname(__DIR__)) . '/src/Controller/MasterPassController.php';
+require_once (dirname(__DIR__)) . '/src/controller/MasterPassController.php';
 
 $sad = unserialize($_SESSION['sad']);
 $controller = new MasterPassController($sad);
