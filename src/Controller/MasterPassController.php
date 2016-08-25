@@ -238,7 +238,7 @@ class MasterPassController
         $accessTokenResponse = $this->service->getAccessToken($this->appData->requestToken, $this->appData->requestVerifier);
         $this->appData->accessTokenResponse = $accessTokenResponse;
         $this->appData->accessToken = $accessTokenResponse->OauthToken;
-        
+
         return $this->appData;
     }
 
@@ -370,9 +370,15 @@ class MasterPassController
 
     public function getCheckoutData()
     {
-        $this->appData->checkoutData = $this->service->GetPaymentShippingResource($this->appData->checkoutResourceUrl, $this->appData->accessToken);
-        $checkoutObject = MasterPassHelper::formatResource($this->appData->checkoutData);
-        $this->appData->transactionId = (string) $checkoutObject->TransactionId;
+        $checkoutId = null;
+        if (preg_match("/\/(\d+)$/", $this->appData->checkoutResourceUrl, $matches)) {
+            $checkoutId = $matches[1];
+        }
+
+        $checkoutData = $this->service->getCheckoutData($checkoutId, $this->appData->accessToken);
+        $this->appData->checkoutData = $checkoutData;
+        $this->appData->transactionId = $checkoutId;
+
         return $this->appData;
     }
 

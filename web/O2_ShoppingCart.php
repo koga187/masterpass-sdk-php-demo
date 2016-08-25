@@ -107,7 +107,7 @@ if ($errorMessage != null) {
                                 Shopping Cart URL 
                             </th>
                             <td>
-<?php //echo $sad->shoppingCartUrl;  ?>
+<?php echo $sad->shoppingCartUrl;  ?>
                             </td>
                         </tr>
 

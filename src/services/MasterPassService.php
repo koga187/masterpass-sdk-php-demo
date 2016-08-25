@@ -4,20 +4,19 @@ require_once dirname(__DIR__) . '/../vendor/autoload.php';
 require_once dirname(__DIR__) . '/../vendor/masterpass/mpasscoresdk/MasterCardCoreSDK.phar';
 require_once dirname(__DIR__) . '/../vendor/masterpass/masterpassmerchantsdk/MasterCardMasterPassMerchant.phar';
 
-Logger::configure(dirname(__DIR__) .'/services/config.php');
+Logger::configure(dirname(__DIR__) . '/services/config.php');
 
 class MasterPassService
 {
 
     // Callback URL parameters
-	const OAUTH_TOKEN = "oauth_token";
-	const OAUTH_VERIFIER = "oauth_verifier";	
-	const CHECKOUT_RESOURCE_URL = "checkout_resource_url";
-	
-	const REDIRECT_URL = "redirect_url";
-	const PAIRING_TOKEN = "pairing_token";
-	const PAIRING_VERIFIER = "pairing_verifier";
-    
+    const OAUTH_TOKEN = "oauth_token";
+    const OAUTH_VERIFIER = "oauth_verifier";
+    const CHECKOUT_RESOURCE_URL = "checkout_resource_url";
+    const REDIRECT_URL = "redirect_url";
+    const PAIRING_TOKEN = "pairing_token";
+    const PAIRING_VERIFIER = "pairing_verifier";
+
     public $originUrl;
     protected $consumerKey;
     private $privateKey;
@@ -37,7 +36,7 @@ class MasterPassService
     {
         return $this->consumerKey;
     }
-    
+
     /**
      * SDK:
      * Get the user's request token and store it in the current user session.
@@ -46,7 +45,7 @@ class MasterPassService
      * @return RequestTokenResponse
      */
     public function getRequestToken($callbackUrl)
-    {   
+    {
         return RequestTokenApi::create($callbackUrl);
     }
 
@@ -62,7 +61,7 @@ class MasterPassService
     {
         return ShoppingcartApi::create($request);
     }
-    
+
     /**
      * Merchant initialization
      * 
@@ -71,11 +70,11 @@ class MasterPassService
      * @return MerchantInitializationResponse
      */
     public function postMerchantInitData(MerchantInitializationRequest $merchantInitializationRequest)
-    {   
+    {
         #Call merchant initialization service api
         return MerchantinitializationApi::create($merchantInitializationRequest);
     }
-    
+
     /**
      * 
      * SDK:
@@ -89,12 +88,18 @@ class MasterPassService
     {
         return AccessTokenApi::create($requestToken, $verifierToken);
     }
-
-    public function postOpenFeed($openFeedUrl, $openFeedXml)
+    
+    /**
+     * Get checkout data
+     * 
+     * @param string $checkoutId
+     * @param string $responseToken
+     * 
+     * @return Checkout 
+     */
+    public function getCheckoutData($checkoutId, $responseToken)
     {
-        $response = $this->doRequest(array(), $openFeedUrl, Connector::POST, $openFeedXml);
-
-        return $response;
+        return CheckoutApi::show($checkoutId, $responseToken);
     }
 
     /**
@@ -122,8 +127,6 @@ class MasterPassService
         $response = $this->doRequest($params, $preCheckoutUrl, Connector::POST, $preCheckoutXml);
         return $response;
     }
-    
-    
 
     /**
      * SDK:

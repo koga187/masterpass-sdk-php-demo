@@ -27,11 +27,6 @@ $_SESSION['sad'] = serialize($sad);
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" type="text/css" href="Content/Site.css">
-        <script type="text/javascript" src="Scripts/jquery-1.5.1.js"></script>
-        <script type="text/javascript" src="Scripts/common.js"></script>
-        <script type="text/javascript" src="Scripts/tooltips/commonToolTips.js"></script>
-        <script type="text/javascript" src="Scripts/tooltips/jquery-1.3.2.min.js"></script> <!-- Needed for tooltips only -->
-        <script type="text/javascript" src="Scripts/tooltips/jquery.qtip-1.0.0-rc3.min.js"></script>
     </head>
     <body class="postCheckout">
         <div class="page">
