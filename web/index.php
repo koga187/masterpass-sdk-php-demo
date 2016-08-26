@@ -260,6 +260,7 @@ $_SESSION['sad'] = serialize($sad);
 					<legend>User Flows</legend>
 					<p>Click the Checkout, Pairing, or Cart Example buttons below to begin an SDK demo.</p>
 					<input id="checkout" value="Checkout Flow" type="submit"> 
+                    <input id="pairing" value="Pairing Flow" type="submit">
 				</fieldset>
 				
 			</form>

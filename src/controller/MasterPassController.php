@@ -206,7 +206,12 @@ class MasterPassController
 
         return $shoppingCartData;
     }
-
+    
+    /**
+     * Get request token
+     * 
+     * @return MasterpassData
+     */
     public function getRequestToken()
     {
         $requestTokenResponse = $this->service->getRequestToken($this->appData->callbackUrl);
@@ -215,12 +220,17 @@ class MasterPassController
 
         return $this->appData;
     }
-
+    
+    /**
+     * Get pairing token
+     * 
+     * @return MasterpassData
+     */
     public function getPairingToken()
     {
-        $pairingTokenResponse = $this->service->getRequestToken($this->appData->requestUrl, $this->appData->callbackUrl);
+        $pairingTokenResponse = $this->service->getRequestToken($this->appData->callbackUrl);
         $this->appData->pairingTokenResponse = $pairingTokenResponse;
-        $this->appData->pairingToken = $pairingTokenResponse->requestToken;
+        $this->appData->pairingToken = $pairingTokenResponse->OauthToken;
         return $this->appData;
     }
 
