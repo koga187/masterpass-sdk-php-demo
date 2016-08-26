@@ -382,21 +382,23 @@ class MasterPassController
         return $this->appData;
     }
 
-    public function logTransaction()
+    public function postTransaction()
     {
-        $shoppingCartData = $this->parseShoppingCartXML("");
-
-        $merchantTransaction = simplexml_load_file(MasterPassController::MERCHANT_TRANSACTION_XML);
-        $merchantTransaction->MerchantTransactions->TransactionId = $this->appData->transactionId;
-        $merchantTransaction->MerchantTransactions->ConsumerKey = $this->service->getConsumerKey();
-        $merchantTransaction->MerchantTransactions->Currency = 'USD';
-        $merchantTransaction->MerchantTransactions->OrderAmount = $shoppingCartData->ShoppingCart->Subtotal + $this->appData->tax + $this->appData->shipping;
-        $merchantTransaction->MerchantTransactions->PurchaseDate = date(DATE_ATOM);
-        $merchantTransaction->MerchantTransactions->TransactionStatus = TransactionStatus::Success;
-        $merchantTransaction->MerchantTransactions->ApprovalCode = MasterPassService::APPROVAL_CODE;
-        $this->appData->postTransactionRequest = $merchantTransaction->asXML();
-
-        $this->appData->postTransactionResponse = $this->service->PostCheckoutTransaction($this->appData->postbackUrl, $this->appData->postTransactionRequest);
+        # Create an instance of MerchantTransactions
+        $request = new MerchantTransactions([
+            'MerchantTransactions' => new MerchantTransaction([
+                'TransactionId' => $this->appData->transactionId,
+                'PurchaseDate' => date(DATE_ATOM),
+                'ExpressCheckoutIndicator' => false,
+                'ApprovalCode' => MasterPassService::APPROVAL_CODE,
+                'TransactionStatus' => 'Success',
+                'OrderAmount' => 76239,
+                'Currency' => 'USD',
+                'ConsumerKey' => $this->service->getConsumerKey(),
+            ])
+        ]);
+        
+        $this->appData->postTransactionResponse = $this->service->postTransaction($request);
 
         return $this->appData;
     }

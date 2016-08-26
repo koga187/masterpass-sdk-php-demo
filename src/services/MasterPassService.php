@@ -16,6 +16,8 @@ class MasterPassService
     const REDIRECT_URL = "redirect_url";
     const PAIRING_TOKEN = "pairing_token";
     const PAIRING_VERIFIER = "pairing_verifier";
+    
+    const APPROVAL_CODE = "sample";
 
     public $originUrl;
     protected $consumerKey;
@@ -74,7 +76,13 @@ class MasterPassService
         #Call merchant initialization service api
         return MerchantinitializationApi::create($merchantInitializationRequest);
     }
-
+    
+    public function postTransaction(MerchantTransactions $request)
+    {
+        #Call Merchant transaction service api
+        return PostbackApi::create($request);
+    }
+    
     /**
      * 
      * SDK:
@@ -100,23 +108,6 @@ class MasterPassService
     public function getCheckoutData($checkoutId, $responseToken)
     {
         return CheckoutApi::show($checkoutId, $responseToken);
-    }
-
-    /**
-     * This method submits the receipt transaction list to MasterCard as a final step
-     * in the Wallet process.
-     * @param $merchantTransactions
-     * @return Output is the response from MasterCard services
-     */
-    public function PostCheckoutTransaction($postbackurl, $merchantTransactions)
-    {
-        $params = array(
-            Connector::OAUTH_BODY_HASH => $this->generateBodyHash($merchantTransactions)
-        );
-
-        $response = $this->doRequest($params, $postbackurl, Connector::POST, $merchantTransactions);
-
-        return $response;
     }
 
     public function getPreCheckoutData($preCheckoutUrl, $preCheckoutXml, $accessToken)
