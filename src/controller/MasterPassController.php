@@ -206,7 +206,7 @@ class MasterPassController
 
         return $shoppingCartData;
     }
-    
+
     /**
      * Get request token
      * 
@@ -220,7 +220,7 @@ class MasterPassController
 
         return $this->appData;
     }
-    
+
     /**
      * Get pairing token
      * 
@@ -231,6 +231,8 @@ class MasterPassController
         $pairingTokenResponse = $this->service->getRequestToken($this->appData->callbackUrl);
         $this->appData->pairingTokenResponse = $pairingTokenResponse;
         $this->appData->pairingToken = $pairingTokenResponse->OauthToken;
+        $this->appData->requestToken = $pairingTokenResponse->OauthToken;
+
         return $this->appData;
     }
 
@@ -318,12 +320,10 @@ class MasterPassController
      */
     public function postMerchantInit()
     {
-        $request = new MerchantInitializationRequest(
-            array(
+        $request = new MerchantInitializationRequest([
             'OriginUrl' => $this->appData->originUrl,
             'OAuthToken' => $this->appData->requestToken
-            )
-        );
+        ]);
 
         $this->appData->merchantInitResponse = $this->service->postMerchantInitData($request);
 
@@ -405,9 +405,9 @@ class MasterPassController
                 'OrderAmount' => 76239,
                 'Currency' => 'USD',
                 'ConsumerKey' => $this->service->getConsumerKey(),
-            ])
+                ])
         ]);
-        
+
         $this->appData->postTransactionResponse = $this->service->postTransaction($request);
 
         return $this->appData;

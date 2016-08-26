@@ -137,7 +137,7 @@ $_SESSION['sad'] = serialize($sad);
                  </table>
             </fieldset>
             
-            <form id="merchantInit" action="O3_MerchantInit.php" method="POST">
+            <form id="merchantInit" action="P2_MerchantInit.php" method="POST">
 				<input type="hidden" name="oauth_token" id="oauth_token" value="<?php echo $sad->requestToken ?>">
 				<input type="hidden" name="RedirectUrl" id="RedirectUrl" value="<?php echo $sad->requestTokenResponse->redirectUrl ?>">
 	    		<input value="Merchant Initialization" type="submit">
