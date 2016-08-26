@@ -235,13 +235,19 @@ class MasterPassController
 
         return $this->appData;
     }
-
+    
+    /**
+     * Get long access token
+     * 
+     * @return MasterpassData
+     */
     public function getLongAccessToken()
     {
-        $longAccessTokenResponse = $this->service->GetAccessToken($this->appData->accessUrl, $this->appData->pairingToken, $this->appData->pairingVerifier);
+        $longAccessTokenResponse = $this->service->getAccessToken($this->appData->pairingToken, $this->appData->pairingVerifier);
         $this->appData->longAccessTokenResponse = $longAccessTokenResponse;
-        $this->appData->longAccessToken = is_null($longAccessTokenResponse) ? "" : $longAccessTokenResponse->accessToken;
-        $this->appData->oAuthSecret = is_null($longAccessTokenResponse) ? "" : $longAccessTokenResponse->oAuthSecret;
+        $this->appData->longAccessToken = is_null($longAccessTokenResponse) ? "" : $longAccessTokenResponse->OauthToken;
+        $this->appData->oAuthSecret = is_null($longAccessTokenResponse) ? "" : $longAccessTokenResponse->OauthTokenSecret;
+
         return $this->appData;
     }
 
