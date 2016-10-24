@@ -109,14 +109,19 @@ class MasterPassService
     {
         return CheckoutApi::show($checkoutId, $responseToken);
     }
-
-    public function getPreCheckoutData($preCheckoutUrl, $preCheckoutXml, $accessToken)
+    
+    /**
+     * Get precheckout data
+     * 
+     * @param PrecheckoutDataRequest $request
+     * @param string $longAccessToken
+     * 
+     * @return PrecheckoutDataResponse 
+     */
+    public function getPreCheckoutData(PrecheckoutDataRequest $request, $longAccessToken)
     {
-        $params = array(
-            MasterPassService::OAUTH_TOKEN => $accessToken
-        );
-        $response = $this->doRequest($params, $preCheckoutUrl, Connector::POST, $preCheckoutXml);
-        return $response;
+         #Call the  with required params
+        return PrecheckoutdataApi::create($longAccessToken, $request);
     }
 
     /**

@@ -155,7 +155,7 @@ $_SESSION['sad'] = serialize($sad);
             </fieldset>
 
             <div class="preCheckoutDiv">
-	            <form id="preCheckoutForm" method="POST" action="O5_PreCheckout.php">
+	            <form id="preCheckoutForm" method="POST" action="P4_PreCheckout.php">
 		            <p>
 	                    <input value="Retrieve Pre Checkout Data" type="submit">
 		            </p>

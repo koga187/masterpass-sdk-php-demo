@@ -235,7 +235,7 @@ class MasterPassController
 
         return $this->appData;
     }
-    
+
     /**
      * Get long access token
      * 
@@ -365,9 +365,24 @@ class MasterPassController
 
     public function postPreCheckoutData($longAccessToken)
     {
-        $this->appData->preCheckoutRequest = $this->parsePrecheckoutXml();
-        $this->appData->preCheckoutResponse = $this->service->getPreCheckoutData($this->appData->preCheckoutUrl, $this->appData->preCheckoutRequest, $longAccessToken);
-
+        # Create an instance of PrecheckoutDataRequest
+        $dataRequest = new PrecheckoutDataRequest([
+            'PairingDataTypes' => new PairingDataTypes([
+                'PairingDataType' => [
+                    new PairingDataType(['Type' => 'CARD']),
+                    new PairingDataType(['Type' => 'ADDRESS']),
+                    new PairingDataType(['Type' => 'REWARD_PROGRAM']),
+                    new PairingDataType(['Type' => 'PROFILE'])
+                ],
+            ])
+        ]);
+        //var_dump($longAccessToken);exit;
+        $preCheckoutResponse = $this->service->getPreCheckoutData($dataRequest, $longAccessToken);
+        
+        $this->appData->preCheckoutResponse = $preCheckoutResponse;
+        
+print_r($preCheckoutResponse);
+        /**
         // Special syntax for working with SimpleXMLElement objects
         $preCheckoutResponse = simplexml_load_string($this->appData->preCheckoutResponse);
         if ($preCheckoutResponse != null) {
@@ -380,6 +395,8 @@ class MasterPassController
             $this->appData->walletName = (string) $preCheckoutResponse->PrecheckoutData->WalletName;
             $this->appData->consumerWalletId = (string) $preCheckoutResponse->PrecheckoutData->ConsumerWalletId;
         }
+         * 
+         */
 
         return $this->appData;
     }
