@@ -83,10 +83,10 @@ class MasterPassController
             }
 
             $redirectParameters = MasterPassService::ACCEPTABLE_CARDS . Connector::EQUALS . $this->appData->acceptableCards
-                . Connector::AMP . MasterPassService::VERSION . Connector::EQUALS . $this->appData->xmlVersion
-                . Connector::AMP . MasterPassService::SUPPRESS_SHIPPING_ADDRESS . Connector::EQUALS . $this->appData->shippingSuppression
-                . Connector::AMP . MasterPassService::AUTH_LEVEL . Connector::EQUALS . ($this->appData->authLevelBasic ? "true" : "false")
-                . Connector::AMP . MasterPassService::ACCEPT_REWARDS_PROGRAM . Connector::EQUALS . $this->appData->rewardsProgram;
+                    . Connector::AMP . MasterPassService::VERSION . Connector::EQUALS . $this->appData->xmlVersion
+                    . Connector::AMP . MasterPassService::SUPPRESS_SHIPPING_ADDRESS . Connector::EQUALS . $this->appData->shippingSuppression
+                    . Connector::AMP . MasterPassService::AUTH_LEVEL . Connector::EQUALS . ($this->appData->authLevelBasic ? "true" : "false")
+                    . Connector::AMP . MasterPassService::ACCEPT_REWARDS_PROGRAM . Connector::EQUALS . $this->appData->rewardsProgram;
             return $redirectParameters;
         }
     }
@@ -120,14 +120,6 @@ class MasterPassController
                 $this->appData->authLevelBasic = true;
             } else {
                 $this->appData->authLevelBasic = false;
-            }
-
-            if ($_POST_DATA['openFeedId']) {
-                $this->appData->openFeedId = trim($_POST_DATA['openFeedId']);
-            }
-
-            if ($_POST_DATA['openFeedMessage']) {
-                $this->appData->openFeedMessage = trim($_POST_DATA['openFeedMessage']);
             }
         }
 
@@ -265,49 +257,49 @@ class MasterPassController
         $requestToken = $this->appData->requestToken;
 
         $request = new ShoppingCartRequest(
-            array(
-            'ShoppingCart' => new ShoppingCart(
                 array(
+            'ShoppingCart' => new ShoppingCart(
+                    array(
                 'Subtotal' => 74996,
                 'CurrencyCode' => 'USD',
                 'ShoppingCartItem' => array(
                     new ShoppingCartItem(
-                        array(
+                            array(
                         'ImageURL' => 'https://somemerchant.com/images/xbox.jpg',
                         'Value' => 29999,
                         'Description' => 'XBox 360',
                         'Quantity' => 1
-                        )
+                            )
                     ),
                     new ShoppingCartItem(
-                        array(
+                            array(
                         'ImageURL' => 'https://somemerchant.com/images/CellPhone.jpg',
                         'Value' => 4999,
                         'Description' => 'Cell Phone',
                         'Quantity' => 1
-                        )
+                            )
                     ),
                     new ShoppingCartItem(
-                        array(
+                            array(
                         'ImageURL' => 'https://somemerchant.com/images/monitor.jpg',
                         'Value' => 24999,
                         'Description' => '27 Monitoritor',
                         'Quantity' => 1
-                        )
+                            )
                     ),
                     new ShoppingCartItem(
-                        array(
+                            array(
                         'ImageURL' => 'https://somemerchant.com/images/garmin.jpg',
                         'Value' => 14999,
                         'Description' => 'Garmin PS',
                         'Quantity' => 1
-                        )
+                            )
                     )
                 ),
-                )
+                    )
             ),
             'OAuthToken' => $requestToken
-            )
+                )
         );
 
         $this->appData->shoppingCartResponse = $this->service->postShoppingCartData($request);
@@ -374,29 +366,22 @@ class MasterPassController
                     new PairingDataType(['Type' => 'REWARD_PROGRAM']),
                     new PairingDataType(['Type' => 'PROFILE'])
                 ],
-            ])
+                    ])
         ]);
-        //var_dump($longAccessToken);exit;
+        
         $preCheckoutResponse = $this->service->getPreCheckoutData($dataRequest, $longAccessToken);
-        
         $this->appData->preCheckoutResponse = $preCheckoutResponse;
-        
-print_r($preCheckoutResponse);
-        /**
-        // Special syntax for working with SimpleXMLElement objects
-        $preCheckoutResponse = simplexml_load_string($this->appData->preCheckoutResponse);
-        if ($preCheckoutResponse != null) {
 
-            $this->appData->preCheckoutCardId = (string) $preCheckoutResponse->PrecheckoutData->Cards->Card->CardId;
-            $this->appData->preCheckoutShippingAddressId = (string) $preCheckoutResponse->PrecheckoutData->ShippingAddresses->ShippingAddress->AddressId;
-            $this->appData->preCheckoutWalletId = (string) $preCheckoutResponse->PrecheckoutData->WalletId;
+        if ($preCheckoutResponse instanceof PrecheckoutDataResponse) {
+
+//            $this->appData->preCheckoutCardId = $preCheckoutResponse->PrecheckoutData->Cards->Card->CardId;
+//            $this->appData->preCheckoutShippingAddressId = $preCheckoutResponse->PrecheckoutData->ShippingAddresses->ShippingAddress->AddressId;
+//            $this->appData->preCheckoutWalletId = (string) $preCheckoutResponse->PrecheckoutData->WalletId;
             $this->appData->longAccessToken = (string) $preCheckoutResponse->LongAccessToken;
             $this->appData->preCheckoutTransactionId = (string) $preCheckoutResponse->PrecheckoutData->PrecheckoutTransactionId;
             $this->appData->walletName = (string) $preCheckoutResponse->PrecheckoutData->WalletName;
             $this->appData->consumerWalletId = (string) $preCheckoutResponse->PrecheckoutData->ConsumerWalletId;
         }
-         * 
-         */
 
         return $this->appData;
     }
@@ -428,7 +413,7 @@ print_r($preCheckoutResponse);
                 'OrderAmount' => 76239,
                 'Currency' => 'USD',
                 'ConsumerKey' => $this->service->getConsumerKey(),
-                ])
+                    ])
         ]);
 
         $this->appData->postTransactionResponse = $this->service->postTransaction($request);
@@ -449,7 +434,7 @@ print_r($preCheckoutResponse);
             foreach ($ar as $c) {
                 $o = ord($c);
                 if ((strlen($c) > 127) || /* multi-byte [unicode] */
-                    ($o > 127)) /* Encodes everything above ascii 127 */ {
+                        ($o > 127)) /* Encodes everything above ascii 127 */ {
                     // convert to numeric entity
                     $c = mb_encode_numericentity($c, array(0x0, 0xffff, 0, 0xffff), Connector::UTF_8);
                 }

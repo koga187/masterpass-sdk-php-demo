@@ -10,16 +10,18 @@ if (isset($_GET["error"])) {
     $errorMessage = '';
 }
 
+$longAccessToken = $_COOKIE['longAccessToken'];
+
 try {
-    //4571dd9740c4dc6e43410a7a33b737c479ab38dd
-    $longAccessToken = 'ed8cdf28c81219477045da8954c074a76b9ab4b5'; //$_COOKIE['longAccessToken'];
-//ed8cdf28c81219477045da8954c074a76b9ab4b5
+    
     $sad = $controller->postPreCheckoutData($longAccessToken);
 
     setcookie('longAccessToken', $sad->longAccessToken, time() + (60 * 60 * 24 * 7));
 
-    //$sad = $controller->getRequestToken();
-    //$sad = $controller->postShoppingCart();
+    $sad = $controller->getRequestToken();
+    $sad = $controller->postShoppingCart();
+    $sad = $controller->postMerchantInit();
+    
 } catch (SDKErrorResponseException $e) {
     $errorMessage = MasterPassHelper::formatError($e);
 }
@@ -36,9 +38,6 @@ $_SESSION['sad'] = serialize($sad);
         <link rel="stylesheet" type="text/css" href="Content/Site.css">
         <script type="text/javascript" src="Scripts/jquery-1.5.1.js"></script>
         <script type="text/javascript" src="Scripts/common.js"></script>
-        <script type="text/javascript" src="Scripts/tooltips/commonToolTips.js"></script>
-        <script type="text/javascript" src="Scripts/tooltips/jquery.qtip-1.0.0-rc3.min.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script type="text/javascript" src="https://jquery-xml2json-plugin.googlecode.com/svn/trunk/jquery.xml2json.js"></script>  
         <script type="text/javascript" src="<?php echo $sad->lightboxUrl ?>"></script>
         <script type="text/javascript" src="https://sandbox.masterpass.com/lightbox/Switch/assets/js/MasterPass.omniture.js"></script>
@@ -81,7 +80,7 @@ $_SESSION['sad'] = serialize($sad);
                                 Authorization Header 
                             </th>
                             <td>
-                                <code><?php //echo $controller->service->authHeader;   ?></code>
+                                <code><?php //echo $controller->service->authHeader;     ?></code>
                             </td>
                         </tr>
                         <tr>
@@ -90,7 +89,7 @@ $_SESSION['sad'] = serialize($sad);
                             </th>
                             <td>
                                 <hr>
-                                <code><?php //echo $controller->service->signatureBaseString;   ?></code>
+                                <code><?php //echo $controller->service->signatureBaseString;     ?></code>
                             </td>
                         </tr>
                         <tr>
@@ -111,7 +110,7 @@ $_SESSION['sad'] = serialize($sad);
                         <tr>
                             <th> Pre Checkout URL </th>
                             <td>
-                                <?php //echo $sad->preCheckoutUrl;  ?>
+                                <?php echo $sad->preCheckoutUrl;  ?>
                             </td>
                         </tr>
 
@@ -148,7 +147,7 @@ $_SESSION['sad'] = serialize($sad);
                         </p>
                         <p>
                         <pre>
-        <code><?php echo $errorMessage ?></code>
+                <code><?php echo $errorMessage ?></code>
                         </pre>
                         </p></div>
                 <?php endif; ?>
@@ -165,7 +164,7 @@ $_SESSION['sad'] = serialize($sad);
                                 Authorization Header 
                             </th>
                             <td >                      
-                                <code><?php //echo $controller->service->authHeader   ?></code>
+                                <code><?php //echo $controller->service->authHeader     ?></code>
 
                             </td>
                         </tr> 
@@ -175,7 +174,7 @@ $_SESSION['sad'] = serialize($sad);
                             </th>
                             <td >
                                 <hr>
-                                <code><?php //echo $controller->service->signatureBaseString   ?></code>
+                                <code><?php //echo $controller->service->signatureBaseString     ?></code>
                             </td>
                         </tr>  
                     </table>
@@ -208,30 +207,16 @@ $_SESSION['sad'] = serialize($sad);
                             </td>
                         </tr>
                         <tr>
-                            <th>
-                                Authorize URL 
-                            </th>
-                            <td>
-                                <?php echo $sad->requestTokenResponse->authorizeUrl ?>
-                            </td>
+                            <th>Authorize URL</th>
+                            <td><?php echo $sad->requestTokenResponse->XoauthRequestAuthUrl; ?></td>
                         </tr>
                         <tr>
-                            <th>
-                                Expires in 
-                            </th>
-                            <td><?php
-                                echo (($sad->requestTokenResponse->oAuthExpiresIn != null) ?
-                                    $sad->requestTokenResponse->oAuthExpiresIn . " Seconds" : "")
-                                ?>
-                            </td>
+                            <th>Expires in</th>
+                            <td><?php echo $sad->requestTokenResponse->OauthExpiresIn; ?><?php if ($sad->requestTokenResponse->OauthExpiresIn != null) echo ' Seconds' ?></td>
                         </tr>
                         <tr>
-                            <th>
-                                Oauth Secret 
-                            </th>
-                            <td>
-<?php echo $sad->requestTokenResponse->oAuthSecret ?>
-                            </td>
+                            <th>Oauth Secret</th>
+                            <td><?php echo $sad->requestTokenResponse->OauthTokenSecret; ?></td>
                         </tr>
                     </table>
 
@@ -240,7 +225,7 @@ $_SESSION['sad'] = serialize($sad);
                     Shopping Cart Data Submitted
                 </h1>
 
-<?php if ($errorMessage != null): ?>
+                <?php if ($errorMessage != null): ?>
                     <h2>Error</h2>
                     <div class = "error">
                         <p>
@@ -248,10 +233,10 @@ $_SESSION['sad'] = serialize($sad);
                         </p>
                         <p>
                         <pre>
-        <code><?php echo $errorMessage ?></code>
+                <code><?php echo $errorMessage ?></code>
                         </pre>
                         </p></div>
-<?php endif; ?>
+                <?php endif; ?>
 
                 <p>
                     This step sends the Merchants shopping cart data to MasterCard services for display in the Wallet.
@@ -263,20 +248,20 @@ $_SESSION['sad'] = serialize($sad);
                         <tr>
                             <th>Authorization Header </th>
                             <td>                      
-                                <code><?php //echo $controller->service->authHeader   ?></code>
+                                <code><?php //echo $controller->service->authHeader     ?></code>
                             </td>
                         </tr> 
                         <tr>
                             <th>Signature Base String </th>
                             <td>
                                 <hr>
-                                <code><?php //echo $controller->service->signatureBaseString   ?></code>
+                                <code><?php //echo $controller->service->signatureBaseString     ?></code>
                             </td>
                         </tr>  
                         <tr>
                             <th>Shopping Cart XML </th>
                             <td>
-                                <pre><code><?php //echo MasterPassHelper::formatXML($sad->shoppingCartRequest)  ?></code></pre>                            
+                                <pre><code><?php //echo MasterPassHelper::formatXML($sad->shoppingCartRequest)    ?></code></pre>                            
                             </td>
                         </tr>  
                     </table>
@@ -302,7 +287,7 @@ $_SESSION['sad'] = serialize($sad);
                             <td>
                                 <pre>                        
 <code>                       
-                                    <?php //echo MasterPassHelper::formatXML($sad->shoppingCartResponse) ?>
+                                        <?php //echo MasterPassHelper::formatXML($sad->shoppingCartResponse) ?>
 </code>
                                 </pre>                           
                             </td>
@@ -336,8 +321,8 @@ $_SESSION['sad'] = serialize($sad);
 		</div>
 			
 			<script type="text/javascript" language="Javascript">
-            //var preCheckout = $.xml2json($.parseXML('${data.preCheckoutDataXml}')).PrecheckoutData;
-            var json = <?php echo json_encode(simplexml_load_string($sad->preCheckoutResponse)) ?>;
+
+            var json = <?php echo json_encode($sad->preCheckoutResponse) ?>;
             var preCheckout = json.PrecheckoutData;
             var supressShipping = <?php echo $sad->shippingSuppression ?>;
             var showRewards = <?php echo $sad->rewardsProgram ?>;
@@ -349,19 +334,23 @@ $_SESSION['sad'] = serialize($sad);
 
             if (preCheckout.Contact != null)
                 $("<tr><th>Profile:  </th></tr>)").append(generateContactSelect(preCheckout.Contact)).appendTo('#pairedData');
-            if ((preCheckout.Cards != null) && (preCheckout.Cards.Card != null))
-                $("<tr><th>Card:  </th></tr>)").append(generateCardSelect(preCheckout.Cards.Card)).appendTo("#pairedData");
-            if ((preCheckout.ShippingAddresses != null) && (preCheckout.ShippingAddresses.ShippingAddress != null)) {
-                $("<tr><th>Address:  </th></tr>)").append(generateAddressSelect(preCheckout.ShippingAddresses.ShippingAddress)).appendTo('#pairedData');
+            
+            if ((preCheckout.PrecheckoutCards != null) && (preCheckout.PrecheckoutCards.Card != null)) {
+                $("<tr><th>Card:  </th></tr>)").append(generateCardSelect(preCheckout.PrecheckoutCards.Card)).appendTo("#pairedData");
+            }
+            
+            
+            if ((preCheckout.PrecheckoutShippingAddresses != null) && (preCheckout.PrecheckoutShippingAddresses.ShippingAddress != null)) {
+                $("<tr><th>Address:  </th></tr>)").append(generateAddressSelect(preCheckout.PrecheckoutShippingAddresses.ShippingAddress)).appendTo('#pairedData');
             } else {
                 supressShipping = true;
             }
-            if (preCheckout.RewardPrograms != null)
+            
+            if (preCheckout.RewardPrograms != null) {
                 $("<tr><th>Rewards:  </th></tr>)").append(generateContactSelect(preCheckout.Contact)).appendTo('#pairedData');
-
+            }
 
             var precheckoutTransactionId = preCheckout.PrecheckoutTransactionId;
-
 
             function generateCardSelect(cards) {
                 var cardSelect = $("<select id='cardSelect'/>").change(function () {
@@ -485,8 +474,7 @@ $_SESSION['sad'] = serialize($sad);
                         "consumerWalletId": "<?php echo $sad->consumerWalletId ?>",
                         "loyaltyEnabled": "<?php echo $sad->rewardsProgram ?>",
                         "version": "v6"
-                    }
-                    );
+                    });
                 }
 
             }
@@ -513,6 +501,6 @@ $_SESSION['sad'] = serialize($sad);
             updateCheckoutButton();
 
 
-    </script>
+</script>
 </body>
 </html>
