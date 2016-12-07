@@ -1,8 +1,8 @@
 <?php
 
 require_once dirname(__DIR__) . '/../vendor/autoload.php';
-require_once dirname(__DIR__) . '/../vendor/masterpass/mpasscoresdk/MasterCardCoreSDK.phar';
-require_once dirname(__DIR__) . '/../vendor/masterpass/masterpassmerchantsdk/MasterCardMasterPassMerchant.phar';
+require_once 'phar://'. dirname(__DIR__) . '/../vendor/masterpass/mpasscoresdk/MasterCardCoreSDK.phar/index.php';
+require_once 'phar://'. dirname(__DIR__) . '/../vendor/masterpass/masterpassmerchantsdk/MasterCardMasterPassMerchant.phar/index.php';
 
 Logger::configure(dirname(__DIR__) .'/services/config.php');
 

@@ -1,0 +1,30 @@
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="cLb0tKkEJhGTITp_6ltDIibO5Wgbx4rIldeXM_jRd4b0476c%21414f4859446c4a366c726a327474695545332b353049303d",oauth_signature_method="RSA-SHA1",oauth_nonce="57d3c40e2ea2e913",oauth_timestamp="1481116031",oauth_version="1.0",oauth_callback="http%3A%2F%2Fech-0a9d8552.mastercard.int%2FO4_Callback.php",oauth_signature="UR5nJYqexsPB3TVXO6IKemuQYRrswB67TWxSWigfKMo9djnb3IEWfts%2FwZ2wJAELX2mISLD0Nkk9LxLH22Iavf71ixuOjY6%2BXSOMnbafxdGg02FhM5NMr4eXDOIl5jmKuYP4ZuQLUYiENaD9JGZ5s1tv14sbFQvBnORjprjYAh8%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.5.37-1+deprecated+dontuse+deb.sury.org~trusty+1;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=32b75efec4abc10bfdd75241f33737d8419db3a3&oauth_token_secret=279a5e5ca060c99583ae37f2f79c1a14b1a4bcd1&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="cLb0tKkEJhGTITp_6ltDIibO5Wgbx4rIldeXM_jRd4b0476c%21414f4859446c4a366c726a327474695545332b353049303d",oauth_signature_method="RSA-SHA1",oauth_nonce="fe200a68608aa475",oauth_timestamp="1481116038",oauth_version="1.0",oauth_callback="http%3A%2F%2Fech-0a9d8552.mastercard.int%2FO4_Callback.php",oauth_signature="F2iR1K4tJAioTAd9QRAfjMfC7zwOW6Kn83NiVjtMX00u7KJ75Q40zbgFKZJ2lORaXFA7T0VgMA6PK8UZzGARPgXJ1T7VEUi%2Fvy4ZWMuus8XHfP5Z73gyp0j48PqfwfLrPI7v8fGpbJ3PhPcKPpZFYGLXvJULkEY%2BnoL8TkWoaC8%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.5.37-1+deprecated+dontuse+deb.sury.org~trusty+1;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=275cb18febfebdbf0e70282bb688830eb1e62fe1&oauth_token_secret=6bb1fc522f6f64b4ecc20d3bc6d9a97be80fb485&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK

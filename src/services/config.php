@@ -11,7 +11,7 @@ return array(
                 'class' => 'LoggerLayoutSimple'
             ),
             'params' => array(
-                'file' => '/var/log/my.log',
+                'file' => '/var/www/html/masterpass-sdk-php-demo/var/log/my.log',
                 'append' => true
             )
         )
