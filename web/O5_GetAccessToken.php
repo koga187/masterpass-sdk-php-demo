@@ -3,17 +3,14 @@ require_once (dirname(__DIR__)) . '/src/controller/MasterPassController.php';
 
 session_start();
 $sad = unserialize($_SESSION['sad']);
-if ($sad->requestToken == null) {
-    header("Location: ./");
-}
 
 $errorMessage = null;
 $controller = new MasterPassController($sad);
 
-
 try {
 
-    $sad = $controller->postShoppingCart();
+    $sad = $controller->getAccessToken();
+    
 } catch (SDKErrorResponseException $e) {
 
     $errorMessage = MasterPassHelper::formatError($e);
@@ -25,16 +22,18 @@ $_SESSION['sad'] = serialize($sad);
 
 <html>
     <head>
-        <title>MasterPass Standard Flow</title>
+        <title>
+            Masterpass Standard Checkout Flow
+        </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" type="text/css" href="Content/Site.css">	
-
+        <link rel="stylesheet" type="text/css" href="Content/Site.css">
     </head>
-    <body class="standard">
+    <body class="postCheckout">
         <div class="page">
             <div id="header">
                 <div id="title">
-                    <h1>MasterPass Standard Flow</h1>
+                    <h1>
+                        Masterpass Standard Checkout Flow</h1>
                 </div>
                 <div id="logindisplay">
                     &nbsp;
@@ -43,7 +42,7 @@ $_SESSION['sad'] = serialize($sad);
             </div>
             <div id="main">
                 <h1>
-                    Shopping Cart Data Submitted
+                    Retrieved Access Token
                 </h1>
 <?php
 if ($errorMessage != null) {
@@ -60,72 +59,79 @@ if ($errorMessage != null) {
 </pre>
 		</p></div>';
 }
-?>       
+?>        
                 <p>
-                    This step sends the Merchants shopping cart data to MasterCard services for display in the Wallet.
+                    Use the Request Token and Verifier retrieved in the previous step to request an Access Token.
                 </p>
 
                 <fieldset>
-                    <legend>Sent:</legend>
+                    <legend>Sent</legend>
                     <table>
                         <tr>
                             <th>
                                 Authorization Header 
                             </th>
-                            <td>                      
-                                <code><?php //echo $controller->service->authHeader;  ?></code>
+                            <td>                     
+                                <code><?php //echo $controller->service->authHeader; ?></code>
                             </td>
                         </tr> 
                         <tr>
                             <th>
                                 Signature Base String 
                             </th>
-                            <td>
+
+                            <td >
                                 <hr>
-                                <code><?php //echo $controller->service->signatureBaseString;  ?></code>
-                            </td>
-                        </tr>  
-                        <tr>
-                            <th>
-                                Shopping Cart XML 
-                            </th>
-                            <td>
-                                <pre>                        
-<code>                        
-<?php //echo MasterPassHelper::formatXML($sad->shoppingCartRequest);  ?>
-</code>
-                                </pre>                            
-                            </td>
-                        </tr>  
-                    </table>
-                </fieldset>
-                <fieldset>
-                    <legend>Sent To:</legend>
-                    <table>                     
-                        <tr>
-                            <th>
-                                Shopping Cart URL 
-                            </th>
-                            <td>
-<?php echo $sad->shoppingCartUrl;  ?>
+                                <code><?php //echo $controller->service->signatureBaseString; ?></code>
                             </td>
                         </tr>
 
-                    </table>  
+                        </tbody>
+                    </table>
                 </fieldset>
                 <fieldset>
-                    <legend>Received:</legend>
-                    <table>                     
+                    <legend>Sent to:</legend>
+                    <table>
                         <tr>
-                        <tr>
-                            <th>OAuthToken</th>
-                            <td><?php echo $sad->shoppingCartResponse->OAuthToken; ?></td>
+                            <th>
+                                Access Token URL 
+                            </th>
+                            <td>
+<?php echo $sad->accessUrl; ?>
+                            </td>
                         </tr>
                     </table>
                 </fieldset>
-                <form action="O3_MerchantInit.php" method="POST">
-                    <input value="Merchant Initialization" type="submit">
+
+                <fieldset>
+                    <legend>Received:</legend>
+
+                    <table>
+                        <tr>
+                            <th>
+                                Access Token 
+                            </th>
+                            <td>
+<?php echo $sad->accessTokenResponse->OauthToken; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Oauth Secret 
+                            </th>
+                            <td>
+<?php echo $sad->accessTokenResponse->OauthTokenSecret; ?>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <form method="POST" action="O6_ProcessCheckout.php">
+                    <p>
+                        <input value="Retrieve Checkout Data" type="submit">
+                    </p>
                 </form>
+            </div>
+            <div id="footer">
             </div>
         </div>
     </body>

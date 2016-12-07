@@ -4,20 +4,21 @@ require_once dirname(__DIR__) . '/../vendor/autoload.php';
 require_once 'phar://'. dirname(__DIR__) . '/../vendor/masterpass/mpasscoresdk/MasterCardCoreSDK.phar/index.php';
 require_once 'phar://'. dirname(__DIR__) . '/../vendor/masterpass/masterpassmerchantsdk/MasterCardMasterPassMerchant.phar/index.php';
 
-Logger::configure(dirname(__DIR__) .'/services/config.php');
+Logger::configure(dirname(__DIR__) . '/services/config.php');
 
 class MasterPassService
 {
 
     // Callback URL parameters
-	const OAUTH_TOKEN = "oauth_token";
-	const OAUTH_VERIFIER = "oauth_verifier";	
-	const CHECKOUT_RESOURCE_URL = "checkout_resource_url";
-	
-	const REDIRECT_URL = "redirect_url";
-	const PAIRING_TOKEN = "pairing_token";
-	const PAIRING_VERIFIER = "pairing_verifier";
+    const OAUTH_TOKEN = "oauth_token";
+    const OAUTH_VERIFIER = "oauth_verifier";
+    const CHECKOUT_RESOURCE_URL = "checkout_resource_url";
+    const REDIRECT_URL = "redirect_url";
+    const PAIRING_TOKEN = "pairing_token";
+    const PAIRING_VERIFIER = "pairing_verifier";
     
+    const APPROVAL_CODE = "sample";
+
     public $originUrl;
     protected $consumerKey;
     private $privateKey;
@@ -37,7 +38,7 @@ class MasterPassService
     {
         return $this->consumerKey;
     }
-    
+
     /**
      * SDK:
      * Get the user's request token and store it in the current user session.
@@ -46,7 +47,7 @@ class MasterPassService
      * @return RequestTokenResponse
      */
     public function getRequestToken($callbackUrl)
-    {   
+    {
         return RequestTokenApi::create($callbackUrl);
     }
 
@@ -62,7 +63,7 @@ class MasterPassService
     {
         return ShoppingcartApi::create($request);
     }
-    
+
     /**
      * Merchant initialization
      * 
@@ -71,9 +72,15 @@ class MasterPassService
      * @return MerchantInitializationResponse
      */
     public function postMerchantInitData(MerchantInitializationRequest $merchantInitializationRequest)
-    {   
+    {
         #Call merchant initialization service api
         return MerchantinitializationApi::create($merchantInitializationRequest);
+    }
+    
+    public function postTransaction(MerchantTransactions $request)
+    {
+        #Call Merchant transaction service api
+        return PostbackApi::create($request);
     }
     
     /**
@@ -85,56 +92,37 @@ class MasterPassService
      * @param $verifier
      * @return Output is Access Token
      */
-    public function getAccessToken($accessUrl, $requestToken, $verifier)
+    public function getAccessToken($requestToken, $verifierToken)
     {
-        $params = array(
-            MasterPassService::OAUTH_VERIFIER => $verifier,
-            MasterPassService::OAUTH_TOKEN => $requestToken
-        );
-
-        $return = new AccessTokenResponse();
-        $response = $this->doRequest($params, $accessUrl, Connector::POST, null);
-        $responseObject = $this->parseConnectionResponse($response);
-
-        $return->accessToken = isset($responseObject[MasterPassService::OAUTH_TOKEN]) ? $responseObject[MasterPassService::OAUTH_TOKEN] : "";
-        $return->oAuthSecret = isset($responseObject[MasterPassService::OAUTH_TOKEN]) ? $responseObject[MasterPassService::OAUTH_TOKEN_SECRET] : "";
-        return $return;
+        return AccessTokenApi::create($requestToken, $verifierToken);
     }
-
-    public function postOpenFeed($openFeedUrl, $openFeedXml)
-    {
-        $response = $this->doRequest(array(), $openFeedUrl, Connector::POST, $openFeedXml);
-
-        return $response;
-    }
-
+    
     /**
-     * This method submits the receipt transaction list to MasterCard as a final step
-     * in the Wallet process.
-     * @param $merchantTransactions
-     * @return Output is the response from MasterCard services
+     * Get checkout data
+     * 
+     * @param string $checkoutId
+     * @param string $responseToken
+     * 
+     * @return Checkout 
      */
-    public function PostCheckoutTransaction($postbackurl, $merchantTransactions)
+    public function getCheckoutData($checkoutId, $responseToken)
     {
-        $params = array(
-            Connector::OAUTH_BODY_HASH => $this->generateBodyHash($merchantTransactions)
-        );
-
-        $response = $this->doRequest($params, $postbackurl, Connector::POST, $merchantTransactions);
-
-        return $response;
-    }
-
-    public function getPreCheckoutData($preCheckoutUrl, $preCheckoutXml, $accessToken)
-    {
-        $params = array(
-            MasterPassService::OAUTH_TOKEN => $accessToken
-        );
-        $response = $this->doRequest($params, $preCheckoutUrl, Connector::POST, $preCheckoutXml);
-        return $response;
+        return CheckoutApi::show($checkoutId, $responseToken);
     }
     
-    
+    /**
+     * Get precheckout data
+     * 
+     * @param PrecheckoutDataRequest $request
+     * @param string $longAccessToken
+     * 
+     * @return PrecheckoutDataResponse 
+     */
+    public function getPreCheckoutData(PrecheckoutDataRequest $request, $longAccessToken)
+    {
+         #Call the  with required params
+        return PrecheckoutdataApi::create($longAccessToken, $request);
+    }
 
     /**
      * SDK:

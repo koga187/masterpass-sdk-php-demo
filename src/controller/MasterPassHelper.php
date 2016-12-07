@@ -38,6 +38,9 @@ class MasterPassHelper
             if (preg_match(self::ERRORS_TAG, $error->Description) > 0) {
                 preg_match("/\[([^\]]*)\]/", $error->Description, $m);                
                 $errorMessage = MasterPassHelper::formatXML($m[1]);
+            } else {
+                $errorMessage = "Description: {$error->Description} <br />";
+                $errorMessage .= "ReasonCode: {$error->ReasonCode}";
             }
         }
         return $errorMessage;

@@ -1,16 +1,24 @@
 <?php
-session_start();
-
 require_once (dirname(__DIR__)) . '/src/controller/MasterPassController.php';
 
+session_start();
 $sad = unserialize($_SESSION['sad']);
 $controller = new MasterPassController($sad);
-$controller->processParameters($_POST);
+
+if (!isset($_GET['checkout'])) {
+    $sad = $controller->processParameters($_POST);
+    $callback = $sad->callbackUrl;
+} else {
+    $callback = $sad->connectedCallbackUrl;
+}
 
 $errorMessage = null;
-try {
+if (isset($_GET["error"])) {
+    $errorMessage = ' ';
+}
 
-    $sad = $controller->getRequestToken();
+try {
+    $sad = $controller->getPairingToken();
 } catch (SDKErrorResponseException $e) {
 
     $errorMessage = MasterPassHelper::formatError($e);
@@ -22,30 +30,27 @@ $_SESSION['sad'] = serialize($sad);
 
 <html>
     <head>
-        <title>MasterPass Standard Flow</title>
+        <title>
+            MasterPass Pairing Flow
+        </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" type="text/css" href="Content/Site.css">
-        <script type="text/javascript" src="Scripts/jquery-1.5.1.js"></script>
-        <script type="text/javascript" src="Scripts/common.js"></script>
-        <script type="text/javascript" src="Scripts/tooltips/commonToolTips.js"></script>
-        <script type="text/javascript" src="Scripts/tooltips/jquery-1.3.2.min.js"></script> <!-- Needed for tooltips only -->
-        <script type="text/javascript" src="Scripts/tooltips/jquery.qtip-1.0.0-rc3.min.js"></script>
-
     </head>
-    <body class="standard">
+    <body class="pairing">
+
         <div class="page">
             <div id="header">
                 <div id="title">
-                    <h1>
-                        MasterPass Standard Flow</h1>
+                    <h1>MasterPass Pairing Flow</h1>
                 </div>
                 <div id="logindisplay">
                     &nbsp;
                 </div>
+
             </div>
             <div id="main">
                 <h1>
-                    Request Token Received
+                    Pairing Token Received
                 </h1>
 <?php
 if ($errorMessage != null) {
@@ -62,10 +67,9 @@ if ($errorMessage != null) {
 </pre>
 		</p></div>';
 }
-?>  
+?>           
                 <p>
                     Use the following Request Token to call subsequent MasterPass services.
-
                 </p>
 
                 <fieldset>
@@ -73,11 +77,10 @@ if ($errorMessage != null) {
                     <table>
                         <tr>
                             <th>
-                                Authorization Header
-
+                                Authorization Header 
                             </th>
                             <td>                      
-                                <code><?php echo null //$controller->service->authHeader; ?></code>
+                                <code><?php //echo $controller->service->authHeader;  ?></code>
 
                             </td>
                         </tr> 
@@ -85,9 +88,9 @@ if ($errorMessage != null) {
                             <th>
                                 Signature Base String 
                             </th>
-                            <td class="formatUrl">
+                            <td>
                                 <hr>
-                                <code><?php echo null //$controller->service->signatureBaseString; ?></code>
+                                <code><?php //echo $controller->service->signatureBaseString;  ?></code>
                             </td>
                         </tr>  
                     </table>
@@ -97,8 +100,12 @@ if ($errorMessage != null) {
                     <legend>Sent to:</legend>          		
                     <table>                     
                         <tr>
-                            <th>Request Token URL</th>
-                            <td><?php echo $sad->requestUrl; ?></td>
+                            <th>
+                                Request Token URL  
+                            </th>
+                            <td>
+<?php echo $sad->requestUrl; ?>
+                            </td>
                         </tr>
 
                     </table>  
@@ -108,36 +115,32 @@ if ($errorMessage != null) {
                     <legend>Received</legend>  
                     <table>                     
                         <tr>
-                            <th>Request Token</th>
-                            <td><?php echo $sad->requestToken; ?></td>
+                            <th>
+                                Pairing Token 
+                            </th>
+                            <td>
+<?php echo $sad->pairingToken; ?>
+                            </td>
                         </tr>
                         <tr>
-                            <th>Authorize URL</th>
-                            <td><?php echo $sad->requestTokenResponse->XoauthRequestAuthUrl; ?></td>
-                        </tr>
-                        <tr>
-                            <th>Expires in</th>
-                            <td><?php echo $sad->requestTokenResponse->OauthExpiresIn; ?><?php if ($sad->requestTokenResponse->OauthExpiresIn != null) echo ' Seconds' ?></td>
-                        </tr>
-                        <tr>
-                            <th>Oauth Secret</th>
-                            <td><?php echo $sad->requestTokenResponse->OauthTokenSecret; ?></td>
+                            <th>
+                                Pairing Callback Path 
+                            </th>
+                            <td>
+<?php echo $sad->pairingCallbackPath; ?>
+                            </td>
                         </tr>
                     </table>
-                </fieldset>  
+                </fieldset>
 
-
-                <form action="O2_ShoppingCart.php" method="POST">
-                    <input value="Shopping Cart" type="submit">
+                <form id="merchantInit" action="P2_MerchantInit.php" method="POST">
+                    <input type="hidden" name="oauth_token" id="oauth_token" value="<?php echo $sad->requestToken ?>">
+                    <input type="hidden" name="RedirectUrl" id="RedirectUrl" value="<?php echo $sad->requestTokenResponse->redirectUrl ?>">
+                    <input value="Merchant Initialization" type="submit">
                 </form>
-
-
-
             </div>
             <div id="footer">
             </div>
         </div>
     </body>
-
-
 </html>
