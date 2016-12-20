@@ -2,7 +2,7 @@
 
 require_once 'MasterPassData.php';
 require_once 'MasterPassHelper.php';
-require_once dirname(dirname(__DIR__)) . '/src/services/MasterPassService.php';
+require_once dirname(dirname(__DIR__)) . '/checkout/services/MasterPassService.php';
 
 class MasterPassController
 {
@@ -37,7 +37,7 @@ class MasterPassController
      */
     private function getPrivateKey($masterPassData)
     {
-        $thispath = dirname(__DIR__) . "/" . $masterPassData->keystorePath;
+        $thispath = dirname(__DIR__) . "/../../" . $masterPassData->keystorePath;
         $path = realpath($thispath);
         $keystore = array();
         $pkcs12 = file_get_contents($path);
