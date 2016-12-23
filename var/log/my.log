@@ -28,3 +28,1008 @@ https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
 Response :  OK
 Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=275cb18febfebdbf0e70282bb688830eb1e62fe1&oauth_token_secret=6bb1fc522f6f64b4ecc20d3bc6d9a97be80fb485&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
 INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject//file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject//file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="cLb0tKkEJhGTITp_6ltDIibO5Wgbx4rIldeXM_jRd4b0476c%21414f4859446c4a366c726a327474695545332b353049303d",oauth_signature_method="RSA-SHA1",oauth_nonce="5880159149435348",oauth_timestamp="1482501141",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="fhdkMd06LNof5SHdf5vfD0nMvCwNXo2WMrkokqhsB2MVyEb9IBgxn%2BPucQOxuQ0xC%2FxX0f%2B%2FxikfUNjDSsMlXfoCjBuDZewEyFSDa8oENgty%2BDiSx3Wr%2BMlopmq0Ax3VdvfkBbj0YY53hHCTzcWI%2FAumVMlx46xt9QI8U01IM%2Fg%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject//file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>ClientId</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>Please enter a valid authorized client ID for the requested service. ERROR CODE 1000</Description><Recoverable>false</Recoverable></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+ERROR - Private key can not be empty
+ERROR - Private key can not be empty
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="0b70f7205c46d2eb",oauth_timestamp="1482502006",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="U4Jf%2F8tHxP%2B3JI71h5%2FxwUl%2FNgKoyTwZmM%2FUwQ2jXXZGynIipkoHAgf5x7uy1Gwkl3rgvunLC1HDDmL8I2kRONFVdYN%2FAUniFpd1ecyPHKmOqZEJ80HY7bfKQo9ubgpslxcoTyyq64VSHrl6llUA9Z6nz%2BOAL1tGPOWAvm6IUcH0vAqL3lZf6NJ3CZB5HIXcDNWuiJjq%2F7%2BrBakd10JXO4S43v4%2B5xGsphaUlRdY14k%2BcZLNriNUerf%2B%2B%2Fk69lCjNWEfgdP5mjG5%2BOEiCIPzjKCJlZnPmD8J3TonMQDfj4mMIvW3yiy4gTFW9gBBv8oVGSI3yp6K3DoWNX6Tj%2Ff1Lg%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D0b70f7205c46d2eb%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502006%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D0b70f7205c46d2eb%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502006%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="13278ace407379bb",oauth_timestamp="1482502044",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="BjHXicjazswRBX9oLbY5dFAulaZOr41T4ibw39LQvrS0ncZKmD0nS4xprAPqvbpNb5Cdl5igEKr7xlpOAzr41ZMAP7apQ59iOJwncF7lUPUuCNsm%2BeBJ16qRSjMflm5UcNSP1%2Bpm8BtJjryf6caHSQwhwqFgy1cNzjHw0qiLP0YMX2ey4w2NFnlMx%2B6UsJrIl4LM3UXl17CaNKjKJYOgeqFt5cyiV1yt7vfsCZcy2SblKVkhBCWBJgCk5I1jdlUgFx%2Bk00BJ4p2b3xMV0y7A3CUah2ilpj0mikwPpDoC%2Fz5n%2FMxBY4nSR13676zpt1SDlNnYHU5nwxZlBnpm6g12Vg%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D13278ace407379bb%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502044%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D13278ace407379bb%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502044%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="416c1adb511772e8",oauth_timestamp="1482502057",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="PeoB70RpvI3RShmkudcdVu5bB1mt7h68s7XzG24eDhb%2FlY3aUT9bSzSvlXQHswKTWvWFOtLfZMUCkJyzQEo49dWh8tRhgK4YC7n7u8VjboTjKQTyn72Pmn8dH3RERkhNjT%2FSgi1rxhvBl2qtFo7HM69kbVN9wSe0aANEukx1T6LyrBMMKCDftXWNLCBEI7KgBXOfRxWE5SCR7X79EqDH1rUsO1s6Xu8O%2BhTj057gieop%2FulKaHFjvbqtyxmAjcihQqqd%2FghYebqZB3RhsH11qfoU2wZw%2FgvBx6mIt8icXPSRrsfit4kF%2BH%2BJE4wHIjXIOYya%2FuvvGFRCXr5w1NmW2w%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D416c1adb511772e8%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502057%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D416c1adb511772e8%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502057%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="39135d07488dcdd3",oauth_timestamp="1482502089",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="CnRrPxl9bJiruAT8l6%2F%2BX8%2FaMPNUuMeVxIxES1aiBq94iowff19BjwckYxqowdzj0QP7gtQc9pT0971eTpKkmHrrHSQCd4%2BXimxWBxVElO%2BwzsFXE%2FIkBX46cQtAGeLQGHHQNJ9Aaat57ilU%2Bvh9864gIF5OulJ6o%2FCRKz1ljME9HUBx%2BTCTEA2%2B1wxAY7Irahmq1lVBuamGlN964sT4evMeJHl%2FWN9depzSRCr1KJDwGDi4MOSWk5sLe4%2Bca%2Bxa4pQcpxky9yKp0Es6KSXYmEpfOg6JnHEdPm0XBUzAxqelMAml2p4Nwis3IeMu%2BAiYkyWajLwg4NsZ1CE13Ryjiw%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D39135d07488dcdd3%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502089%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D39135d07488dcdd3%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502089%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="aa0c3aa90872753e",oauth_timestamp="1482502140",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="WOePNnNKvk4P%2B%2BWeVUPDGZQVJgwVX5Uz0Z94E8scN8%2B9XwdlWYLj41Iu8oPnsGNS81BY%2BSaG8X6mcJh0GAp2mr6o9AogmOkgqEEvja%2FMoIjj8aPrzUUs%2BskBnYIGV5DfXB953tgsEqH9kmfZ5Ec945nM7wImVWB5aS9YTd6UWcQ44sPIvPFRvMxlTuS4xVuSi2pMoQGaIblQH3%2BFADFUPv4SJNwlqOU4G1RLC7HrUwvUy5JDxkRaM3iSX03PdjLaPzG8fIGUfBHcVCy34Zm0CUMYyOGSpH1scvm8D7H6WGXRdxJLOZ33d9R%2FnRiTvumI%2BGsl%2FoJsyjxUWjiDjMsx%2BA%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Daa0c3aa90872753e%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502140%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Daa0c3aa90872753e%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502140%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="77f068c23400170d",oauth_timestamp="1482502193",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="f0D%2BQetYLYdi14fFvPb7zWLGwwEDLMtTpUb9Ok2KkksKKSmcJpYvyt%2BgHp6NFcevsW4iQul25eLP2UL23Qez9rjh%2F2iJDrfzUpKFbES9MWWFxMl9d15qbKLu4KdVtTdctQiWiU26BpKV8nifY0w8n55STww9pjLula8qYdr%2Fwmfjq0c3XvQbnhYnj8z0X9fucKp0xXz1L46PIQtui1FWiwme2GZjEXEWimlWMV7e3ArAPhfKv1BJQA65PT4rFWv%2Bg4HQca%2FClWM4iYqLOg91TWvZtdfH7slV%2BMrdI5ho5TJj6qsU9zYmkhbacTz0oCYXG5xdf9aA6HqGQ5LGpJHVlg%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D77f068c23400170d%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502193%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D77f068c23400170d%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502193%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="d1c0d67316772102",oauth_timestamp="1482502242",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="S%2FDrZTWQ%2FK7MM8Q%2FlBrMW4pqFFFUfrqpje%2FkpWpb294h35d4%2FIQk3bXQps2WFaVUwiJ%2B8PtMrzd3Uk6lX2%2BlUj7tvzPqrsY7jdgdnMyu6v8UNIOeQVd9xsV%2B3F1vtu8Z2tFKkMLc6MJtRHnIfCXIpedK1h7%2B49fa25m6grn%2B%2F73Ed5i8KeDqCO7EJiilibGpEqkVVcXNEaQoNhXUnc4jN4tb4GV9TBgWabbbuvBAizVDhaJuxTWMZGXIm0T7tmt69JR8J6%2BNr2VP5liirQeNs7ry5ObZLgRjJxDZ0K7dZ8PtUEa2GNAIeBvtZoHM7hOnpoCcbCr6Z2IBeV8%2FTa1UkQ%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Dd1c0d67316772102%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502242%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Dd1c0d67316772102%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502242%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="768e8ba656e6f502",oauth_timestamp="1482502253",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="gwZjLT1BVmv0OI2QQeNIRHRzIRDRVhfive9W0mPChU9hX%2FGFz5OmtA8KweJUP4HJT1aeA1HMir%2BJjdTmRF5uYwtLbdZqLfiLhTr1qdwXHvtHpWfccNeerBfmuWQnZS04RT5I6lYGEJF0MoP2d1ZRgnx851Rl8sWRYXhu8z2K8quJP1iIkz3UmQwc4ZliAXdY6h70M0NP7%2BH9uXaGo3cl6HWvoGJReO74OrOovAf7%2FjKBQRRsvgmXEkPwcZX2CN7iCYNcFUeYWmg9%2B3pYB%2FCtnmxgovQmncH5HuTgrBroHJPM4AQneAr1dxB%2BqYEuuhgQ99n%2FyonI3kS8X%2B8XM3yyag%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D768e8ba656e6f502%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502253%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D768e8ba656e6f502%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502253%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="37340a10cb856107",oauth_timestamp="1482502304",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="MT8ZSIy0gR3RR%2B6voKloQ7UsLrR6vX1btDSoPcBPe44bdMdP94cSk%2ByCCVxlOUORmpKOwuA4GTnM2xPCRgsy1%2BWZd0chVKjIi%2FhEFnQNy60OkEW9xJWS2SS%2BO9HSH6z6DlGGhSiRGJg8wQj0t8t0AAeEwlD7tyim0hGiO%2BwxA74L1J392c6McqvBRFqT%2FczLdpopI09DPSUQ0sSmIF5lmQH9bzF8B26tRKWYdb0tuVtuFZ6KPUXp6eFemr0MjLZVh9RvHWE86qxIYlBxrTs7Qeef14bnyg%2FQlWtNtU%2FNMkYChsiEEqlooSW2IvDVrPl5yGMDSLAD1sELV8aY8o81Zw%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D37340a10cb856107%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502304%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D37340a10cb856107%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502304%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="c0bc5810d5168d38",oauth_timestamp="1482502308",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="Z3I2vLb6A7ZbrzgRNN1KrS%2Fqofykee1c3Hk2wOzEz0%2Fqjc8YsUkx%2FRZsXKcYuy%2Fmk0aNZXJEm6ZiUHeSLh8%2F59SDIrXj4y45WzrmWWIHi706saDdjO9Dg%2FZYjuFPp0ZgRNHI%2BLitvq5IJsRNeXLUF4Gp1KCDuKUrCv71mhvCPpEhwf1hDD5x%2BadIPAADpMseoXAHIhjRwqcQMKRg0XcFHBdLznmyPQDoJLmw9REMxdV%2BLyHqwj9BDK%2FVGkYZq6Xl7rWseDJh1YOx7LRAcz2VgWCPnOfg2nPW1vkyZn75b9E8lVdTRz4RO0vk%2FnZuMNfsy4oARO42Ra6QGuAb95NmNg%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Dc0bc5810d5168d38%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502308%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Dc0bc5810d5168d38%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502308%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="30202dccaeda1572",oauth_timestamp="1482502422",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="DQKDwmlQx6cwpIkcvd4sdwa5LHtu8T7LnNcYuHZM7IhnWwGktc2%2FKnbg0PRQ22dAdQ9GofpSUrajCE4yLpe%2F%2FEUJNzApajeADSqaT5ZufkRGpe%2FQKGhB%2F%2F3K9z8YSq1v0bu0udptunNaEwi4jnoxnER3DN5F4mbSKUvGGQgQ5BTisIgIcm1mJgwGnRsl1T0TWQsO7dVihS66uaOx47NSh3N7TsEzUR9hjU70EPPDI4HAcMG3hZGd75vSas9oqloKwYO2UuVjEsI0h29PeQM4jzBvQybr%2FFy4Kwb5NHRDruGRJ9oGhKrRhN%2FthN4li%2BivwOGbdZziA6FPF9xyOAREXw%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D30202dccaeda1572%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502422%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D30202dccaeda1572%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502422%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="b4cad475c1ab084e",oauth_timestamp="1482502472",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="FVgtIqXBXHnuRD9qJoQtlUlEGOmvtIPBLndxLkM%2BmNehxuL6P5BhGpnrV%2BpeOzPTtlnP0PVROuHZUb0432xG2mpCHsAodqdfvkzs7WVe7cOl9a1UtA%2F%2FV5g3cTlEV30A2BUld9ORFnFX8MBiuu9ALgj1S8%2BeAoPDx1tFMyngL%2BFTe2LciP3SwhYlw5TrWDnOrg0TmQ0kmwzOCtNJmtjYtHAsSgIl1TvrTHuuvGnsuxqj8viOs0J2ewxz2tYjiTRuuZgeh8G7Mg8XKzobeA%2FfiPzNbtOnNt8OhXy%2B1754FEAGon%2FBen5eBEJiLMrEOPliJEockEfXEX8bwxX2Fwok8g%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Db4cad475c1ab084e%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502472%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Db4cad475c1ab084e%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502472%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="690819e61be622c4",oauth_timestamp="1482502513",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="Rrg3NqWVe%2BcJF7Wudb%2F%2F1H21E2m9AR9W1c33dmwnyFxzWvKG9kQWEUq5X%2Bh%2FuCm6AKA4U1%2BRigYyEpeqdUAIvpULq7I2Qhc8dlJFib3PRop0AKtE1Wu0AGzWWJODRHL1jNbFRVeGGUTzVPPEBNZpqi%2BQ5kdVYaumIX0hjeqUQrtra7XNMd361NtJ9EeeOYj%2F7ctvdzzSRJmjr7FrafJXRxpzdGz8BaZGArPCo48TVyqlcNVZQKay1b6xrxuax6rT%2BpAXpSx%2FQBJZ02K%2FdcQkJ0wwQd59yL%2F2wHi4AbPNRyZReQmMm1ytnRFA5SZy5p7T0RlBl%2BBtW4XFXjmchx9%2FnA%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D690819e61be622c4%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502513%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D690819e61be622c4%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502513%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="da610bba6284794c",oauth_timestamp="1482502549",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="MNQFm3kZAuEox0vBr1AA%2Fa3LLL7%2FcsVBaU2ilX2j%2B1jSXHdNxx%2FZanM7dD%2FbfD2skEfA5Vdrv%2FfIOM22gviyNQ%2BHVmMZ%2Fm%2FVwUZdHXI%2BB%2FXie%2BoXgILHAoZPIWW0dXl4zXg5tqjYJGuhGxMLkRAhSHajTBQTzmWpSGA1vPJQLpF9XOeUN9dwMfiWuPNE7iqg8Yd1eba9BPyxBYTJV8ZPFdcFgm3CfhBGAHC6i7Twiu%2FBxrt18%2F3kjf0QvyujyY1oJlahPXjhLBq9zjmElt62cNDQoJLwwIoy2qmd0fLt1EF7QZhc7mmkgaz2C%2BG8cNzPVH8dHY2QE6v6CmdL1cOXbw%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Dda610bba6284794c%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502549%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Dda610bba6284794c%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502549%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="ad38de581393875a",oauth_timestamp="1482502622",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="WW5lYKldw50KoyL6zZ37yivVJ7jHcKbe6Em9%2B3zaX4UOPG0N%2FZxIskHq%2F%2FfpwUzkE9dJzxps1v5W4nNLa6se5omlwJPbhk0C2FJYVt3GE%2B701gkqyowmFGPzln%2BmiqbPLHxAxwHcJ98x9M8AKRXXAhIbECgaKJdVD%2Flz5EsATJ664fyL5qQSdJU1MiK3T2W%2B8nrm3czaDA%2FGUTC5YwanYFaXNSowgk%2BMAzxdeeER%2FllX0esay1B6dqLc1z2e7gKMOyOnEz0AsqPxhOAf21cRcw1i4nKMXsrWA3x7%2BMpSHMX6c5Inq9LPiVS1no6gba0KDmfQaYo1i4Ohv97Y%2BXExLw%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Dad38de581393875a%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502622%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3Dad38de581393875a%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502622%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="e573a82507385c72",oauth_timestamp="1482502648",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="IiIL%2FPgRB8isHZu549tqo5D2nH03Mg4c%2BE8vyaVH7%2FvCQRJTT%2F9ecZ%2FwYZvEE9hP%2BPKzQbhR67NEWEMF%2FwTzfjMdzDCmiJr4BTvPRcYZh58nXnsL0TA5NfKlpij6sUz9leG9jv4nh7Gnupr9PgAWego9LpFkMJkyWsog8ut5%2BjPx85hydV1PSzP%2BiFaOZbRUasnXExS77D7DS0m7mGQw607XpHibbAmOncgY%2FjJ6yt%2FBQjQ2aBAfUIWaBfjNg1c3HkksolAmOrBLEEAfUsGso5EEuPu2u4FsQB%2Bf54xtPtc2pVbkS%2F5kPfth6xxgoTDFk8AJPR7JXlPYjX2VPFWNYg%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3De573a82507385c72%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502648%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3De573a82507385c72%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502648%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="986093ee26c2efd4",oauth_timestamp="1482502945",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="JYU8rKTe1CmZkYqgFoO8o1VuuqKH%2BZcDsGSMrhkpVqB2s0Epq0tXN%2BO8WObsA4STz4%2FnouInXCv94Y63tOW%2F2og%2Bzl5MAXllK4xY094Wzz7s4aL4AGKkDd2ip7TlOyjt2o8IUoEJgrpKp89UO7V%2FBFubPvKahOQKxpqkp3khSDYn2Ki%2BlKRdZPe%2Fk7qf3zE4ayEazoUxIlW%2FI08zRKBj84FOYjNBWzgc%2BzwxR%2BpDblch5WAeYM3SQqXrBeIar%2Fxo8wURwcPiJQoXYzwsXVeR01IZxwDY0gSY5VcaUtqOCDmPsgczze4AmbfMk5K6V0mW2gffrky8jkRwESKpVBQ%2BPg%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D986093ee26c2efd4%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502945%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D986093ee26c2efd4%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502945%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
+INFO - POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation
+Content-Type: application/xml;
+Authorization: OAuth oauth_consumer_key="bbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d",oauth_signature_method="RSA-SHA1",oauth_nonce="788424fd39e11a5c",oauth_timestamp="1482502984",oauth_version="1.0",oauth_body_hash="nGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D",oauth_signature="LkUpqr%2Btb%2BUuACrgjnXNt5eJadnBroG43nPhiWmmOVGZX%2FTEiOOtEvqdcm49zE74RuH4NPn2%2B4ka1Lqqthx74DPqt5nXg1uBG%2BxwIY33iWHIzxSGtqR9aNIAKAtS4ti08BPdzbeND6xxndThJuely6Poyh4h9PtsShkDYuc66O73gU5bq9MPFeHqIcoU8flKvyG3ZkQlTNwanfasjxnWw06%2Bs91YcDgF96C24TyqWMY5RVZtiv2%2FROdxTCldYlzTeVd75irFplJxRQ7xKuAPhNBmWZXdesi5GQWt3tUF68vVSURaF92iSFkCmsh7xPNp2cVxn8SJgU5iTfNvUf5oLg%3D%3D",realm="eWallet";
+API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=PHP,lang_version=5.6.24;
+User-Agent: MC Open API OAuth Framework v1.0-PHP;
+<?xml version="1.0"?>
+<MerchantUpload>
+  <Merchant>
+    <SPMerchantId>SPMerch58401</SPMerchantId>
+    <Action>C</Action>
+    <Profile>
+      <Name>SPMerch58401</Name>
+      <DoingBusAs>SPMerch58401</DoingBusAs>
+      <FedTaxId>211624440</FedTaxId>
+      <Url>https://SPMerch58401.com</Url>
+      <BusinessCategory>test</BusinessCategory>
+      <Address>
+        <City>SPMerch58401</City>
+        <Country>US</Country>
+        <Line1>898 SPMerch58401</Line1>
+        <PostalCode>78090</PostalCode>
+      </Address>
+      <Phone>
+        <CountryCode>1</CountryCode>
+        <Number>3734517671</Number>
+      </Phone>
+      <Emails>
+        <EmailAddress>email@masterpass.com</EmailAddress>
+      </Emails>
+    </Profile>
+    <CheckoutBrand>
+      <Name>SPMerch58401</Name>
+      <DisplayName>SPMerch58401</DisplayName>
+      <ProductionUrl>https://SPMerch58401.com</ProductionUrl>
+      <SandboxUrl>https://SPMerch58401.com</SandboxUrl>
+      <LogoUrl>http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png</LogoUrl>
+    </CheckoutBrand>
+  </Merchant>
+</MerchantUpload>
+
+INFO - Error Response Code : 401
+DEBUG -  Response Information  
+https://api.mastercard.com/masterpasspsp/v6/checkoutproject/115334150/file/validation 
+Response :  Unauthorized
+Response Body :  <Errors><Error><Source>OAuth.Signature</Source><ReasonCode>AUTHENTICATION_FAILED</ReasonCode><Description>The request contains an incomplete or invalid oauth_signature.</Description><Recoverable>false</Recoverable><Details><Detail><Name>Allowed OAuth Signature Base String 1</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%252B9E5Yg9Fm65OTPg7rs%253D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%2521414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D788424fd39e11a5c%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502984%26oauth_version%3D1.0
+]]&gt;</Value></Detail><Detail><Name>Allowed OAuth Signature Base String 2</Name><Value>&lt;![CDATA[
+POST&amp;https%3A%2F%2Fapi.mastercard.com%2Fmasterpasspsp%2Fv6%2Fcheckoutproject%2F115334150%2Ffile%2Fvalidation&amp;oauth_body_hash%3DnGqSFve3P%2B9E5Yg9Fm65OTPg7rs%3D%26oauth_consumer_key%3DbbUQUH44166MYOvshPW7eKhVsIjj4DabeFcEc9rDad54e37d%21414d366942447741782b55565871414e506d44756a69553d%26oauth_nonce%3D788424fd39e11a5c%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1482502984%26oauth_version%3D1.0
+]]&gt;</Value></Detail></Details></Error></Errors>
+INFO - Response Status : 401 ;Response :  Unauthorized
