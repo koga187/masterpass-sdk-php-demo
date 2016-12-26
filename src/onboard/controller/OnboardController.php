@@ -52,7 +52,7 @@ class OnboardController
 
         return $this->appData;
     }
-    
+
     public function postMerchantValidate()
     {
         $merchantUpload = $this->createMerchantUpload();
@@ -96,6 +96,37 @@ class OnboardController
                             )),
                     'BusinessCategory' => 'test',
                     'FedTaxId' => 211624440
+                        )),
+                'AuthOption' => new AuthOption(array(
+                    'CardBrand' => 'MASTER_CARD',
+                    'Type' => 'ALL_TRANSACTIONS'
+                        )),
+                'AuthOption' => new AuthOption(array(
+                    'CardBrand' => 'VISA',
+                    'Type' => 'ALL_TRANSACTIONS'
+                        )),
+                'MerchantAcquirer' => new MerchantAcquirer(array(
+                    'Acquirer' => new Acquirer(array(
+                        'Id' => 540452,
+                        'Name' => 'CSOB',
+                        'AssignedMerchantId' => 'ACQMC113'
+                            )),
+                    'MerchantAcquirerBrand' => new MerchantAcquirerBrand(array(
+                        'CardBrand' => 'MASTER_CARD',
+                        'Currency' => 'EUR'
+                            ))
+                        )),
+                'MerchantAcquirer' => new MerchantAcquirer(array(
+                    'Acquirer' => new Acquirer(array(
+                        'Id' => 491011,
+                        'Name' => 'CSOB',
+                        'AssignedMerchantId' => 'ACQVS114',
+                        'Password' => 'CSob1214'
+                            )),
+                    'MerchantAcquirerBrand' => new MerchantAcquirerBrand(array(
+                        'CardBrand' => 'VISA',
+                        'Currency' => 'EUR'
+                            ))
                         ))
                     ))
         ));

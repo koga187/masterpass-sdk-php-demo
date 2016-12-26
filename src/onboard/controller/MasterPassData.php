@@ -39,8 +39,11 @@ class MasterPassData
     public $openFeedId = 115334150;
     public $openFeedRequest = null;
     public $openFeedResponse = null;
+    public $openFeedUrl = 'https://api.mastercard.com/masterpasspsp/v6/checkoutproject/%s/file';
     public $validateRequest = null;
     public $validateResponse = null;
+    
+    
 
     //const variables used for configs
     const RESOURCES_PATH = "resources/";
@@ -100,6 +103,7 @@ class MasterPassData
         $this->connectedCallbackUrl = $this->callbackDomain . $this->connectedCallbackPath;
 
         $this->lightboxUrl = $settings['lightboxurl'];
+        $this->openFeedUrl = sprintf($this->openFeedUrl, $this->openFeedId);
     }
 
 }

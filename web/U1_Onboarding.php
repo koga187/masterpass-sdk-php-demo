@@ -2,7 +2,7 @@
 session_start();
 
 require_once (dirname(__DIR__)) . '/src/onboard/controller/OnboardController.php';
-include_once (dirname(__DIR__)) . '/src/onboard/controller/MasterPassData.php';
+require_once (dirname(__DIR__)) . '/src/onboard/controller/MasterPassData.php';
 
 $sad = new MasterPassData();
 $_SESSION['sad'] = serialize($sad);
@@ -14,11 +14,13 @@ $errorMessage = null;
 try {
 
     $sad = $controller->postMerchantValidate();
+    if ($sad->validateResponse->ValidatedMerchant->ErrorText === 'Successful') {
+        $sad = $controller->postMerchantUpload();
+        
+        print_r($sad);
+    }
 
-    print_r($sad);
-    exit;
-
-    //$sad = $controller->postMerchantUpload();
+    //
 } catch (Exception $e) {
     $errorMessage = MasterPassHelper::formatError($e);
 }
@@ -37,8 +39,7 @@ $_SESSION['sad'] = serialize($sad);
         <div class="page">
             <div id="header">
                 <div id="title">
-                    <h1>
-                        MasterPass Standard Flow</h1>
+                    <h1>Merchant Onboarding</h1>
                 </div>
                 <div id="logindisplay">
                     &nbsp;
@@ -46,12 +47,12 @@ $_SESSION['sad'] = serialize($sad);
             </div>
             <div id="main">
                 <h1>
-                    Request Token Received
+                    Response Received
                 </h1>
-<?php
-if ($errorMessage != null) {
+                <?php
+                if ($errorMessage != null) {
 
-    echo '<h2>Error</h2>
+                    echo '<h2>Error</h2>
 	<div class = "error">
 		<p>
 		    The following error occurred while trying to get the Request Token from the MasterCard API.
@@ -59,71 +60,62 @@ if ($errorMessage != null) {
 		<p>		
 <pre>
 <code>', $errorMessage,
-    '</code>
+                    '</code>
 </pre>
 		</p></div>';
-}
-?>  
-                <p>
-                    Use the following Request Token to call subsequent MasterPass services.
-
-                </p>
-
-                <fieldset>
-                    <legend>Sent</legend>
-                    <table>
-                        <tr>
-                            <th>
-                                Authorization Header
-
-                            </th>
-                            <td>                      
-                                <code><?php echo null //$controller->service->authHeader;  ?></code>
-
-                            </td>
-                        </tr> 
-                        <tr>
-                            <th>
-                                Signature Base String 
-                            </th>
-                            <td class="formatUrl">
-                                <hr>
-                                <code><?php echo null //$controller->service->signatureBaseString;  ?></code>
-                            </td>
-                        </tr>  
-                    </table>
-                </fieldset>
-
+                }
+                ?>
                 <fieldset>
                     <legend>Sent to:</legend>          		
                     <table>                     
                         <tr>
-                            <th>Request Token URL</th>
-                            <td><?php echo $sad->requestUrl; ?></td>
+                            <th>OpenFeed URL</th>
+                            <td><?php echo $sad->openFeedUrl; ?></td>
                         </tr>
 
                     </table>  
                 </fieldset>
 
                 <fieldset>
-                    <legend>Received</legend>  
+                    <legend>Validation Received</legend>  
                     <table>                     
                         <tr>
-                            <th>Request Token</th>
-                            <td><?php echo $sad->requestToken; ?></td>
+                            <th>Message</th>
+                            <td><?php echo $sad->validateResponse->ValidatedMerchant->ErrorText; ?></td>
                         </tr>
                         <tr>
-                            <th>Authorize URL</th>
-                            <td><?php echo $sad->requestTokenResponse->XoauthRequestAuthUrl; ?></td>
+                            <th>MerchantId</th>
+                            <td><?php echo $sad->validateResponse->ValidatedMerchant->MerchantId; ?></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>Upload Received</legend>  
+                    <table>                     
+                        <tr>
+                            <th>Batch ID</th>
+                            <td><?php echo $sad->openFeedResponse->Summary->BatchId; ?></td>
                         </tr>
                         <tr>
-                            <th>Expires in</th>
-                            <td><?php echo $sad->requestTokenResponse->OauthExpiresIn; ?><?php if ($sad->requestTokenResponse->OauthExpiresIn != null) echo ' Seconds' ?></td>
+                            <th>SuccessCount</th>
+                            <td><?php echo $sad->openFeedResponse->Summary->SuccessCount; ?></td>
                         </tr>
                         <tr>
-                            <th>Oauth Secret</th>
-                            <td><?php echo $sad->requestTokenResponse->OauthTokenSecret; ?></td>
+                            <th>FailureCount</th>
+                            <td><?php echo $sad->openFeedResponse->Summary->FailureCount; ?></td>
                         </tr>
+
+                        <?php if (isset($sad->openFeedResponse->MerchantResponseRecord->ErrorText)): ?>
+                            <tr>
+                                <th>ErrorTex</th>
+                                <td><?php echo $sad->openFeedResponse->MerchantResponseRecord->ErrorText; ?></td>
+                            </tr>
+                        <?php else: ?>
+                            <tr>
+                                <th>Checkout ID</th>
+                                <td><?php echo $sad->openFeedResponse->MerchantResponseRecord->CheckoutBrand->CheckoutIdentifier; ?></td>
+                            </tr>
+                        <?php endif; ?>
                     </table>
                 </fieldset>
             </div>
