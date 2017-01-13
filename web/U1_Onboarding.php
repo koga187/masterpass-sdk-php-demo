@@ -16,11 +16,8 @@ try {
     $sad = $controller->postMerchantValidate();
     if ($sad->validateResponse->ValidatedMerchant->ErrorText === 'Successful') {
         $sad = $controller->postMerchantUpload();
-        
-        print_r($sad);
     }
-
-    //
+    
 } catch (Exception $e) {
     $errorMessage = MasterPassHelper::formatError($e);
 }
