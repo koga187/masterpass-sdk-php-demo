@@ -12,10 +12,10 @@ $controller->processParameters($_POST);
 
 $errorMessage = null;
 try {
-
-    $sad = $controller->postMerchantValidate();
+    $SPMerchantId = 'TestMS20170101';
+    $sad = $controller->postMerchantValidate($SPMerchantId);
     if ($sad->validateResponse->ValidatedMerchant->ErrorText === 'Successful') {
-        $sad = $controller->postMerchantUpload();
+        $sad = $controller->postMerchantUpload($SPMerchantId);
     }
     
 } catch (Exception $e) {

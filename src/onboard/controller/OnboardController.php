@@ -48,22 +48,22 @@ class OnboardController
      * 
      * @return MasterPassData 
      */
-    public function postMerchantUpload()
+    public function postMerchantUpload($SPMerchantId = 'SPMerch58401')
     {
         // clear the data
-        $merchantDelete = $this->deleteMerchantUpload();
+        $merchantDelete = $this->deleteMerchantUpload($SPMerchantId);
         $this->service->postMerchantUpload($merchantDelete);
         
-        $merchantUpload = $this->createMerchantUpload();
+        $merchantUpload = $this->createMerchantUpload($SPMerchantId);
         $this->appData->openFeedResponse = $this->service->postMerchantUpload($merchantUpload);
         $this->appData->openFeedRequest = $merchantUpload;
 
         return $this->appData;
     }
 
-    public function postMerchantValidate()
+    public function postMerchantValidate($SPMerchantId)
     {
-        $merchantUpload = $this->createMerchantUpload();
+        $merchantUpload = $this->createMerchantUpload($SPMerchantId);
 
         $this->appData->validateResponse = $this->service->postMerchantValidate($merchantUpload);
         $this->appData->validateRequest = $merchantUpload;
