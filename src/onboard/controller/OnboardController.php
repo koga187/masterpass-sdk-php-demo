@@ -43,10 +43,18 @@ class OnboardController
         return $keystore['pkey'];
     }
 
+    /**
+     * Post merchant upload
+     * 
+     * @return MasterPassData 
+     */
     public function postMerchantUpload()
     {
+        // clear the data
+        $merchantDelete = $this->deleteMerchantUpload();
+        $this->service->postMerchantUpload($merchantDelete);
+        
         $merchantUpload = $this->createMerchantUpload();
-
         $this->appData->openFeedResponse = $this->service->postMerchantUpload($merchantUpload);
         $this->appData->openFeedRequest = $merchantUpload;
 
@@ -63,20 +71,20 @@ class OnboardController
         return $this->appData;
     }
 
-    private function createMerchantUpload()
+    private function createMerchantUpload($SPMerchantId = 'SPMerch58401')
     {
         # Create an instance of MerchantUpload
         return new MerchantUpload(array(
             'Merchant' => new Merchant(array(
                 'Action' => 'C',
-                'SPMerchantId' => 'SPMerch58401',
+                'SPMerchantId' => $SPMerchantId,
                 'CheckoutBrand' => new CheckoutBrand(array(
                     'Name' => 'SPMerch58401',
                     'SandboxUrl' => 'https://SPMerch58401.com',
                     'LogoUrl' => 'http://www.mastercard.us/_globalAssets/img/nav/navl_logo_mastemasterca.png',
                     'ProductionUrl' => 'https://SPMerch58401.com',
                     'DisplayName' => 'SPMerch58401'
-                        )),
+                )),
                 'Profile' => new Profile(array(
                     'DoingBusAs' => 'SPMerch58401',
                     'Name' => 'SPMerch58401',
@@ -93,44 +101,60 @@ class OnboardController
                         'PostalCode' => 78090,
                         'Country' => 'US',
                         'City' => 'SPMerch58401'
-                            )),
+                    )),
                     'BusinessCategory' => 'test',
                     'FedTaxId' => 211624440
-                        )),
-                'AuthOption' => new AuthOption(array(
-                    'CardBrand' => 'MASTER_CARD',
-                    'Type' => 'ALL_TRANSACTIONS'
-                        )),
-                'AuthOption' => new AuthOption(array(
-                    'CardBrand' => 'VISA',
-                    'Type' => 'ALL_TRANSACTIONS'
-                        )),
-                'MerchantAcquirer' => new MerchantAcquirer(array(
-                    'Acquirer' => new Acquirer(array(
-                        'Id' => 540452,
-                        'Name' => 'CSOB',
-                        'AssignedMerchantId' => 'ACQMC113'
-                            )),
-                    'MerchantAcquirerBrand' => new MerchantAcquirerBrand(array(
-                        'CardBrand' => 'MASTER_CARD',
-                        'Currency' => 'EUR'
-                            ))
-                        )),
-                'MerchantAcquirer' => new MerchantAcquirer(array(
-                    'Acquirer' => new Acquirer(array(
-                        'Id' => 491011,
-                        'Name' => 'CSOB',
-                        'AssignedMerchantId' => 'ACQVS114',
-                        'Password' => 'CSob1214'
-                            )),
-                    'MerchantAcquirerBrand' => new MerchantAcquirerBrand(array(
+                )),
+                'AuthOption' => array(
+                    new AuthOption(array(
                         'CardBrand' => 'VISA',
-                        'Currency' => 'EUR'
-                            ))
+                        'Type' => 'ALL_TRANSACTIONS'
+                    )),
+                    new AuthOption(array(
+                        'CardBrand' => 'MASTER_CARD',
+                        'Type' => 'ALL_TRANSACTIONS'
+                    )),
+                ),
+                'MerchantAcquirer' => array(
+                    new MerchantAcquirer(array(
+                        'Acquirer' => new Acquirer(array(
+                            'Id' => 540452,
+                            'Name' => 'CSOB',
+                            'AssignedMerchantId' => 'ACQMC113'
+                        )),
+                        'MerchantAcquirerBrand' => new MerchantAcquirerBrand(array(
+                            'CardBrand' => 'MASTER_CARD',
+                            'Currency' => 'EUR'
+                        ))
+                    )),
+                    new MerchantAcquirer(array(
+                        'Acquirer' => new Acquirer(array(
+                            'Id' => 491011,
+                            'Name' => 'CSOB',
+                            'AssignedMerchantId' => 'ACQVS114',
+                            'Password' => 'CSob1214'
+                        )),
+                        'MerchantAcquirerBrand' => new MerchantAcquirerBrand(array(
+                            'CardBrand' => 'VISA',
+                            'Currency' => 'EUR'
                         ))
                     ))
+                )
+            ))
         ));
     }
+    
+    private function deleteMerchantUpload($SPMerchantId = 'SPMerch58401')
+    {
+        # Create an instance of MerchantUpload
+        return new MerchantUpload(array(
+            'Merchant' => new Merchant(array(
+                'Action' => 'D',
+                'SPMerchantId' => $SPMerchantId
+            ))
+        ));
+    }
+    
 
     public function processParameters($_POST_DATA)
     {
