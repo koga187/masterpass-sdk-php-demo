@@ -3,6 +3,8 @@ session_start();
 
 require_once (dirname(__DIR__)) . '/src/checkout/controller/MasterPassController.php';
 
+use MasterpassDemo\src\checkout\controller\MasterPassController;
+
 $sad = unserialize($_SESSION['sad']);
 $controller = new MasterPassController($sad);
 $controller->processParameters($_POST);
@@ -67,42 +69,6 @@ if ($errorMessage != null) {
                     Use the following Request Token to call subsequent MasterPass services.
 
                 </p>
-
-                <fieldset>
-                    <legend>Sent</legend>
-                    <table>
-                        <tr>
-                            <th>
-                                Authorization Header
-
-                            </th>
-                            <td>                      
-                                <code><?php echo null //$controller->service->authHeader; ?></code>
-
-                            </td>
-                        </tr> 
-                        <tr>
-                            <th>
-                                Signature Base String 
-                            </th>
-                            <td class="formatUrl">
-                                <hr>
-                                <code><?php echo null //$controller->service->signatureBaseString; ?></code>
-                            </td>
-                        </tr>  
-                    </table>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Sent to:</legend>          		
-                    <table>                     
-                        <tr>
-                            <th>Request Token URL</th>
-                            <td><?php echo $sad->requestUrl; ?></td>
-                        </tr>
-
-                    </table>  
-                </fieldset>
 
                 <fieldset>
                     <legend>Received</legend>  

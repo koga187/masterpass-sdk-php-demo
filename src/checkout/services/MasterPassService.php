@@ -1,8 +1,14 @@
 <?php
 
+namespace MasterpassDemo\src\checkout\services;
+
 require_once dirname(__DIR__) . '/../../vendor/autoload.php';
 require_once 'phar://'. dirname(__DIR__) . '/../../vendor/masterpass/mpasscoresdk/MasterCardCoreSDK.phar/index.php';
-require_once 'phar://'. dirname(__DIR__) . '/../../vendor/masterpass/masterpassmerchantsdk/MasterCardMasterPassMerchant.phar/index.php';
+#require_once 'phar://'. dirname(__DIR__) . '/../../vendor/masterpass/masterpassmerchantsdk/MasterCardMasterPassMerchant.phar/index.php';
+
+use Logger;
+use MasterCardCoreSDK\MasterCardApiConfig;
+use MasterCardCoreSDK\Services\RequestTokenApi;
 
 Logger::configure(dirname(__DIR__) . '/services/config.php');
 

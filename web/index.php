@@ -3,6 +3,8 @@ session_start();
 
 include_once (dirname(__DIR__)) . '/src/checkout/controller/MasterPassData.php';
 
+use MasterpassDemo\src\checkout\controller\MasterPassData;
+
 $sad = new MasterPassData();
 $_SESSION['sad'] = serialize($sad);
 ?>

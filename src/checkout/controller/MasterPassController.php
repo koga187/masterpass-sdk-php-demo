@@ -1,8 +1,12 @@
 <?php
 
+namespace MasterpassDemo\src\checkout\controller;
+
 require_once 'MasterPassData.php';
 require_once 'MasterPassHelper.php';
 require_once dirname(dirname(__DIR__)) . '/checkout/services/MasterPassService.php';
+
+use MasterpassDemo\src\checkout\services\MasterPassService;
 
 class MasterPassController
 {

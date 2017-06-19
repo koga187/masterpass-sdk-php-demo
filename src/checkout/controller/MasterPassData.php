@@ -1,5 +1,7 @@
 <?php
 
+namespace MasterpassDemo\src\checkout\controller;
+
 class MasterPassData
 {
 
