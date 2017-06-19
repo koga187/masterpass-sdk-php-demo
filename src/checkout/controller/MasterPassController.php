@@ -7,6 +7,11 @@ require_once 'MasterPassHelper.php';
 require_once dirname(dirname(__DIR__)) . '/checkout/services/MasterPassService.php';
 
 use MasterpassDemo\src\checkout\services\MasterPassService;
+use Mastercard\Masterpass\Merchant\Model\ShoppingCart;
+use Mastercard\Masterpass\Merchant\Model\ShoppingCartItem;
+use Mastercard\Masterpass\Merchant\Model\ShoppingCartRequest;
+#use Mastercard\Masterpass\Merchant\Model\ShoppingCartResponse;
+
 
 class MasterPassController
 {

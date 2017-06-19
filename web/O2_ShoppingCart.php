@@ -1,6 +1,8 @@
 <?php
 require_once (dirname(__DIR__)) . '/src/checkout/controller/MasterPassController.php';
 
+use MasterpassDemo\src\checkout\controller\MasterPassController;
+
 session_start();
 $sad = unserialize($_SESSION['sad']);
 if ($sad->requestToken == null) {
@@ -65,54 +67,7 @@ if ($errorMessage != null) {
                     This step sends the Merchants shopping cart data to MasterCard services for display in the Wallet.
                 </p>
 
-                <fieldset>
-                    <legend>Sent:</legend>
-                    <table>
-                        <tr>
-                            <th>
-                                Authorization Header 
-                            </th>
-                            <td>                      
-                                <code><?php //echo $controller->service->authHeader;  ?></code>
-                            </td>
-                        </tr> 
-                        <tr>
-                            <th>
-                                Signature Base String 
-                            </th>
-                            <td>
-                                <hr>
-                                <code><?php //echo $controller->service->signatureBaseString;  ?></code>
-                            </td>
-                        </tr>  
-                        <tr>
-                            <th>
-                                Shopping Cart XML 
-                            </th>
-                            <td>
-                                <pre>                        
-<code>                        
-<?php //echo MasterPassHelper::formatXML($sad->shoppingCartRequest);  ?>
-</code>
-                                </pre>                            
-                            </td>
-                        </tr>  
-                    </table>
-                </fieldset>
-                <fieldset>
-                    <legend>Sent To:</legend>
-                    <table>                     
-                        <tr>
-                            <th>
-                                Shopping Cart URL 
-                            </th>
-                            <td>
-<?php echo $sad->shoppingCartUrl;  ?>
-                            </td>
-                        </tr>
-
-                    </table>  
-                </fieldset>
+                
                 <fieldset>
                     <legend>Received:</legend>
                     <table>                     

@@ -4,11 +4,13 @@ namespace MasterpassDemo\src\checkout\services;
 
 require_once dirname(__DIR__) . '/../../vendor/autoload.php';
 require_once 'phar://'. dirname(__DIR__) . '/../../vendor/masterpass/mpasscoresdk/MasterCardCoreSDK.phar/index.php';
-#require_once 'phar://'. dirname(__DIR__) . '/../../vendor/masterpass/masterpassmerchantsdk/MasterCardMasterPassMerchant.phar/index.php';
+require_once 'phar://'. dirname(__DIR__) . '/../../vendor/masterpass/masterpassmerchantsdk/MasterCardMasterPassMerchant.phar/index.php';
 
 use Logger;
 use MasterCardCoreSDK\MasterCardApiConfig;
 use MasterCardCoreSDK\Services\RequestTokenApi;
+use Mastercard\Masterpass\Merchant\Api\ShoppingCartApi;
+use Mastercard\Masterpass\Merchant\Model\ShoppingCartRequest;
 
 Logger::configure(dirname(__DIR__) . '/services/config.php');
 
@@ -67,7 +69,7 @@ class MasterPassService
      */
     public function postShoppingCartData(ShoppingCartRequest $request)
     {
-        return ShoppingcartApi::create($request);
+        return ShoppingCartApi::create($request);
     }
 
     /**
