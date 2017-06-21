@@ -1,5 +1,10 @@
 <?php
+
 require_once (dirname(__DIR__)) . '/src/checkout/controller/MasterPassController.php';
+
+use MasterpassDemo\src\checkout\controller\MasterPassController;
+use MasterpassDemo\src\checkout\controller\MasterPassHelper;
+use MasterCardCoreSDK\Exception\SDKErrorResponseException;
 
 session_start();
 $sad = unserialize($_SESSION['sad']);
@@ -53,30 +58,6 @@ $_SESSION['sad'] = serialize($sad);
 			</div>';
                 }
                 ?>
-                <p>Once a Access Token is gained, request the user protected
-                    resources (shipping and/or billing information)</p>
-                <fieldset>
-                    <legend>Sent</legend>
-                    <table>
-                        <tr>
-                            <th>
-                                Authorization Header 
-                            </th>
-                            <td>
-                                <code><?php //echo $controller->service->authHeader;     ?></code>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Signature Base String 
-                            </th>
-                            <td>
-                                <hr>
-                                <code><?php // echo $controller->service->signatureBaseString;     ?></code>
-                            </td>
-                        </tr>
-                    </table>
-                </fieldset>
 
                 <fieldset>
                     <legend>Sent To:</legend>
@@ -87,23 +68,6 @@ $_SESSION['sad'] = serialize($sad);
                             </th>
                             <td>
                                 <?php echo $sad->checkoutResourceUrl; ?>
-                            </td>
-                        </tr>
-                    </table>
-                </fieldset>
-                <fieldset>
-                    <legend>Received:</legend>
-                    <table>
-                        <tr>
-                            <th>
-                                Checkout XML 
-                            </th>
-                            <td>
-                                <pre>
-<code>
-                                        <?php //echo MasterPassHelper::formatXML($sad->checkoutData);  ?>
-</code>
-                                </pre>
                             </td>
                         </tr>
                     </table>
@@ -385,6 +349,11 @@ $_SESSION['sad'] = serialize($sad);
                         </fieldset>
                     <?php endif; ?>
                 </div>
+                <form method="POST" action="O7_PostTransaction.php">
+                    <p>
+                        <input value="Post transaction" type="submit">
+                    </p>
+                </form>
             </div>
             <div id="footer"></div>
         </div>

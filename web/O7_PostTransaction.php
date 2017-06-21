@@ -1,5 +1,10 @@
 <?php
+
 require_once (dirname(__DIR__)) . '/src/checkout/controller/MasterPassController.php';
+
+use MasterpassDemo\src\checkout\controller\MasterPassController;
+use MasterpassDemo\src\checkout\controller\MasterPassHelper;
+use MasterCardCoreSDK\Exception\SDKErrorResponseException;
 
 session_start();
 $sad = unserialize($_SESSION['sad']);

@@ -4,6 +4,9 @@ session_start();
 require_once (dirname(__DIR__)) . '/src/checkout/controller/MasterPassController.php';
 
 use MasterpassDemo\src\checkout\controller\MasterPassController;
+use MasterpassDemo\src\checkout\controller\MasterPassHelper;
+use MasterCardCoreSDK\Exception\SDKErrorResponseException;
+
 
 $sad = unserialize($_SESSION['sad']);
 $controller = new MasterPassController($sad);
@@ -13,7 +16,7 @@ $errorMessage = null;
 try {
 
     $sad = $controller->getRequestToken();
-} catch (Exception $e) {
+} catch (SDKErrorResponseException $e) {
 
     $errorMessage = MasterPassHelper::formatError($e);
 }

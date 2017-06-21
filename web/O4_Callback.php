@@ -2,6 +2,8 @@
 
 require_once (dirname(__DIR__)) . '/src/checkout/controller/MasterPassController.php';
 
+use MasterpassDemo\src\checkout\controller\MasterPassController;
+
 session_start();
 $sad = unserialize($_SESSION['sad']);
 $errorMessage = null;

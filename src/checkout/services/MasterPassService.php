@@ -11,6 +11,8 @@ use MasterCardCoreSDK\MasterCardApiConfig;
 use MasterCardCoreSDK\Services\RequestTokenApi;
 use Mastercard\Masterpass\Merchant\Api\ShoppingCartApi;
 use Mastercard\Masterpass\Merchant\Api\MerchantInitializationApi;
+use MasterCardCoreSDK\Services\AccessTokenApi;
+use Mastercard\Masterpass\Merchant\Api\CheckoutApi;
 use Mastercard\Masterpass\Merchant\Model\ShoppingCartRequest;
 use Mastercard\Masterpass\Merchant\Model\MerchantInitializationRequest;
 
