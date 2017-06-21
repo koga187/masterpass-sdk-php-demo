@@ -34,7 +34,7 @@ $_SESSION['sad'] = serialize($sad);
         <script type="text/javascript" src="Scripts/tooltips/commonToolTips.js"></script>
         <script type="text/javascript" src="Scripts/tooltips/jquery-1.3.2.min.js"></script> <!-- Needed for tooltips only -->
         <script type="text/javascript" src="Scripts/tooltips/jquery.qtip-1.0.0-rc3.min.js"></script>
-        <script type="text/javascript" src="<?php echo $sad->lightboxUrl ?>"></script>		
+        <script type="text/javascript" src="<?php echo $sad->lightboxUrl ?>"></script>	
 
     </head>
     <body class="standard">

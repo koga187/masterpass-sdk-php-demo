@@ -10,7 +10,9 @@ use Logger;
 use MasterCardCoreSDK\MasterCardApiConfig;
 use MasterCardCoreSDK\Services\RequestTokenApi;
 use Mastercard\Masterpass\Merchant\Api\ShoppingCartApi;
+use Mastercard\Masterpass\Merchant\Api\MerchantInitializationApi;
 use Mastercard\Masterpass\Merchant\Model\ShoppingCartRequest;
+use Mastercard\Masterpass\Merchant\Model\MerchantInitializationRequest;
 
 Logger::configure(dirname(__DIR__) . '/services/config.php');
 
@@ -82,7 +84,7 @@ class MasterPassService
     public function postMerchantInitData(MerchantInitializationRequest $merchantInitializationRequest)
     {
         #Call merchant initialization service api
-        return MerchantinitializationApi::create($merchantInitializationRequest);
+        return MerchantInitializationApi::create($merchantInitializationRequest);
     }
     
     public function postTransaction(MerchantTransactions $request)

@@ -10,6 +10,7 @@ use MasterpassDemo\src\checkout\services\MasterPassService;
 use Mastercard\Masterpass\Merchant\Model\ShoppingCart;
 use Mastercard\Masterpass\Merchant\Model\ShoppingCartItem;
 use Mastercard\Masterpass\Merchant\Model\ShoppingCartRequest;
+use Mastercard\Masterpass\Merchant\Model\MerchantInitializationRequest;
 #use Mastercard\Masterpass\Merchant\Model\ShoppingCartResponse;
 
 
