@@ -1,6 +1,6 @@
 <?php
 
-require_once (dirname(__DIR__)) . '/src/controller/MasterPassController.php';
+require_once (dirname(__DIR__)) . '/src/checkout/controller/MasterPassController.php';
 
 session_start();
 $sad = unserialize($_SESSION['sad']);

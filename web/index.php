@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once (dirname(__DIR__)) . '/src/controller/MasterPassData.php';
+include_once (dirname(__DIR__)) . '/src/checkout/controller/MasterPassData.php';
 
 $sad = new MasterPassData();
 $_SESSION['sad'] = serialize($sad);
@@ -53,7 +53,7 @@ $_SESSION['sad'] = serialize($sad);
                                     <span class='tooltip' id='conKey'>[?]</span>
                                 </td>
                                 <td id="consumerKey">
-<?php echo $sad->consumerKey; ?>
+                                    <?php echo $sad->consumerKey; ?>
                                 </td>
                             </tr>
                             <tr>
@@ -62,7 +62,7 @@ $_SESSION['sad'] = serialize($sad);
                                     <span class='tooltip' id='chkId'>[?]</span>
                                 </td>
                                 <td id="checkoutIdentifier">
-<?php echo $sad->checkoutIdentifier; ?>
+                                    <?php echo $sad->checkoutIdentifier; ?>
                                 </td>
                             </tr>
                             <tr>
@@ -71,7 +71,7 @@ $_SESSION['sad'] = serialize($sad);
                                     <span class='tooltip' id='keyStorepath' >[?]</span>	
                                 </td>
                                 <td id="keystorePath">
-<?php echo $sad->keystorePath; ?>
+                                    <?php echo $sad->keystorePath; ?>
                                 </td>
                             </tr>
                             <tr>
@@ -80,7 +80,7 @@ $_SESSION['sad'] = serialize($sad);
                                     <span class='tooltip' id='keyStorepass'>[?]</span>
                                 </td>
                                 <td id="keystorePassword">
-<?php echo $sad->keystorePassword; ?>
+                                    <?php echo $sad->keystorePassword; ?>
                                 </td>
                             </tr>
                             <tr>
@@ -89,7 +89,7 @@ $_SESSION['sad'] = serialize($sad);
                                     <span class='tooltip' id='callback'>[?]</span>
                                 </td>
                                 <td id="callBackUrl">
-<?php echo $sad->callbackUrl; ?>
+                                    <?php echo $sad->callbackUrl; ?>
                                 </td>
                             </tr>
                             <tr>
@@ -98,7 +98,7 @@ $_SESSION['sad'] = serialize($sad);
                                     <span class='tooltip' id='requestEndpoint'>[?]</span>	
                                 </td>
                                 <td id="requestUrl">
-<?php echo $sad->requestUrl; ?>
+                                    <?php echo $sad->requestUrl; ?>
                                 </td>
                             </tr>
                             <tr>
@@ -107,7 +107,7 @@ $_SESSION['sad'] = serialize($sad);
                                     <span class='tooltip' id='shopEndpoint' >[?]</span>
                                 </td>
                                 <td id="shoppingCartUrl">
-<?php echo $sad->shoppingCartUrl; ?>
+                                    <?php echo $sad->shoppingCartUrl; ?>
                                 </td>
                             </tr>
                             <tr>
@@ -116,7 +116,7 @@ $_SESSION['sad'] = serialize($sad);
                                     <span class='tooltip' id='accessEndpoint'>[?]</span>
                                 </td>
                                 <td id="accessUrl">
-<?php echo $sad->accessUrl; ?>
+                                    <?php echo $sad->accessUrl; ?>
                                 </td>
                             </tr>
                             <tr>
@@ -125,7 +125,7 @@ $_SESSION['sad'] = serialize($sad);
                                     <span class='tooltip' id='postbackEndpoint'>[?]</span>
                                 </td>
                                 <td id="postbackurl">
-<?php echo $sad->postbackUrl; ?>
+                                    <?php echo $sad->postbackUrl; ?>
                                 </td>
                             </tr>
                         </tbody>
@@ -245,6 +245,7 @@ $_SESSION['sad'] = serialize($sad);
                         <p>Click the Checkout, Pairing, or Cart Example buttons below to begin an SDK demo.</p>
                         <input id="checkout" value="Checkout Flow" type="submit"> 
                         <input id="pairing" value="Pairing Flow" type="submit">
+                        <input id="openfeed" value="Onboarding" type="submit">
                     </fieldset>
 
                 </form>
@@ -291,18 +292,9 @@ $_SESSION['sad'] = serialize($sad);
                 }
             });
 
-            $('#openfeed').click(function (event) {
-
-                if (!jQuery("#openFeedId").val()) {
-                    alert("ProjectID have not be null");
-                    event.preventDefault();
-                } else if (!jQuery("#openFeedMessage").val()) {
-                    alert("Message have not be null");
-                    event.preventDefault();
-                } else {
-                    $("#merchantInfo").attr("action", "OpenFeed.php");
-                    $("#merchantInfo").submit();
-                }
+            $('#openfeed').click(function () {
+                $("#merchantInfo").attr("action", "U1_Onboarding.php");
+                $("#merchantInfo").submit();
             });
 
             $('#iframe').click(function (event) {
