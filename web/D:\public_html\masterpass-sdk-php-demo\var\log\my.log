@@ -1,0 +1,1518 @@
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="cc3296f443b72d6c",oauth_timestamp="1503080780",oauth_version="1.0",oauth_callback="http%3A%2F%2Fphpdemo.localhost.com%2FO4_Callback.php",oauth_signature="U1%2FhbisL38IIhLCFMY28msxaNxLbw2k%2FUKCIgwcTtOW86%2F%2BFGR8NyuF9%2Ba%2BD58jSwpwjIjrKn0ABa8VqKYCDBy28ma50%2FsqO4P%2BEyzqUDv95VliJRbWCF8sws6RwJ0bJZO6FJ4aRqK5g4yidf721prs2Y2sjA9L4cMVqyBwcM8z8cVLVFln7LdeT%2Bwp7ZVikaLg3vScpMth6hMqWmpmbUKLuMB2%2BKUDQ17wPEAc53rexA%2FDHAoFcKk%2F%2FIMEPM%2FMzyRrTcfTG%2FrMCO9ezdWECcME0w8XMWVHBPXS%2F9Qcq6M0ll93Br5%2B6NsOEeTqVzh7bHcowQj3%2BOGE5aashjzOtoQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://phpdemo.localhost.com/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=066343417fd89f4cd0f40694acaa650f37daaa28&oauth_token_secret=c0ce4aa7b5b5c3cb8a2bb04d741238d922fe6919&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="9d489285e141c785",oauth_timestamp="1503080784",oauth_version="1.0",oauth_body_hash="T0hTCYafSRhEySXhmD4qaBa9MUE%3D",oauth_signature="PLBt%2FLj08yro2ByAPKqn%2B9KY%2FcvXUXwgfGsgcTipP8GnqCOgm2uF6yi6Ilhnw4vhbAgV%2BjjD1wGmYGtrks2%2Bh4Z0viJeTLs8ycYNqi9AdhpcHi6LoJa4lU%2BwfY31tA3VmY%2BKYvLLM06akcVdN8Kp9zDs9Nlw5VSNtO7MsBle%2B3SQkp1uQhbOx7PZqsiUx4niblBeiOj%2BFy%2F7rxfVtjNGg9hoHfc9xBE0dP7XGzlx5yvfqL1TRPcS%2FMw2yn%2BP2zUNSi4MvYhK1cVbUrYJtwPrDOg8tPcQWM803ZpytrjUfSci14AXbtsX0qDCQPnhMY90RsD%2FoYMo4rMaQtXpqu2ZNg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <OAuthToken>066343417fd89f4cd0f40694acaa650f37daaa28</OAuthToken>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  OK
+Response Body :  <ShoppingCartResponse><OAuthToken>066343417fd89f4cd0f40694acaa650f37daaa28</OAuthToken></ShoppingCartResponse>
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/merchant-initialization
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/merchant-initialization
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="5185e2d825497809",oauth_timestamp="1503080786",oauth_version="1.0",oauth_body_hash="whfAWnYPeQ3zqiNAOpScEcv3p2o%3D",oauth_signature="W5NsbhZY2pvVqqq3y9YaDB%2Bib3LjzgmqdmUh%2BDj3rpidvuhgcD2OK%2FLaEqDuAogh5gFoh6WsCePzlWS%2FD8fqbNK1MxNdJ4otTG7ykFhROUH4gHkxI6s8lULTvNtbwsaI3U9myAmAP4JIRrhj4chWzGy7laHPMs%2BH2gpEqI0JQdIlMinssP98hfDevSCMH25dKwdkaAVsLvLCBTGUr44mQO8eX1kaZJbTwdEu8xoM2epBAbS0lkLRgLU8OT53kDMvtST0jkerct%2FDT2spcU1ItPBwJwNqTzoMa36LliBBSz5m20gzYSlfjbM8nccpbweI0ODX1CjHC4lQI%2BFeZW32CQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<MerchantInitializationRequest>
+  <OAuthToken>066343417fd89f4cd0f40694acaa650f37daaa28</OAuthToken>
+  <OriginUrl>http://phpdemo.localhost.com</OriginUrl>
+</MerchantInitializationRequest>
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/merchant-initialization 
+Response :  OK
+Response Body :  <MerchantInitializationResponse><OAuthToken>066343417fd89f4cd0f40694acaa650f37daaa28</OAuthToken></MerchantInitializationResponse>
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="c13ced4b34e370da",oauth_timestamp="1503080831",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="gDB3Vpc%2FX1qK0soZO47QCe%2BkvvqiouH%2FxxoIGdMc1fGpCyGNDRRqMG68yGDb9uAjHwl1FVi8h%2B%2BOWD16EDleh9pbRRJvik5nh5SOPnWomQaxY91pCHW6nUgRYX8TEph5wfQSK3n%2B4KvgAgSAVvs8jIr5QdX2yvsNiAIHTvGXt%2FtcqzlzkT3RX9s6El8Xw6FwDdBL6tFVA2HyV9eqF0bcaMsPr8F00BA4bv7NSTUxiXyayQym3uKGfQWXX7d6Zg5M5eNolC6itsLkR7%2Bk0otIv0CCa9UeZpSnvH3gXmyMsITNuQXBFvh8i0L0%2BBENyBlKhDwFO6YmDwNimsCjv1Tejg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=b22e7e08862fbf6db6cf55c0a78ea907f396f1fc&oauth_token_secret=59896a5fdc4ca48d5f4ec157b4ca968b7f1f3b7d&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="ea6fb2f3a481fb0c",oauth_timestamp="1503080835",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="Udg%2FgTOI2sRT7EnUM8VCc8VrOMtCIP5lNQfKd5v8LZwq018UU9yBHDM1dC%2Bi4ueD%2FQE0BLvV8NADzGbIl3WUR2g3xJf4KBiAZOahnM5JeJsxxIo3R0KbAx%2BvUTu0XVIPNjLWIc2e9Qq%2B%2BzJ%2B%2BHpPLhgmwMfnfABsjsA8mFTke09ty90J2Kyg64a5gkdtNIXazKC4DklLyqzjYTjMU9y%2FzVNk5DCnTonV1LEuJB863S9uK6Ogvh3Vlwg%2BFUHD2pOT5JJ2yIiYwWxjpE2BDIeWQFMdmU0Ii8XIu%2FyxysBTQL7nvHEYxF0MbB2ObL0xZs74lEJgL2HV2hRYNfClsJidrw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="d1e7572eb625ff04",oauth_timestamp="1503080854",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="N1VZF5fG3wYzHAQvA0VnjDm9b5l3qnJ2tXs1TS1pe9pFc1GXHt3ElQJv2V3nhWbJDdNQBSQElGzyE3izjv2GSIaN6G%2BYH66YWkwP065SUc04teDbvNGMsA9K1z2NgnvgfJYRXiPH5nPWRhphDX9yu%2F3SDALvmhcQYJoqmtGRJagzp%2BuePtDLER3lJ4dqaWHK7A%2FTN7QSb%2F77eD2zRFt5ElFwfjxn41Nwb04k1f%2Bw%2FiO%2BTnWubuYpAc4xQsAjeCFmoVMRsPQZW7W5BPSEmiGKJqBTq58dfOzoKsI%2F86zUrJd1UBq4Ykbyt7AMt3HDF%2F00rQXbtntVpQ2vjsZaGQUPlg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=6c0d070eb4d90ebb15e958125388a8d508d83d5e&oauth_token_secret=c7717567562777d4c3a041cc1edccd9d6a37acbb&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="c5be470abf97bf81",oauth_timestamp="1503080859",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="br0d7dhDjenZnX%2Fd7FW6GrG9J%2FDgNMLQ8nDz%2FXbdgTRKKXtVf64w2sMd7H%2F%2FINvvU6%2BpEWGv%2FeII7WixcYbqCpGh0WONjprLsluC9%2FSLE46FXiEyF9FG%2F%2FLHlcnmCuBIO9tjqXMNPWIbIyIjbm26iAB5BGPIGXFNICFv45hb24HhT5Q%2Bp6xhxA3lzkQGeqVshwxhdnETMJgN745oWZSiKviXXZ72HkXCj3WHPO%2BkejbXx3zbVA4gJkHhC5vXGldISpIg22g50KrwM6ss%2B3Zevah8%2Fx7E%2ByloZbmtE3JhrEmugrlQJwXIdZ402xErjxBntk8tjRFKxLze4r1byiDy4Q%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="cec50f7838b055e6",oauth_timestamp="1503080902",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="UA1%2Bi3n0yAuUiwG9oZvXWHngESjmdBCUkSloYYZMphzR%2BTjQTYY7nmGtIQKVvKmYNdWiEXvVVAALnqe%2BrajQOk1Gw%2BlmsdOOAxKMxGzCJY8hosErCxHbr9AG9P1RgXNKsy0DFR1wwbffi0aGDHBssCaZjpgZsw5MULF%2BavY1R%2BCWb1DHdVP5ou%2FmYnKS4xuQRE7570y1A0kGAVrKLs5yaj01vFntQjmxMCx9i2vQbd9g4iALKCGFdVWhazqaJ%2BeNUIEmx5YRN5H4abbJtN7dh%2F%2FNpH3ErjljrfTZ5peKyJXN1zga8An2%2F%2BqcjdJZdFnIqj4Ug%2BO13sWwuVCVN3gEfg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=780b9c6fa4cbd4c7ec8bdbae0c8a7a6186179323&oauth_token_secret=af86cc68805fd32cbadaf03d56e9d4150d381ffa&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="56faaa69eba844f7",oauth_timestamp="1503081040",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="a71pmMXnbUQyKP4yCHSxK1PL9DFWnWhOyes8bOrLgdUvZiljx5d%2BlK0PECSdrwGTKQn9bhVzb84HduBj9Nx7z4AwbAFbxYy620AS5XrEzT5YIj2goAoR0o6XQ32Fc2uhg1OsoMGjq1hEWPcAg8gPinsiBu6WXCwK8UgmfDvwu9cj6IjIYaa%2BknG2dkACxKmC%2Bx0tXD5jihi8GQQJ%2BXpmFb91auZXHoGXFxyuQb7kNO2bJtuDhW5OEA%2BlEl723I1vXVI4jEoDjznrJIkbDEGxbPXbOWAHnWrehM3%2F9CgmRsHRFmK%2BM7nQBSwmPSveQf0jQnoiozCqzSiDEcJ1f14igA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=107b0f73c62f9d8579510ccbff070dd757234b6b&oauth_token_secret=0d96cdb4d55d528e2a00c77241f554ad1f45f50f&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="d33f57887526cec4",oauth_timestamp="1503081064",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="gKE7V4XJXS%2BrvJPrxN9DZQHKAUN%2FaMsTrxDTkezqnG4ssjCSqqpmBYblhyRx%2B0oZsuoq37r%2BXXk2%2FotW1oQOn%2Fvzs7AVcpymsv75zi9UAVmMS3CL3j%2BpDGwGj0kdsuUCdQDZdvSDaOMRY%2Bama56tImFddXYpay7yhkTyR9sG7tlyGvM5JNKo70xE7Qfm%2BzFwwzJ%2BjnxlKScV2%2FtAOP5moMQnIDqOzmajBUqAflBcMgg3P%2BQ3KJaTkKCH%2FP%2FWAzqpHL2pnlIRi0Rcyj64KcspHFul31QeOLbDB47OqCan1HqqumWXxarrpxeEz1H2u5G7%2B6JBT5IEtC9EGFD8506NSw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=457f8ad4c907e142fd78498c7aaee8168f2bc773&oauth_token_secret=74f5670bdde63938e88263be065011a1e433e984&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="3c31f5faaf8c6f24",oauth_timestamp="1503081091",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="ant%2BC4Lxaq4rJvloN9cvo9Xie8KWamnSPQfG4riGCTy46TAJ8KLLLI4w%2FMEiV7mJIP%2FiU5tpxByfl6RHGj2jtpZn0dv96OFOd5Y%2Bf4FOqSR3hRw%2BISYJ4n%2Bq5Exs8VtkdyEx51sdmeStEo2BARLcakqTcOKZZODvMPFffzupOp%2F0G9Fk386rMCVXIMOow9Jgn31dhml1E3TBxLCLnb3NgOTn15RIRuFdGgmyWfCMv9vcsRNjkd4M8jLDCAPWHyGJXnS3bCjobGccAy5TMLMTiXUGxxARL6hA3H0hzf4dXnZbOAug3WJGg%2BIDzzy7J8vD%2FM6dAx7pNAJANmeYvVLpPw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="56c7c7dd4e1bffdb",oauth_timestamp="1503082321",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="bpI1LOLtWrZBxeH%2FxiGjZEmrRajCSJ%2Fg6XsaudqtPyvUw1BY%2BQntojpEL%2FFaEAi5kJTd8Kg%2BvAMTBl9qoxhWY2ZsC5qnu7S3q8RNp0NIg1svDSg3bsok6yYsjywnS4NaqqxOAGiQYmKIWYy%2FVfk7BBgipdnNZVw%2BdPLNApekm5ehKYkJN8fb1HmkFFTm%2FAFtox3c1bPNkeGg6qb3KeKczzxFEY6EImLPJyyaXEN25hqDIjAlvztQbsxYw3eUeVPud7XnlRkLWpTCDqCRvxEZDYKwvgCj9bcSoNmGVh7L9sWvEbcDoRICd1DAUPGlpQBaHMCYFk6QkzUMrTL3BzDqkw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=c2186d605c86bd6b09c389bd43dd159b740ace61&oauth_token_secret=f5789facf200d882717e8850b21e64caf53b6c47&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="caf49d3501253a48",oauth_timestamp="1503082327",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="VA56%2BCy2E8Q9eEK7WQ5fU0FaAipNehGVxCCMUQW2JXRBHXicjWBxPdFWyuIbSeX35aEY0O3fq6eup3MZQ9DALwGevvi8e3zWX%2B6QY%2FDWNZJNNvZH8wE%2FIzirLgjSXKHH45vokDxg8lbrPLOvUXyMaf4J6%2BLuAYv2vht%2BPUAQfjhDYu25mlCMq9zlVpxiI2qa9BWOZnb07FeuHG0IfYHTMcTCxFhroJggaRiz%2FIxkZANCsBQawhc5UXm6M58ehbZd6OBsGj7KLro8GdvNGA2G3pqPWIBdvhLyDJkPqEH%2BgKShx71hWIP3dwmX0ipgCIY6iHi%2BDWVOaVIhdjmxxMtbSA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="d91ebdd76d8e73fa",oauth_timestamp="1503083261",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="dnB1Zzg9%2Fr5oWoRfhLsep7T84ZhOyWlC5T0CwyqT5XqARFJGoD9x8AVoze2bi4LtTGNd03XHTYtoYD%2F3IEBYm97JR1jO%2B8cQt0Qr1KM9vpc%2FuqFgDrlO9c6JqIB1yDC5H4qEau2p8N4Vj5hlx4l%2BLrK79HHsOnQUQH%2BapDwzECxnwcySn9Ur6wFdopkz6J2FzumE2SGlZC4yWIt10pHGS%2F1co9C4BNuvz62%2FAMibMqXQg%2FcyfNv3WnHiVYgRNBf4n1P6t2Zqw6r%2FbJdKtIpCVEYf%2B4vFM56vhaqeyeB%2BoLe%2FtVbTnOcXZqn0Xf4JYWpUvmGshOJ3e9uMttnyTEmIxA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=aad5283f0a4926b09abfe64219dd6856a247ed48&oauth_token_secret=28c9fc63f8e2f5590d9b1c287389ae4393ab8834&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="c830a1eb78de2c05",oauth_timestamp="1503083290",oauth_version="1.0",oauth_callback="http%3A%2F%2Fphpdemo.localhost.comfavicon.ico%2FO4_Callback.php",oauth_signature="MyfdFv7qOr4bcbz7KJoApo5Llkqd8nbHlEs%2BhK8c5xs98g07sSCgBcYT31Spu39mMhZsSSMHZldTnM9LOcZwTd2HU%2BpJp74JjE%2BTReBKQQXsbuuZAAIcuas%2FaOzyPRfQKjGFe7d%2BKiwLQa94zKq92dofX2LMHMy2IqmFeV4%2BoZVVE%2F7a3vtiUSHp0WB2cD4ih8wnHLt8mRFkx91IOY%2BM1izvPmFxeI1hv3RjotDOu1aQJ0lDq2a%2BBCRFDxjC%2B%2FcXLcpFm1FZe5RcHNYdSrrhQKXGijXt8b2YjkJKbID6hUpWUJUzXrNscNKovY0MI%2FcTbBxl%2BZiSK9GHjRTwyknhYQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://phpdemo.localhost.comfavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=fad82d10cee42946802d0f69bf094dbb69a8e32d&oauth_token_secret=54cb5f9b184fc695bdd9012d428c1d6e8e283886&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="5202ca5f4f6712bc",oauth_timestamp="1503083376",oauth_version="1.0",oauth_callback="http%3A%2F%2Fphpdemo.localhost.comfavicon.ico%2FO4_Callback.php",oauth_signature="L28On82Oe43qjq3U9YCbwFAI9nt3UdAw0YIvzumkVQZ02q2zDREvxZa1iEiT0JWRnpyVuX3CwWobrTK5vXB28AntuIYIby8IBtpkLugO6iXX4WapRnaZfBEPusLAPNyYELimJx%2B8i4RGzfmc%2BOIDOiiP00S4Q%2BsTu9KRIO8YB2JNc3rSVTovwx%2BkCtA5nzIVxiz5DrLwSj8o%2BmIYg%2BuWOPGBWa077cwwqO8kj3NksTu%2FgysEmVgHt3KqXo7sY%2BaXLaXx9OhcbhEw5SQEyOutFnae0mqUiacSfR%2Fuu8jDls62Aacud8Y1lO1MPKe2%2FoRbSqXL9VsUXCSVeTucDLFH8Q%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://phpdemo.localhost.comfavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=3c402ddaf04715c4e7b0130ccf76ff9a7e365c9e&oauth_token_secret=85de725724aeb3c4c4b732128ea08b2420c89c01&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="10da33d59a8f602b",oauth_timestamp="1503083453",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="c6tup5%2BpoXjnhxMxLJDeOJNjjv%2BhfuyaUoM4z3cZJLfhoTf%2Ba65d4AXm9S6Nu3j%2FDnI8aS4MhPNzeo5kylWW2V%2Bda9dbzjsoOV%2BR0IuPUubErAV0M6O0D8V6reFiXxZPF0sfsQOYIs9p0F2B3SbXC8C%2Fu5ELfzhoVRKl4h7dCaVbj%2FJTddnbskIxlo2aPNcxECRDifXhca2DncCiwCV4LCNBFDSthT%2FoZLEqxCKeRtqGcGx3AxF0evrpzjQ7rlZfdSET484esQBNFOI4gL%2FcO%2FaiGWKGbQ0Uy%2BQISUaPnpyYRJNs9fOh4ThjgaJtCB9uGygWdie0W5yM0gZ4Sey8sA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=9fe852e10248544dca6eeb152d4f63eca6fe47ab&oauth_token_secret=e079545ef26da0c39b5065041c67800d7d33a695&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="651bcb3b9c543312",oauth_timestamp="1503083549",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="XLGE9ovglzcgFyjTjAOGcHh4b2iXfb48UY%2F6H3ydX2UCGcSeCIq4m5EA0XPG9TIJ163sbob98rgtZRmUVAi76Vk01if9WTLGymFsVHANbM%2BYVo5rmcZmnswELQubxmjn2fqT6Pjo09FboSnQxa7s6lg3WB2E9wglFO4OJwz0LfK%2BmuW6cAnDY6bPXVDhjXyhz2kC3UDAWd6DGC5YXvGXUBV9czIOtt6N7EWgcZZ4YrJ%2BF50p2MoMWgqyBYv746E6piFVyjJSu4iaWxoy1cNeyQ5Wg1qQkVZePSok1VEKe%2BOasn%2BvzV6bhi%2FztK1Ygr1jjFf8gtXIekMAVcs4ydZViw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=7dc0ec608894d9a9b5752971e639093a603c7a93&oauth_token_secret=d7f58730e082c9b20f4320a987efa32d21a8c728&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="5575a0ad26b1daff",oauth_timestamp="1503083595",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="gEw%2FNCIOFG9HWC3F5Q7XdRyuNlwu21rLKeXUQeORMGen%2FdGSb1QN567CUY2%2FWtld8xCIYMpy7g0x%2BkevQb8TbBelx2sdNJQddSL0fUZIvLvHROtHnhmofjuxnBSBJIsnlwBjwI8mvavRiFtruDacTbBCuayXB%2F50Fy5YiWVEciK0YzlpvJTvyeC0201eMGl6FlVDfVAu%2B0LQTkkmRokBiXmoFm7xGddV7tA4ExkX996oVTP427tqsejjm%2FBatYRUIK4zLWaLSP5BW1TDh6igsuTlUILZxk6rRxGjN8hgjznNmmljxT%2FyiM9%2B9x2tvOgX7UnLNz5QBkFFSlVY3JVLvQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=3b785c4f107e73d1832511203ac17a9de7223f64&oauth_token_secret=21bea64b6c44aa1c48248db6761c731171bce3f3&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="7d5bb5667a1b6260",oauth_timestamp="1503083605",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="ZBDOYP26A9Qmfi0edrF5lFJa8jpuwhiOpLD0B4GhBGQmeLgu6LyyULb7EVdNDEy2B26sQU%2Bky%2Bzl0o6eBcxXkjGYOkrX0DSgQq6ub1r7ZrX2lq2XRZ0xmA1v9JoCkxsPC%2FhaCf5Gt902fcBNMz1WzmXMtX2VQf3z4tFuBS08RTvoij6zjs%2B7WMI%2Bhw4JTMqdUWZ01dzUnNUbDfHTK3QfzWnxsTt%2BFIaPiIKIJx0mnpMpvk8RZjArpD9RNI6COmb4TnSHwl5qHn9V04jhy1hZVlrmM0MH%2FuafoHhnhf4nmmJGynWzYZGCdK9KFJnGGe90%2BWYS7qdkcMSnkzqUH4uo3A%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=4a66dfe194803a64d1b9b9a355fc46782fe28e9f&oauth_token_secret=b5075b9d2bc9ce45247fd68609d5a3dfdf7ed2a1&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="33c6542107761f5b",oauth_timestamp="1503083641",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="ENeqaTwy94YYqs7N7mQi5CE5QFqZHjpzK1v5NkG44uQrNp2juksQUNwq5p5jN2ouiti7SQEkGH8eW%2BwL14Hmi7lL5NLarAubW9mssB%2F9QeN6hI0SXvVgsVVm5GjmxP2tAofCydoQ4q509q55OuFwITRESCXNZLg7qUwxp3ubLSNKrpl4WIDkF2M%2F4M%2BUmoKImNUVlwFwiyPXKNh%2F0ht4Wn9S5QvPIUGA%2Bh%2BJbxY1TMxTw4eC2RHYQPd7839F2%2BY%2BQyt0ddx0NHswOwAMtdkc%2BEOEHqgRjwl%2BXw4cof2JGpNUgbWCaEngNyoYKpMpu4qxu73ND%2Bsr0I9RRfVAvDPqMA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=3c0921a24361370913fa3b17d1d3e5a9a4875c1c&oauth_token_secret=28970a25632659ea493187547dfab072c4248478&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="4dabc8bf92add3fc",oauth_timestamp="1503083680",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="H4GN7jku81EoOVbNT5KdzhKv0HBNpcLdypZyVTR00OmO0BFqjlR1BD6frTrVm6uzNCS4W%2BMU21HKdzz9MM17k5gQsrvSTGrJsE4JL2VEC6M1jI0gGikyxz%2FskscpzrOj8QX8Prt9AM4mzFUWV4Rpee3QfAQcO5oyRAuKN5XK5aMBNSAYp8YmpmvxXg5l824r44DlcRMEtUkI%2FgyuCSD7%2Frrx5D8IcxzH7KmVrWdSr%2ByyPmEjQvu%2F8dNdR76rixzrT6YWFRgru%2F0pdQ8o3PVmGpcGfE2%2BJk8vA8IQ0NFlng6X1ylK0UbmbywKZ3ri3tISlQoFcBC6ru4f3DZ5i0YCrQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=7e78b100ab68a168f446f81de806d3f25a675b47&oauth_token_secret=e945fd89fa83279e0b004821ae52c15e712cec24&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+ERROR - Private key can not be empty
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="967b562cbb84e706",oauth_timestamp="1503085215",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="YSoxBFdwUlmRYJtck%2BQVD%2BqNnuYmjTCzCV0Leq6W5Bo1Dg0wduCDj3WOXbuXYqD4mbEFBST35RFfLLlM8CPZWOeFdJCDrIgF%2B2znnqtOvoMySKD9crBYod8VBcW3bdLNtvNKe4lULOrPlG4SOOhK%2BvzLPWUga%2F2JfbEBfs9xSg95tbqRb%2BHS5TIsfQwe7yLdIxvmULZfMnuPf3vB2LPWoFT6w8C%2Bfh2sM5HCs8zLjOYGaqrQe%2BI5Kky5%2BU49tXBHeryOqIkxj5q7Jux%2Bk9drsURCsA26umxdnNxm%2FE5VJ77AIhurxzEOT88OIFKaWQsfMj9WK1z0VU5O2u3BDaaOyA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=f795f0309993626e098e0ddd28f78f5c8f724881&oauth_token_secret=69aede9a1214d35a7b903de0f4ea22bc0028f6bb&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="c31dc6515d158a6d",oauth_timestamp="1503085263",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="LGoQvGyzTzKjRWH7N8X%2FGC663Hf28O3zWJosWTjNQ5RgM3J3JszjkmkJDr8i8FHD506hIDcBz5chglmtjGGH3McQ5VSOap5k14DCF2oJK9utTiB1r5d5GpaU3gfGbOpUWbKIFOUnr%2Bhf2p1aTZIeAB2KMkmiAUKBAfWrwh8yIeuiplzdjQflsIarFNpdwdhzX7Vnr7bELE97m1xG40A7WOFd3lawm6hvUxEBrydL%2BuEftZlfraQTNal8u7IssiJSC5A2ZlGrV5kjiHWAmNCx4j1z3X7fienSytlBp7a6uJBkC3phwwL477zu1X7lsspcqL4Xk9CF3EuOcnXa5hYU4A%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=d753ba91370c490a484c3728baed60eb804e7fa2&oauth_token_secret=b10873b88d0802163056feff4529d7e56d4f0bba&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="4ab0eb4f47da0e54",oauth_timestamp="1503085314",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="dUO4evegYxlNFUqfrBg%2FMuimTpBBkigLKQiyv2a8GJt8bLt%2FlK9BP2OKmApYkBk%2FH%2BSeAQvPEnY%2FX0APW8PiViXKxqC3eHdiFUZKP3VYg3ACWrzejibLDBwNkNTTfDbQn1GcHnwzsqQH15mjPfDbkbRJRBut5ZP4hZ28hqveWhb54bJoC8g9UESPBYa28wSH2FmjITvOdijFYHg0bBNC7MuwapFxiJ0wbvoHzI6nJIqDDmAaU2VCgy5K2m0VfarOEsh867e8GXJLJ%2BLpclCsjwAB%2FlWTOPPsD38gem1EjsFRD9tiIV3iy4Pb0pPrE3SDCHm6YH5I7yvZAgRi9Q8UGQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=a0c3566a9d614a259ffb6cec54fdb61c6a39a26e&oauth_token_secret=f18c0693bb0b6c19ad1e0f2f0978f43a344cf1c3&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="c5f6a0520d9426d7",oauth_timestamp="1503085327",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="EY6Xufgt2yp8sU2bf9sIdNhaaiq6VyoaUMCtREghSn%2BPZ%2BecNV59vt98D%2B8u16yLr0Tr995rgbJNxTPZzxVROlAj9FKwZJ%2BDFrI1uHoyiCJ%2BAyfWxbTrmkMImJfhDWVNsX65QF%2FXUeKArSng9KgfF5%2BpMS0s6joD67cMaAhxV3IWLw%2BYycSiEzCtxqgMdrBq9gdumK4XC%2BcJ7T4Yih7L%2F0hmzbhaZkBaAWHaExYYophL7ABauvRQEGnuTnFqO5ULwAH65T%2F5%2B7A%2BZDmMcGSJIudLhbxxKjuIwMuWssZX0NKCVx16MLK%2Bq%2BAO2QVeL9Jikp0TulJMV758gDtbPjs8uA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=0fecef439cf3a8b8fe6fbcfecca05247335b75ab&oauth_token_secret=e4035ca2303334f908bd65706d312c7521058510&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="63688ca11ab40a89",oauth_timestamp="1503085368",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="BGyNzqh208Z%2FxDmCSI30LQP58oZpq%2B8Sh1cYn3xWr4GiRKvLvlLqlz72UJMQP43wQN4ZtcjJPm%2BAVkv3Jvms2n2JKYBsjRNK0QwHL%2Ba21FrOY0Syb%2Bc1NZFpjtIhPdHk5NWaU0i5KMtyRRYcpeQyFfEOUDG5jqc5UNbZr%2BCdrdEXeOJ1zb5EZUuQ7y0yL05H3FGrL4g2%2FGuQop52QTEBcbbanSK5%2BUbst5VjnshoZfZjV6OCDF1M3JdL8oZd2LD6We24fKwjGnfPmo3fQRmf1NzCMQtsyFyfI5WKRg0vmY4MlPKnoPvGShgGa7JJ0OPa0J5iwCQR0S7Fo8BsxLNMWg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=31a828a75de9a569ccd295e6c0ca4f4c6d0d52d8&oauth_token_secret=ccccca5f22d9f716825a52b860508afd862b5993&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="96804068f0f9189b",oauth_timestamp="1503085442",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="ZS%2Fn%2B17VB%2Fgb0yDrRpvKwYaorF3gzsyLJ1FiyR3ZEyGG9jhW9Iw5j2QIlRfgGrv4F2ACxMD%2FKziMj%2BMjZ3VDzTeftiC8v2yo9JKTWN4o7f9oF%2F93sY6WVY3pMTUMIa%2Bl6%2BB%2F0rCSU1IJrJbCNtNPeyrm5uUBgVerFfY%2F%2BZh%2B7g8r%2BTAPLUxk5qk6Sf%2BdJ6IbZkeDQtgeNYTlPdB6LS%2BeOG195WLRkpdKGPj2FpfOOk3zBQsMZsv6fa4p3hJW4qh%2B8DSgO5H9y5HT8KsJXy66uTv075gJg9u6rivms8IxGGUNOFqrP3WCCIMIm2nOnDH8HUPsHpOmUE6Ul2fClV9EBA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=3e31fa411576848c20f676c32f5b71da3fddc9e6&oauth_token_secret=56105c7bf5143301fc11612d418207fa5f09417d&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="43e238e8b96b56f7",oauth_timestamp="1503085488",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="Cli4%2FunWpT8aU%2FC0EKipoXtdfyhzhPwysLKvFLu2yDrqdECaVlPd4AWIMKAorxpS6Vd%2BdAI83ANFr%2B8s1Xx9v5cQ08GsSt%2BVYHkRdLuGf03Rvy56%2FQej6Q2DXDhAf1sMCTy1dHHqY9gOxMJH%2BKs8raT3YganyYiPZ%2Bav%2BcqDJBJEJY5cHAVzBiQ1OtX29pg116Xm4%2Bl50IT%2BSkTaTwsIprYwEPN5tP2WU5ovM5FdPasyBZ4HXQOq0r%2B7lNda6Z1FBzF6sTUbqORTASjVoDm%2FP2DvJgpJECPTpuRRqwxyXMzCHHy6lmVxWaW%2BbABG7h6WyK%2FNrWaksNR13EqOqWk6Ag%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=09ce4cfe3fc2194081e3cfd276ca8f80fd7342b6&oauth_token_secret=5c32c83083653bfe9408602a4b1665a612071f0b&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="0db70ef086c6dd54",oauth_timestamp="1503085491",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="A19QHQY74MBggm%2F2coT%2FYTBJuzUc2M%2B0YqenunbVhKeFEL4za9SLBDAC8fDzBySNHwjfLR5lrK2oVbgOFQNRjwjO6NS3HT950g5BmMD%2FOOXgB%2B4urStHWfGfTVB5jwyJ0NfA9te2k%2BIxqVqMCxVFKKIaAgShD%2FDp6yTNwVdSKrzUj2sr8aTWqP%2BcIvKkeoLufgPhysdnqWiVVyw%2B49LKGVlK0dm58AAnEVZrlElfV0QBFHYx29Rf%2BW3xavObkyRPHlE%2B44CAbdKxUEsxQSa4TXFBjIXf7IjM7Tmnj%2FMAjlkWsxRkDCbzU4wja5loNpM3tQ2NQuiNTEbZIALyTxpaJA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="957265446d44ee3a",oauth_timestamp="1503085515",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="MgfQtfjcjyAI%2BZWha7HqNw%2BIaIYRCC6BZ3%2BlLPF8TyC2vzQBAhewkOO0VoD%2Fv2N1NlyCdsqR%2F4AVuLo2axyS9ELC3Etn%2BCRiNCN1LDfgQE2vpsl3m2eN1we1uV6glmhnIGZb2usqbnVQh5kANwVIcda%2BtzwgaANU%2BkZJidXxZof3aSwu4u9%2F1ueG2wCnU%2BBu6mMaxCI4RV4yNwnTZtd4BygGLAU0ii3rux198U%2B1P0%2Bdle1dYngdtznOzgDci0r%2Fb4AmqGSOndmhGj0w2LvUg9BXwAvAXcqfL1E4pTipNt1bwPMSvd0%2BSbuaU%2BuQXwAb%2FPzevNIB2hkXTnLtp39oYQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=f4f9565691b22f0861cb3bed01a1dd4ca68fd857&oauth_token_secret=e54906507ba771a4f2d8ff5da422e02987014545&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="8f7b1447e2bc64c4",oauth_timestamp="1503085518",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="UIC2sN2kL6NMol0G6Ym%2FUvHxGqLlvN6Jwuc8Ro0VvS5WLOdG54Aha%2BjHuUc5vnwncKTWUyNcOSeQDi4ChhQVqtM4p3J%2BpE5I9cJtUdxC64le0%2BVl%2FbJBy1QLLYF%2BjCu6r89mEVhs9x2h7Knex3Y5YWQZbU6Uh%2FLhFKTIh4wLXtMVcmJaVMe92IY%2B%2BIYyaA%2FaN7QrdElwTPDy7mq35D1ib%2FrvN1uRj75chD16wl1FYwThKjtEbXrceIJk%2FlO5vaW3CvLWDHq0W8vOQn1LpUsUX4oP2ngNAJ%2F%2Bm6zRCQMU0Kq8JOJvaWjz2933SEI4dDTkyRzs7d1qWRst%2FL4e93Y1hQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="2213f066bff35f4b",oauth_timestamp="1503085538",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="BWVXGoRfnkVKmegevSmVBsYluICDAFzOj7g0w8mjd7LpfOcJ%2BsmzKRoRVc1Fu81dNtKDDksJYU0IGFQcMi7Yh2r3zi9DlxeNedTA732D6BhjebqEjt6Sxf8CiwFbpzPgQ2a5F5BSZpZguTXR7k%2BsT994G9xq6DZ%2Bi%2Bv7XsSefYzv%2B0jIMkbiEzAIcNt%2BGnge7WFH0EcRh%2BHZyb063SWOARf29o1UseX1quhpvsCl9Uu1U2zQqmQGO0ewk79ET41lw9beTcztEUvdWheTb%2FbaWErCfFylIOXDqdMTS9JpIuf5rHjFrTVKf8KSIidBwEZM6QohEhwS7nE9X%2BWz7bzJfA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=04085e018bb978aca73f5750d0ed6709e59ea8bf&oauth_token_secret=e4743b7c4e4e55b30a6027225d0450fbc9db4022&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="16c33fb4d9126820",oauth_timestamp="1503085600",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="YhomputFWMGsuleccEt%2FiK2JUA%2Bl0dZIOmCMftU0V8t5MhFi%2BiGAU%2B6RoEv6h6BmWnA2tGuv2NcmCtqXYA%2BLT0xLvFRWPP7T6soe1WKiP5wmP%2Fnmw3bMfjWzxYLp7%2FkZQVIXYK8q%2FqtpKUg3VpQnDtM1o2tcPxO9fMU915G%2BC%2B6YEh%2BjxUNYUaB0oiy6eK0B2LPnRYLst2kGDVaKkLY4nldrI8F7cAl6OZkrhnqjWNxBXyiSkcA5E9psNXkhplRXA96WKOrC1CtVFlRALkEEGVx6DU6zZsT94XLISBu2noO3vnOLthK4xfopV%2BCrOx%2BUh0hoFnXsa3gUNrsyC2jWGA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=d9db976df544b5e6ac22532cf01c79aad39f12d5&oauth_token_secret=8d3e163632900d00e2948e9ad2770205cdffc1b3&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="bf8a6e2184096238",oauth_timestamp="1503085642",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="V4vscucF6IRVbbcM2VY1p93KPZr6vowJ%2FnwFivs5MennB0F9PbZX9izWSlCFPQjo9q8Bm%2F3ARsQn%2B5Sr1OaHGE4ep3W7%2FFvyMU9CIYM4ivUmogm%2FUp32bvHOOrytutDjhRJAR0Y9FVHo0%2FSERwkgik3z4T7Lb07PH8peOdDF2Ub9QfKuIYTyrJQ0RauQ8kEGSfKddA6sp1gSBkqRRTptrQRNRkLpYpJH%2FC%2BLpXgEY07V0cTjlWKY8LCdwRRDXI8NjJN5k%2FPrALK2ZUoDheOcdXpsKvIScRpQ1XZaUwNOGMOsLBkwS6%2FoPakt1UjEwEITRD%2Bt3yUQ8Mp0%2FLcw0XSXxg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=a1b6db29f0004b3a86bc0fa0a2aa27981a22e305&oauth_token_secret=52ecff7589d78bca4758ea5053b2f878da09fe59&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="594a51f439f2df0e",oauth_timestamp="1503085670",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="CRq0NJ4ZBaJ%2Bu7tO5c8py6e%2FnXR%2FKaWFETNKCxGvuBPVvgSFeqQdya1mhUSSIW1eUq8zx%2B84Lyqq1OFuAVRdcB0yAYTAa3S4M%2FZNmh83iGFJh7xD28kCoGqQczyZJknd4yW1O%2FZcxs1ViYDehtkpR6yaeFfAyvyM4RbWuILbLNs9dgQh19cowlAKbyWQq7XEZc1z%2BA0z8Se2qWYZNNolT1UvGp2O6CeI883OMgBm3H%2Fhoj5k9c6cJRQLowF2t%2BXsahHmSeBLxpSCS%2BbYXPI0iueQzBvfK4mwAXMRrnIoeQOPt%2Fyh%2BQ%2FYwmX9kj5eJ9DuRi9tYnqXxObKP8LFQ6MeCA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=9d2a0ed06a9b53299092b266a555f446e9e0b6df&oauth_token_secret=ccc7514b9bde75b90147c6cb936edfee11ed6f72&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="4c9c4ece4f07f98c",oauth_timestamp="1503085905",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="U0AMwuCZJa4KXwT4Mr2h2JuYEhtluX%2BjPVQDqoRq48VnDpZzLKbE9IiGgN1rHaWRMUPExnKxHlAd94WQu4F0Zz2IHOaYTATdnVHyidc86i9UTs1OgkbpZoV98oJ5zdRXVBCHU3avXlJ7ly%2FJIYnHOtb%2FNiE7alquRvsrCVcl%2BjN%2F2Sk49RMsNul9uZKly9pshm7YFqe7DCfmyJ%2FkrbKIrRQcObNELjVNRYUzw7En8CWmoCRmAMtfmbLyWnRoIRbR8VcBR6k4Zic45Xycceq9S0FzcgpGXW%2BquWY3jpV4%2Bx2%2Bz7rwzVt2Mb4bbcUgPwz1vWl%2FuaJw0D0FCFB0MTpjyw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=1f53072dabd2c742e199bd70224d3584d65da451&oauth_token_secret=3e868f00490ea0c3eaf41603e6bd688b002f24ef&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="c6d5ef650fb0fa32",oauth_timestamp="1503085908",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="Lb6J8cNzhwePCR1Flo1CjibDb1dHNrPtc28350X386vPRFSfiAeid1B3Reh8C%2FAgnL0%2BkDoLAf07vmZ5xfIC4fpsL0wrFvWT9W5eRycMTBHUsqN75aP%2BL7pCmUaky88jh%2BKdyDoJAo%2FpqH5Rn3T112Hrpq6U%2FuPUNX3WomFIu%2Fzm3Y5aL8mJHajVdL2Psdk1mysf01TSFeES%2Ftsp6bqtUF6wEjAH0vziWkRz0aSN2fPtvrhzlKi%2FRFxCrExxFFfFPXUOFnNpY68vgi3lHIy9wdSBN35UgpGTcBvqxdzymLFrGXWZnkWv1VTRJV1qsgfkc5gWtmYU8n4HhMDMWjcKIQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="baf543b68e0b690e",oauth_timestamp="1503085968",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="UyHK4Y4%2BCi4ZBClbdE3zPQ0BaGuSLzGRBJiTx4Dl%2BkCAnY%2BCOozOwdZMOZpzW9JUU2qTYlIKU4Ce3p8V29%2BR5Dd%2BAygMWLRe3US4Q4F8MtPMpEnU5QGA6enol0xtCz7N41RzNUZLBoQO3T5qP8QRNi%2FTJoymbbbBe%2BIJKHYpXg5R6eAl9uFlLRsCBRsoy0m1azM3zzaBUmiHWfDRQ%2BLGfgPV1dmZhVjErUGT7C4EzSTCkttYiROawreMbauBT5PMHPeES2d22ZTrQLZMfYQStVoz0v6XWSbOL0JNs2VzljIVzStHOH1FaUctBPzmVnW5QT06RkSbZFcB29KzuzzhQw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=0bab2dae601a6886c9b676fa54981081e68ed130&oauth_token_secret=423114729950d1d5c981f6df28436d0e4970cb33&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="87c9c4d8fe0aece2",oauth_timestamp="1503086178",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="HGvJiceu2ln1J6kgTQvlCKBFzWx30TzRKJhpx9xVV%2FrblYvUaDQ1ZMH5Yi3Ubx3uX46KFh2h%2F0nbFZPl5BWchllrC2pVmXXC6RAhgl%2ByWniTcznr%2FQE9tUZEzhaxbG7PXgTARAiNJLOD%2FgBIothpWIRYrDKKAo66EjeMb7LOhOicvWiAkRnzdkj95hUa0AagNAUGyJZiAtbzeO78uYkAvTrjk0Uh%2BRbPorgwRllyB8QepuXzGiy0Y7MndYMFDASvhwOjsM0BJ%2FbWD9lS5yJb%2FkHFC98QMm6OF2e60wrnVo1Gelm7JYuy6%2F%2FJutL6l060vWHE7GvHaibSe4SLbdn0gQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=6f4973107389500078348d8917703212926e2fdd&oauth_token_secret=8f2a3b961ef4363f94d8a61e4ca06ed03320cbfa&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="8adb7407596e87c6",oauth_timestamp="1503086228",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="SE6L1iPvB8IDNmziiXiJOdzxWL6Un6gqgRcqYjBiFCr%2BmlrIPeOiDAvfhGICthPfXHZK1uYoJkd0GLx0ocT%2FNu3vdZ2Un%2FfU0ow6PHeregIT%2Bdpx1rDVOUUpYZzI8wdWZMoNfIJ8BDLiVRIQgnsBiRn74bUAUIZpijwhPXVhqs1FILNL5qm0G60GOIqs58BOsRJ4lpBhjWLmbRhVjN5Ifc2rr7FIRg89%2BkGyzlFiWK137jvnQRVFTStBoQlQefhmCAroxokY4kUdZ1BaUsi0FpNRZT59fruqHGOjG1P%2F3O5xE76eKIdjFUSPdQ51Ig3NuptUfgGP%2BXMi%2BIZkBfLlmQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=6e60535841c2f0ac463abe28761020b23e86f4aa&oauth_token_secret=760ce8636f1c15fb037e3ea147f05e157855dc5f&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="86b8fe7248bcc7f7",oauth_timestamp="1503086359",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="Ow3CH8VHvQLDi3lXoSAG%2BpWsT%2B3l7x%2FtXjjXe7mGqa3sRCd7fznqVUGIYq%2FNHyDZX63cf3twa5lzhgv5pZCHh2tH9%2Bz0%2FQ5R5Eh2IKWlTtw74cHOqjzGmM1U4M3rY9f2toyGViLOeH1gHIZVS2FLvYwgNBwLRKXKXh1nJclI6DF0x7CnEjnxGOWvdBgBuFxH0keDUT%2FvT91RtLOusViSKN1wq1OEmPIgB9ARLEUUap7HTmJiCZlbD2%2F8h7CEd2WJwfsKb5SCs6VrOnhn1Fq8swbGhJ6FQQ2lTNDZJRXEFad9wxVRsU7RHfBeiXu8r%2B4z95d8znVGFRMMfxX6a2kM7A%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=9e1df42ae17f590497543fec744d375487fbb5a1&oauth_token_secret=9cf4ff4f7831687d3808744304fd9fa5a19532d8&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="91e2a963adfa2c86",oauth_timestamp="1503086363",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="W69ec0eisMiPZSRIfE6o8me6tPBgb33spoZrQk97xc4DGHNnaFbkNkShwGQZLcuQeqP2uuEKdg3bT%2BPrxHlIvhHAbCOGflnjKXEKG9a7SCTy3t%2B4ZIbDPfsg1HzcomLqiAwePy2E4HEPExAMa3XETdiBnTFFvEL2UNF4jo0Jcl2HmcMvbESemeqMA4olYsN4UUkZYNQFh9mCFvxcYIcB4%2BGT%2Bu0aT3kzK055LcJp9yihpKW2UqlLDeJvRQvn%2BrRftEuAHh8W7OPaOCFEQnCamyp%2Bh%2BO2eC9wGpMGzRS8QvyPfP9ZVl7JISqxFivGps3v6pp7WGcsiQBblA2Z9tqRug%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="becfaae51d42aa89",oauth_timestamp="1503086393",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="VMatBfXxKvm1J%2Bcje%2BHz23pTnUWv13CEs15bobJoSJshaO1w1qCMZQ3nHrnbN0TXoLPtZGyNopJT939Q6IfhzHQdtu6n963wTTmVypOoNlrq4bfxlJdkbOie0mTeFmINXv%2F2L0CTmYasIF9NcWd81RtbFAck5M1pl3W9q134ScRRMkKsebwS5oDhX5gFRrhhFRUSebU8wkapGWr7rvseNiFELSsol180OAkmx6yOy8rKE%2BBIzvFzaTeSTCFD8vInfdhEK8%2F48%2F3rY87IIGCUajW4d4jRH5R0bNku9btZrcwF%2F8Z0DjRfqTmKwGOTP1WHK%2F%2BupkRf6X%2Fys7Jw%2B1zWUg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=4a9a5251c8aa4222ca8e7fb8638721cb0f31a989&oauth_token_secret=a566cc1456b2a74bbf2df530a3b80a40b79b33a4&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="0ed933d008a680b0",oauth_timestamp="1503086396",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="EGcurQTpLadG4dE8ytIwXD3vNRhoDlrdutWV%2F6uFOUt%2FwCwG0EKEaTzdrhVRfUMD1MHM8FidBszh4sdmjfytcN4No8Yn%2FfBHrGTb8f1uU%2FwL8vaJacUnFQMwMs8nUWPQG9noLQGQEwFrwplSrWU8oMV9EaKHXo7Gf9tRkRi4Npay6kO4Ti4tcxYikmnFYPPKsd8%2FihEtYrzeCDtB6B0rCXQU38WFCjCZJQlQKVJs5Jcb4k9yRbut6boe6peUF8cpW5cEmDdyEJVQAyDnObN%2B9tuFl7Ur1%2Fbrbllr6kEMiUEP9yoACCGDU6NzeLwKGlU6zA3LNZtAdloBGBGlnF3Hsw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="1d9a407ed3275e87",oauth_timestamp="1503086402",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="GqI9lg%2Fj66FlkNWcOKKIkboWxH2XsosGDK%2BkwUiW%2BmKVhpdX1JfEJW7lnaCkL1b40mUnCsJGhyJBINXhjLjntX4lgigte0hEY6Aw1yDU%2FjDz4q1BqHan2svtJPj6Ux0LAy3f3dU%2BAACTu2umwIirEJhUg3uG95y4wRpcDbJWt5Cn9UHTZefhPVhAp3tORWkJnkq7NR66NLQbclZfnZDDJfQzXV9oP0Iz8ihYWeCoBfdno4fdDQVlX0XOWDQIVwsSe828hoTJmzgzLHHMmX%2B8V4ZrM%2FsMsoVdVZMPoZBC6nfkQwy2t5y7tw6%2FI%2BfhCETBZvFAXd3JP3lpL3BogkRDrA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=ba57293074eb1a1941e175d99c8a6446d76639a8&oauth_token_secret=73e977604b78fbe44d15e93ad5eda0c7955120cf&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="146654d76b6a44da",oauth_timestamp="1503086420",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="ewpa70viINhNOLUPGGr7O%2FYiqjCIgXI8caRFvEd6IOsgblbkZyd52eMmjZMr0udlIAq937sYjOFEVF%2B8DTaPf3XKmaKacc1wGJYFgrWdVZvW6NGbJF2dfCHOal7BnrVAEgff4RldltAxfA5CWuy2AiQyjSLZdEZXsmqly7ORFwoHCoPQjOx8c8dP6yr9xkq41jLMG80P%2BdYmOuJgJzbg46b8o%2BNWW0Obb62aW%2FEPFKBxmPJkkkfeelIWPBEBoKubOkxQtz3ijQZlRjN6EnTiN2YeN9ripHI%2F7IP7SYiRC%2FQISo9T2B5fvi5GmqzfG%2BjFfEfCp7BJO6EXgcA6FlyLAA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="5591a84d7ae7efd7",oauth_timestamp="1503086548",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="Cntj8vrXg4n4TTBlOcLTm7R4WLMKncADKO8zcc15tmhJ%2Fv9%2FNju5oQ3ItxfrGUDDuL1%2BWRnD2tv1dRtLVI0smtVjYl4bcspB3s6yZQPyqIYf8ZBsFo1c4FkpY9vk5a4HOkm4BNjIq6KNbH9S3ew5RSikLd50sOOcIih2Zt%2F8sRS8MPPFRDPKxqqpmPPPJ9zi1Tl2slasIfPfIo66YhsTis7YCptif6pFR60ziTfrP%2Bn1FkpM2SWM%2BQ8%2B0%2BhSf4PvZE6cLN3joD9tkweWPGCxGDwIDRZ%2BhmR0CgN02Bw7VG5VnWbSY69Eq8gqHCW4JrMOxxLsicmYBjMtz5doSPTUWg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=e1001bf30b29de3dc17f8fe768ca6a27fb06ea0c&oauth_token_secret=157936d4d584269cc5df4173eef762c45439a85f&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="c87da12df7e3a211",oauth_timestamp="1503086552",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="SoGgW0Ss7PG5js4fsI8HjryodGq0VNFxrqKK4x6Sh5n1yKZCNVzIoGYAQg1LmgAL5abDdCsbvkhFosWDcgYO%2BQp%2BbcgvuGsPFcgA6xhbTrjg3fXAYnwGShPmHEhOxmWjAze71%2FVTZRUgszxI7pFFKiW3N3%2BSjqLPV8uy8OW2c%2BGOstzJPxMcJSlpiRelnBUTPVczcRQ42u2FsooyhEs%2FZpY5SFiYdj%2FP841dzSNPr%2ByFmVJTrVUT%2B62s7jIseq16KFp1xC1GpIPBClxNr9rnw4SZkhSih7oxtKleE5AsexlHVALS8J9WSJnRUsRwvpJxtr1lfqwV0Y1rImM1ucyj5Q%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="c4dabfd2ebde3874",oauth_timestamp="1503086717",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="C%2Btg9P8nj9tcV6LdSkto8ejUIYGQVpZPpcPTguQPc8rwkTxfw7zrJ0aiyeNPECYj6ME3un3ZVoA4vTHWsICOibr%2BLAusxawqZmh0L9BB50Mce5JrHuZ8xVnFFWbI5xuoX4lOfslyqyZRGN%2BzWK96MiVMGzDDcPCfYFE33EYLcY2uA5umqOZw6g7P425e2HoztgTotUA0yOD9Vr3e%2BtJaCLrbfX%2FtZKmM2x9UdIq7u3RCYPHUAQHp%2Bj7byRGX4xaktALLpmFcAX2%2FxuF%2BXt84EqNdZS3xbLUHE13BGY1zrx5GOHnNY%2B6JxaNFFDcVlMQ44wT11laYDPb78vDdPy6%2FoA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=4478fac6d42a98aced8c4e5fec9f34395898e41b&oauth_token_secret=d33ba60f69f26d55ff4e8df1cab09a3a54f872f0&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="cdd8c1063e4e303d",oauth_timestamp="1503086731",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="L%2FvtJcurmNarr%2FMeZPMgn40FX%2FulqPUwrArjKMjqVghFLilWSgQpcYVWAdnAWCvO1GlV%2F14ZyqWlIRKSn%2Fj48t93k2sSuUwAgrTv0eDkIKAPRzgKgVqfVKsF1Bc%2BSKEPE%2BEF5xZHpCCeEMMFUXTPIMdiCwfZMuHQGu6U6y5g%2Fdk3g5s9QOcP2r%2Fq5%2F57%2FUHN1ZlXzdyqMo1x7ZY0MWHpxCCjMc95S2a%2BrFR0nbatsse5tqFqOb%2FJxZLYq1uiQTRJjW42XwRfeUC7saJ4ABtCaoLfcoHcty3LWJsRuFjws25IFWuX98w%2BESaELhNL%2BPu3r6l0mqbHzX88QqO8sZ7XCg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="2bf3b3aaac115b03",oauth_timestamp="1503086934",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="Y8iuam5ilQTIYlephrgcNTVWizYCQBaY%2Bs4eM0GgN904CWm3NHqoZBZj5BCOCLbuL%2F4FUUxFongyTD74yBrHYqoPY4oT2%2BETEv9fi%2FH9yZCZSIGpd690Gbsv0Y5I%2FVFupXd7t0UcFVgNmI3mXJo1%2F%2BuKAOLuDkXUd5%2BH779JYvq2c1OjNtM1KMk0YSLkhIqU809Pr0xG7WL3yC7qTVLZuA057QmUP0RioS8fJEBQMCb2KgrZJt3YcrATepQvM8E%2FQBlOM43WmUBreILxiILHdcZSQt2mwL%2BIYtpsGi2KhQrm2%2Bg1nfWtpsnKSR8vMjt1f7sHpY2%2F3xBHn61OFhfs7w%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=4e52db9cfc455a174f809fdb556a6c12ec6affce&oauth_token_secret=94e4b8f52c0e86270c39ea2b536d6e3d8b5fc0f7&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="101ec8ce39cc0533",oauth_timestamp="1503086939",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="A2Ji61SmOfCPWeqEBg%2Fa7YdtnMjvvtvEAdUgxjLgn%2FQd6uSmMtWIDjn7XhQjMfz4womoXR7ugj3a2crLwqhBk0VYyOsCTnyS6h0OL1xQa5i1vmlvcuKjqwGkPWYJuzzE8mIZvXtx9iAOg6gHRIchLykfKt9MWiLP9BmvKs8ZTPBU%2FwY8as9oAM0NtoGEHkpoyQpLacIbQHM%2FleeRLn5frhnC3q7q8tf0UxRal6Eieq9gvRIE50JxOtRy8eBGVFnX%2FTKPPZoX%2BtYWiK44y59DVcfUbCbV2UBSuuK09lyY12pyj9S53bKAR2ZG9wc2shzRvT8qt9KRzycx0gwu%2FJgprg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=d36ab002ab71c46b67b2b657b9f3deee79514b75&oauth_token_secret=ba1c83c134897b61553376f3d0185da19c195eab&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="864aa9b02050d2f8",oauth_timestamp="1503086956",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="HRVgrhfuNf9G51TjukqFSYcHmMMrO3ss%2Fi7DuSKtPf8uf6xxS%2B31RLPUEOtNiEGCEXzVC6dFdIBn6qy4KMteMGAnjEpYHuf6xXCqkd6bX%2BQeZUYhKJedul3wWJJ7SBTv34REYI3gIbNlRpCZ9kz3GdPBUURQ0eTS7qrQryD6Fd%2FTfciRm7VIlGnH1irXBco8WM8hXXNAk%2Fkp54KKGYuybj9tC2sW%2FcKjw63UlNwl7P6YsyHJVYi%2BP4P1iKKZHGXY3gyvHk4zteryaoKwRCGAZw1MI%2F817nzLdLj0zkcjIkQkU2MC9Phe6%2BYYVYd40B4kxFvBFY1YYIKumtyuuCx7bQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="ff10e11fa3e95089",oauth_timestamp="1503087623",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="H5jBAmpHMHjTT4GxiqsepwAWRrcO0p2hVIaLpfEKBU0ZeZw0p%2BM3IVqp96TCcxOzzc83mmXgTkRxBMSTop4lfMZHcQwGH0REBL6fd5nk53u28hYc1YwGIuw8HN6F3gcX7iKWS%2FcUp5kIZFfzjMI56J6fOQfAIWONc3H4gSlHUJvYcA6%2F5e1A2UX3wrgeJ0za3hUnWi%2BNXalmN%2FkeRqED2djC6Fzq1G8ISsMoaqyAbtmvytOgdFOyaxWS2UPlqRGv7O3cV8UMHDlzOPVayMkV1liX28PwepchLBGIwL0YmCZMhlkKTfisZTGCZBz5fQGqfYtKapEEdhxkAxIBnjM81Q%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=2e623184fbb0a79cd1f152216f27895dddc40444&oauth_token_secret=b8960fa9a8b5e7fcc73c5e7c56b2198b31faa3c2&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="57def2414b941353",oauth_timestamp="1503087629",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="Iwo45SyYoldM45WMe%2FBSv5C2Wos%2BBbr3cG79mXpMd%2BNmtFNGe2TSWXebI8nm9Gq3LeBZ3Lnm2kb2iNhT5MZa7dOt%2BQu2jOcq%2BbxNkccbygEkZ96WJbzYfRqGttQfGIzfqwhP108FtWFBbxtsCr6qWTZLv%2FwVb83Yz5PbCel87TsV9GthTbyfx5I8rg61sGBNqWoA7WaE%2FCBncjZJwNDo6EPmCTTFq27XRx8rEMxAe32RYP717DIO0zD7SaM6RYhaj5DM8KcbZAAe%2BJYD5uiuhNx2Ib1PUqC5QQHyb92JVkXQPLAWLWZNYTxE28NSDyXAnhl5Tam7RKbb8sLSz4%2BHdw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="04b0b45a0b56e534",oauth_timestamp="1503087662",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="GmMKHBjvgHpL5FcCLA0xxTJ3BpYeNr3pKkP2keL779kIpTu%2FrJlcqqYG0ejC0OTxk11D7%2B58eVvK0zqd5HGsZQApWSPQPaN0Px4RGeXg2YvldtHNkE0Olu7FrR8MMZ0kIb%2BF3piJ%2FTpycIteeSoCmiBQ2kDYpeEHvfUbfUe2yUMRteC7BOGurUDIOwIlgJDiifTrJXfiH0Lo9xoBXo9sQdb2x7hfUKOzDOQTXlLjKh0O6UgMRwlPn6LqHvLTm3QvDy8v2OYaybYkmBzGESZ7REC775XfGwSCLGDYb8aDW6KL2TEu7K2rW%2Frdzo%2FGdQD86z%2BMuSK%2BTVdlpe0w4WdAgA%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=347303b1f29cd2f8cb9d069d5f5930519fd3e061&oauth_token_secret=225f879f80ace453e955379a994f0896a64471ec&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="d97f4c736d6012c0",oauth_timestamp="1503087665",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="LMS6dsAGLqH2XN93SH1kyHsHyyiiEfDNTNieazLa5RVs6gBVTM3E7NNcNMfCwssf4K9L28K6OmYc3ghIcfipx9VmkDGzXREHEt%2FCuXst4K0c2QSqYNMTaycnkOncRRnBuer0QIWI16mCkllaEDDo6wgZvRpa350LOBjkNFwbxbNa325ryCZAvRVVHDRxLXgJ%2FtpZnV8XLDAPCn3b6%2FIVTdd8zmw0%2Fb8xvIhB92dN0CmiLR1UiyYhHdlBF3QfpWsiBxw4qGlpe4HYNEwjDXgZgsIrHBaly4L02ch2xVNkOxbVrzaZ6NP8q0bUPwEVVZMPOqKRtIETI6lwC2L2ZBbwcw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="b3a303d440a32e6b",oauth_timestamp="1503087765",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demo%2Ffavicon.ico%2FO4_Callback.php",oauth_signature="Zt%2FTZPw7Zok6vVVLLbFmYCOUPxfVjxu1bg1GcbtPe3xXqauiT4IKHVGqdQGfW%2FKneu8a65JtoM7MDIKUueAvrLSEq%2Byp1dWZt51llZ8%2BhpK62KHqkcplQCU9TBDTZWWwWguY2n5ZdvT3LAUZ4qYvL4MneEGlreAb7ZHBL4OnkEIAxYAys0xkA30o64%2FXkRqc5%2FtXpXI%2FLSTfWzGn027%2F6Mf8MKjVDe8RRCjBMDD36klO%2FB%2Fp1EO7UBmd0siKWv4ho6sbDMm835KZyK8H4IMqdPRRPTOiewM3590DiftozFRj8%2BRm61fa%2BcCRnXOHBqyEt3tvO7gGQ98nr3HLB0PRsw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demo/favicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=601b9d0904955f262dc7ca5690c9e2b75ca046fe&oauth_token_secret=0d507c2b0cf8d29114da41ec648543ef6e4e6744&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="f374bb72bdc38117",oauth_timestamp="1503087769",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="HEmwqokVp3QGnZQNq%2BJk5thuBWvzpF94h1QRQkAnikZrYpO4bwy5dkxOwxMLQHegx9cP3%2BwvFyckbvqMgL5vHpsciqoK%2BxtwAvrasDZPrlyr15PzAEakYPcGtufIULXxZ4do9rScfXEzbyurMU7NWtMjXpmSrmrCm37MR04q%2BbewiABPidW7DcUE5XEixYMR14M6%2BS3F%2B1mkfX1uGb3ca5vd4ZApcovOT%2BxOkUQYT%2FIG4npon2o%2B0UhXWSqPnBlKN4gS9ElmYhPmW9esGGeQwBlhjvkWQ2vmqg06vU5ZPWdTHsjQK%2BoTerhhBQZ%2FSQlmnTaKrEYJ%2FDZqFaTkRvUYlw%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="51d026edb189b5ac",oauth_timestamp="1503087801",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="WR4dh07rewdLjqYnAhZVGWz97FckOttNeSzs7NF4r%2FRKUVwmEnu%2BietYBpGwpQ6O8iz9eUC7%2B38xj6uou7Cmg3QrJt2aDqOk2IyrGHJZRQwLcShPw3%2Be%2FMjKXVyatZFC9BmC48t62M5e%2FXjoOw%2BeP2HGSPgMAPv%2BVUYJX8QlFlFpdLZ9jK%2FxJG4cyrtjI2vYWfOYSCGHagWCa5NPEMGxCC97V84PdkWRDYZlT7%2B15NeKTKROpbFM3gaqzdsDn4jf5%2BGQAobW1%2BbBQz5Rbtsdt1CrcBX%2BemiVNrh8jpNAFbHPCQ%2FF6jpU9Rl4UjqimCrFrHoQzBVDPnMPKCcMquq81A%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=b3a5ae2f4682fb9e77f9c3d8d3e22b22a60b7638&oauth_token_secret=3566e3de0c1312b6be479c975c044ad7d4e54ef5&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="4aba576baa697748",oauth_timestamp="1503087803",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="EvC8v9JxVgxEGHQecqVLd9KuU00Z1smKW2eHbmd5K%2BokVZUb4duH6CJVBki7ni8yqn1qeSoTKMG0gga8R9EG%2FksabUZH5Mica7wchg4Wn8eDKSOCMRcUoFPIGyxRNtJFk61C4k0dwOHDddQTjNNvV2v3LmZOXDNenfviWS8%2BYMx7BSCyikgI2G1eKWx9imr4vaBxgQ1riiIftdm77OoTBrrfFDDk8Eu2qdCJOPpPVY%2FqDrYMIpp4zB%2BfPF9timn381cUheTV%2BAk4YxD1bSOR3VFWcdQLKdFQW1fZgQ5UjpZOPs13HzlIZrVR1r6KHqbXBCU7P5%2B8dZc8qFztPEP6dg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="f715a437af0f199e",oauth_timestamp="1503087807",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="dzzwkO33Db8BrH%2FfQ4Xvb%2FVQlk5kxXqbZKRiDBFgYZ31TZQ4Ml%2BGrwxaVHr1b0PhQcPXoFrOgjdBRjIdSdCSMiK4XiGbYiTbE6C%2BiW1UJSRdaDmRYbSfXXzx%2BidrVlQrimx9SBkgFb5W6874KjePg27JXLRumPV9ow8KRZnHXa4pf9PadHNu3WvdIRUpsQ630AMgL%2BXlDdKmQQ1ncuOx28wVGy%2BhAQCvSXZsTgEeL%2BDm0%2Ba5X3%2BI%2BqZtgt2MWwAEBR5YXMRrV8qsilcIaww0ajcY0f4sqlDNZiLV0cjouRNppipIpiJGnBmRX7TU9iWj7gmCCxuaQm8NCQocnCaxIg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=7dc59174505799f61ec7fefec03fc77679431000&oauth_token_secret=6c78c99ba5d4b685f9fde82cb93f95c26347d16f&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="4afe1f96c06fe1c3",oauth_timestamp="1503087852",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="ENPEpMd%2FQqvNPuFWssDQX2pVzbNIDAmf5zuLZMfy0TDF4lwQQ%2BNImrptH4gdKX3e2pmwUS5dgoZa5Lewui%2F9jtxZY8o7a37xEWqJAsWdA0omENk0H5mhv0TvEAhOni0V6aQX7lGVMlRgP%2FLKwuuoyG7s2MEm7Gqv2b6bwRorcdQSkssCOaS%2B8rk9cfL6XS2hRrfO2efhmEjwXah6b0ZMVgY1pSF%2FLZs5va2M437BYULoVYnUzK9Q5QAxdD5cUwiPFb8D5SMMIxi%2F3S%2FQqL6NevPru66GD13N5ofWHcOovDTWyBXtenT5BwZ2h2%2F86RjuW607JBO9pM9YM%2BTJ6NilwQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=fe979c81ddc08274c5e7f2e488e0a1e2f0ba9998&oauth_token_secret=3ca1920ba08d80aa6bc06b5fc2a2adf6e1902942&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
+INFO - POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="0d5677b5e7853d67",oauth_timestamp="1503087856",oauth_version="1.0",oauth_body_hash="8nnPb%2BszTPb2g%2Fwq2j7c996%2FV4o%3D",oauth_signature="GvZkuY9VN%2F37cJVfXdPdquAEN39Jnz74EbF6TSLaeVgmeUBZ0A%2F3%2FaIntO3TSQnN05JlSn55djhVeDabm495V1bvJLqiLzYEsBzIbZv22zDPD17n8UO%2FYeY85DOreLhJp085AihwgpuVbNa9XWTO38%2B2TRdE9LwuUAFqz9KuAamEhDSa0iSqMtam1hUmgFJ37nVjlLnC7kTp4JanH%2BYDxk%2FEMQ1hwifltZL4c8STJ2%2FM9TzMBhS2kYC5gZROcPYqQNT6CgIHNcRZLftLjaf1pvnZdeMXcTQheuhGnDkabtQqufi1kJL33Vw4T5rt8yA1%2FOkhBQsllcZMZk1iz9w%2FSg%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,client_sdk_version=1.1.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>https://somemerchant.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>https://somemerchant.com/images/CellPhone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitoritor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>https://somemerchant.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin PS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>https://somemerchant.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+INFO - Error Response Code : 400
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart 
+Response :  Bad Request
+Response Body :  <Errors><Error><Description>OAuthToken is a required field</Description><ReasonCode>MISSING_REQUIRED_INPUT</ReasonCode><Recoverable>false</Recoverable><Source>TokenHelper</Source><Details><Detail><Name>OAuthToken</Name></Detail></Details></Error></Errors>
+INFO - Response Status : 400 ;Response :  Bad Request
+INFO - POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+INFO - Authorization header added in the request.
+DEBUG - Request Information  
+POST https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content-Type: application/xml
+Authorization: OAuth oauth_consumer_key="0KlivcJ5X8nFz-1VK2bpZupWCIAd3y9L1QSqmDcte15345e9%217f33d589df4044c89a52d26c75d5ed1e0000000000000000",oauth_signature_method="RSA-SHA1",oauth_nonce="acbcd5931c902030",oauth_timestamp="1503087863",oauth_version="1.0",oauth_callback="http%3A%2F%2Fmasterpass.demofavicon.ico%2FO4_Callback.php",oauth_signature="FklJM0IvWme5VT8j7uw6bNvSqfu%2FVm1wzevCh6w2HxHv1R8W2CLh%2BN18P8PBsrHqU8OoTS3vqx9ttg3bGjbEx0Ez3FmQqH4%2F6VfM%2FooaO%2BtbBj%2FmxCclyNgMJAc0CN7ZwT1%2BBKW%2Bdu%2BE%2B7nkjmAizpdiG0O8HE6rHE8%2BraDC3Uxmjx9qbjxDkIvhf57CU8%2FCjToDS0ZUQA7GVDzNl8S6iUMwSRGb7Xu7cP6AZI7TCU7KgCHNAq5H7YPBRprnWY5n6%2FsRzwzm2vvCmmvUTIVEtedsWB4FDg72EfWUGXlv8XQ1f5V%2Fm0IHegFP0US8RPWjAqUiWHfHcPPt9DNpwy4%2FVQ%3D%3D",realm="eWallet"
+User-Agent: base_sdk_version=1.3.0,lang_name=PHP,lang_version=7.0.22-0ubuntu0.16.04.1
+oauth_callback: http://masterpass.demofavicon.ico/O4_Callback.php
+
+DEBUG -  Response Information  
+https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token 
+Response :  OK
+Response Body :  oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=742cb45fa48de4fdeb70d94479d1ff417193a1e1&oauth_token_secret=ed175dc2a646e868171227145ce2074ea1c232c2&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+INFO - Response Status : 200 ;Response :  OK
