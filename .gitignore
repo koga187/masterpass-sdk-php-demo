@@ -1,7 +1,8 @@
 #Others
 *.php~
+.idea/
 /nbproject/*
 composer.lock
 phpunit.xml
-vendor/*
-var/log/my.log
+vendor/
+var/log/
